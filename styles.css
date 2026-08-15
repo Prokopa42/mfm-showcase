@@ -41,11 +41,7 @@ a {
 
 .hero {
   min-height: 720px;
-  background:
-    linear-gradient(90deg, transparent 49.85%, rgba(21, 21, 19, 0.11) 50%, transparent 50.15%),
-    linear-gradient(rgba(21, 21, 19, 0.07) 1px, transparent 1px),
-    var(--paper);
-  background-size: 100% 100%, 100% 84px, auto;
+  background: var(--paper);
   border-bottom: 1px solid var(--ink);
 }
 
@@ -61,7 +57,7 @@ a {
   font-family: var(--display);
   font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   text-decoration: none;
 }
 
@@ -70,7 +66,7 @@ a {
   gap: 24px;
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -88,7 +84,7 @@ footer a {
   font-family: var(--mono);
   font-size: 0.73rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -103,17 +99,16 @@ h1 {
   max-width: 900px;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(4rem, 10.5vw, 8.7rem);
+  font-size: 8.7rem;
   font-weight: 400;
-  letter-spacing: -0.07em;
-  line-height: 0.82;
-  overflow-wrap: anywhere;
+  letter-spacing: 0;
+  line-height: 0.86;
 }
 
 .lead {
   max-width: 660px;
   margin: 42px 0 0;
-  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  font-size: 1.4rem;
 }
 
 .hero-actions {
@@ -132,7 +127,7 @@ h1 {
   padding: 12px 18px;
   font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -155,7 +150,7 @@ h1 {
   padding-block: 13px;
   font-family: var(--mono);
   font-size: 0.73rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -171,9 +166,9 @@ h1 {
 h2 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2.7rem, 6.5vw, 5.2rem);
+  font-size: 5.2rem;
   font-weight: 400;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
   line-height: 0.95;
 }
 
@@ -199,7 +194,7 @@ h2 {
   margin: 44px 0 12px;
   font-family: var(--display);
   font-size: 2rem;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .feature-card p,
@@ -264,13 +259,13 @@ h2 {
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .edition-card h3 {
   margin-top: 36px;
-  font-size: clamp(3rem, 7vw, 5.4rem);
+  font-size: 5.4rem;
   font-weight: 400;
 }
 
@@ -299,7 +294,7 @@ code {
   padding: 7px 10px;
   font-family: var(--mono);
   font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -464,27 +459,38 @@ footer {
 
   .hero {
     min-height: auto;
-    background-size: 100% 100%, 100% 68px, auto;
   }
 
   .hero-content {
-    padding-block: 66px 42px;
+    padding-block: 40px 32px;
   }
 
   h1 {
-    font-size: clamp(3rem, 14vw, 4.8rem);
+    font-size: 3rem;
+    line-height: 0.92;
   }
 
   .lead {
-    margin-top: 30px;
+    margin-top: 24px;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
   }
 
   .cycle-strip {
-    margin-top: 46px;
+    margin-top: 28px;
+    gap: 7px;
+    font-size: 0.66rem;
   }
 
   .section {
-    padding-block: 72px;
+    padding-block: 60px;
+  }
+
+  h2 {
+    font-size: 3rem;
   }
 
   .feature-grid,
@@ -510,6 +516,10 @@ footer {
     overflow-wrap: anywhere;
   }
 
+  .edition-card h3 {
+    font-size: 3.2rem;
+  }
+
   .adaptation-layout {
     gap: 22px;
   }
@@ -529,7 +539,11 @@ footer {
   }
 
   h2 {
-    font-size: clamp(2.5rem, 13vw, 3.4rem);
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
   }
 
   .edition-card {
