@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="МФМ — личный финансовый диспетчер зарплатного цикла в редакциях Personal и Corporate.">
+    <title>МФМ · Финансовый диспетчер зарплатного цикла</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav shell" aria-label="Основная навигация">
+        <a class="brand" href="#top" aria-label="МФМ — начало страницы">МФМ</a>
+        <div class="nav-links">
+          <a href="#editions">Редакции</a>
+          <a href="#status">Статус</a>
+          <a href="#adaptation">Адаптация</a>
+        </div>
+      </nav>
+
+      <div class="hero-content shell" id="top">
+        <p class="eyebrow">Личный финансовый диспетчер</p>
+        <h1>Зарплатный цикл<br>без догадок</h1>
+        <p class="lead">
+          МФМ связывает деньги на руках, обязательные платежи, накопления и долги,
+          чтобы показать понятный ориентир: сколько своих денег безопасно на сегодня.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#editions">Сравнить редакции</a>
+          <a class="button button-secondary" href="#boundaries">Увидеть границы</a>
+        </div>
+        <div class="cycle-strip" aria-label="Логика зарплатного цикла">
+          <span>Деньги на руках</span>
+          <span aria-hidden="true">−</span>
+          <span>Обязательства</span>
+          <span aria-hidden="true">−</span>
+          <span>Защищённые суммы</span>
+          <span aria-hidden="true">→</span>
+          <strong>Безопасно сегодня</strong>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section shell" aria-labelledby="focus-title">
+        <div class="section-heading">
+          <p class="eyebrow">Один рабочий вопрос</p>
+          <h2 id="focus-title">Не просто баланс, а контекст до зарплаты</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card accent-blue">
+            <span class="feature-index">01</span>
+            <h3>Сегодня</h3>
+            <p>Доступный ориентир учитывает финансовый цикл, а не только сумму на руках.</p>
+          </article>
+          <article class="feature-card accent-yellow">
+            <span class="feature-index">02</span>
+            <h3>Цикл</h3>
+            <p>Платежи, долги и дата следующей зарплаты собраны в общей логике.</p>
+          </article>
+          <article class="feature-card accent-red">
+            <span class="feature-index">03</span>
+            <h3>Сверка</h3>
+            <p>Утренний и вечерний факты помогают увидеть необъяснённую разницу.</p>
+          </article>
+          <article class="feature-card accent-green">
+            <span class="feature-index">04</span>
+            <h3>Дневник</h3>
+            <p>Операции сохраняют понятный след и поддерживают объяснимость расчёта.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-ink" id="editions" aria-labelledby="editions-title">
+        <div class="shell">
+          <div class="section-heading light">
+            <p class="eyebrow">Две честные редакции</p>
+            <h2 id="editions-title">Одна логика цикла, разные границы</h2>
+          </div>
+          <div class="edition-grid">
+            <article class="edition-card edition-personal">
+              <p class="edition-kicker">Personal · Wikmiks</p>
+              <h3>Личный</h3>
+              <p class="edition-lead">Облегчённая редакция для личного зарплатного цикла.</p>
+              <ul>
+                <li>локальное хранение в браузере;</li>
+                <li>платежи, накопления, долги и сверка;</li>
+                <li>без Подотчёта и корпоративных кейсов.</li>
+              </ul>
+              <span class="status-tag">Работает</span>
+            </article>
+
+            <article class="edition-card edition-corporate">
+              <p class="edition-kicker">Corporate · ProKopa</p>
+              <h3>Корпоративный</h3>
+              <p class="edition-lead">Полная редакция для личных и рабочих денег одного владельца.</p>
+              <ul>
+                <li>Подотчёт и нейтральные кейсы;</li>
+                <li>поле «Код кейса», например <code>К-009</code>;</li>
+                <li>ограниченный single-owner pilot серверного сохранения между устройствами владельца.</li>
+              </ul>
+              <span class="status-tag status-pilot">Ограниченный пилот sync</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" aria-labelledby="screenshots-title">
+        <div class="section-heading">
+          <p class="eyebrow">Проверяемый интерфейс</p>
+          <h2 id="screenshots-title">Две редакции на мобильном экране</h2>
+        </div>
+        <div class="screenshot-grid">
+          <figure class="screenshot-card">
+            <picture>
+              <source media="(max-width: 350px)" srcset="screenshots/mfm-personal-320.png">
+              <img src="screenshots/mfm-personal-390.png" alt="Экран Цикла в редакции Personal без Подотчёта" width="390" height="844" loading="lazy">
+            </picture>
+            <figcaption><strong>Personal / Wikmiks</strong><span>Личный цикл без Подотчёта</span></figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <picture>
+              <source media="(max-width: 350px)" srcset="screenshots/mfm-corporate-320.png">
+              <img src="screenshots/mfm-corporate-390.png" alt="Подотчётные кейсы в редакции Corporate с нейтральным кодом К-009" width="390" height="844" loading="lazy">
+            </picture>
+            <figcaption><strong>Corporate / ProKopa</strong><span>Подотчётный кейс К-009</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section shell" id="status" aria-labelledby="status-title">
+        <div class="section-heading">
+          <p class="eyebrow">Статус функций</p>
+          <h2 id="status-title">Работает, пилотируется, не реализовано</h2>
+        </div>
+        <div class="status-grid">
+          <article class="status-card">
+            <p class="status-number">01</p>
+            <h3>Работает сейчас</h3>
+            <p>Пять основных разделов, финансовый цикл, сверки, накопления, долги, дневник и границы двух редакций.</p>
+          </article>
+          <article class="status-card">
+            <p class="status-number">02</p>
+            <h3>Ограниченный пилот</h3>
+            <p>В ProKopa подтверждены учётная запись одного владельца и сохранение состояния между его устройствами.</p>
+          </article>
+          <article class="status-card warning" id="boundaries">
+            <p class="status-number">03</p>
+            <h3>Не реализовано</h3>
+            <p>Многопользовательские роли, общий кабинет организации, бухгалтерия и общедоступный multi-user SaaS.</p>
+          </article>
+        </div>
+        <p class="boundary-note">
+          МФМ не выдаётся за бухгалтерскую систему или финансовую консультацию.
+          Статус пилота не является обещанием общей многопользовательской услуги.
+        </p>
+      </section>
+
+      <section class="section section-paper" id="adaptation" aria-labelledby="adaptation-title">
+        <div class="shell adaptation-layout">
+          <div class="section-heading">
+            <p class="eyebrow">Corporate adaptation</p>
+            <h2 id="adaptation-title">Под процесс и техническое задание</h2>
+            <p class="section-copy">
+              Адаптация может охватывать сценарии, терминологию, правила и фирменный стиль.
+              Граница работ и критерии приёмки фиксируются до реализации.
+            </p>
+          </div>
+          <ol class="steps">
+            <li><span>01</span><div><strong>Процесс</strong><p>Факты, роли процесса, события и исключения.</p></div></li>
+            <li><span>02</span><div><strong>Техническое задание</strong><p>Правила, данные, границы и критерии результата.</p></div></li>
+            <li><span>03</span><div><strong>Изолированная адаптация</strong><p>Изменения вне действующего пользовательского контура.</p></div></li>
+            <li><span>04</span><div><strong>Проверка и пилот</strong><p>Статус только после наблюдаемой приёмки.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section shell roadmap" aria-labelledby="roadmap-title">
+        <div class="section-heading">
+          <p class="eyebrow">Дорожная карта</p>
+          <h2 id="roadmap-title">Направления, а не обещания релиза</h2>
+        </div>
+        <p>
+          Расширение ролей, совместной работы и серверного контура возможно только после
+          отдельного продуктового решения, технического задания и приёмки. Сроки и состав
+          таких работ публично не заявлены.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-grid">
+        <div>
+          <strong class="brand">МФМ</strong>
+          <p>Документационная витрина. Исходный код приложения не публикуется.</p>
+        </div>
+        <div>
+          <p>Лицензия на материалы будет определена отдельным решением владельца.</p>
+          <a href="LICENSE.md">Условия использования</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
