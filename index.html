@@ -1,230 +1,544 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="МФМ — личный финансовый диспетчер зарплатного цикла в редакциях Personal и Corporate.">
-    <link rel="icon" href="data:,">
-    <title>МФМ · Финансовый диспетчер зарплатного цикла</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="МФМ помогает увидеть, сколько своих денег можно потратить сегодня с учётом зарплатного цикла, обязательных платежей, накоплений и долгов."
+    />
+    <link rel="icon" href="data:," />
+    <title>МФМ · Сколько можно сегодня</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
+    <header class="hero" id="top">
       <nav class="nav shell" aria-label="Основная навигация">
-        <a class="brand" href="#top" aria-label="МФМ — начало страницы">МФМ</a>
+        <a class="brand" href="#top" aria-label="МФМ — начало страницы">
+          <span class="brand-glyph" aria-hidden="true"><i></i></span>
+          <span>МФМ</span>
+        </a>
         <div class="nav-links">
-          <a href="#editions">Редакции</a>
+          <a href="#story">Почему</a>
+          <a href="#modes">Режимы</a>
+          <a href="#future">Будущее</a>
           <a href="#access">Доступ</a>
-          <a href="https://github.com/Prokopa42/mfm-showcase">GitHub</a>
         </div>
       </nav>
 
-      <div class="hero-content shell" id="top">
-        <p class="eyebrow">Личный финансовый диспетчер</p>
-        <h1>Зарплатный цикл<br>без догадок</h1>
-        <p class="lead">
-          МФМ связывает деньги на руках, обязательные платежи, накопления и долги,
-          чтобы показать понятный ориентир: сколько своих денег безопасно на сегодня.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://github.com/Prokopa42/mfm-showcase/issues/new?template=pilot-access.yml">Запросить пилотный доступ</a>
-          <a class="button button-secondary" href="#editions">Сравнить редакции</a>
+      <div class="hero-scene shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Финансовый диспетчер зарплатного цикла</p>
+          <h1>МФМ</h1>
+          <p class="hero-line">Сколько можно сегодня?</p>
+          <p class="lead">
+            Не просто записывать прошлые расходы, а каждый день видеть сумму,
+            которую можно потратить без ущерба обязательным платежам,
+            накоплениям и планам до следующей зарплаты.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="https://github.com/Prokopa42/mfm-showcase/issues/new?template=pilot-access.yml"
+              >Запросить пилотную учётку</a
+            >
+            <a class="button button-secondary" href="#principle"
+              >Как это работает</a
+            >
+          </div>
         </div>
-        <div class="cycle-strip" aria-label="Логика зарплатного цикла">
-          <span>Деньги на руках</span>
-          <span aria-hidden="true">−</span>
-          <span>Обязательства</span>
-          <span aria-hidden="true">−</span>
-          <span>Защищённые суммы</span>
-          <span aria-hidden="true">→</span>
-          <strong>Безопасно сегодня</strong>
+
+        <div class="hero-visual" aria-label="Фирменная геометрия МФМ">
+          <div class="shape shape-square"></div>
+          <div class="shape shape-circle"></div>
+          <div class="shape shape-triangle"></div>
+          <div class="shape shape-dot"></div>
+          <div class="shape shape-bar"></div>
+          <img
+            src="assets/mfm-brand-mark.png"
+            alt="Фирменный знак МФМ"
+            width="400"
+            height="300"
+          />
         </div>
       </div>
+
+      <a class="hero-next" href="#story">
+        <span class="mono">01</span>
+        <strong>Почему появилось приложение</strong>
+        <span aria-hidden="true">↓</span>
+      </a>
     </header>
 
     <main>
-      <section class="section shell" aria-labelledby="focus-title">
-        <div class="section-heading">
-          <p class="eyebrow">Один рабочий вопрос</p>
-          <h2 id="focus-title">Не просто баланс, а контекст до зарплаты</h2>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card accent-blue">
-            <span class="feature-index">01</span>
-            <h3>Сегодня</h3>
-            <p>Доступный ориентир учитывает финансовый цикл, а не только сумму на руках.</p>
-          </article>
-          <article class="feature-card accent-yellow">
-            <span class="feature-index">02</span>
-            <h3>Цикл</h3>
-            <p>Платежи, долги и дата следующей зарплаты собраны в общей логике.</p>
-          </article>
-          <article class="feature-card accent-red">
-            <span class="feature-index">03</span>
-            <h3>Сверка</h3>
-            <p>Утренний и вечерний факты помогают увидеть необъяснённую разницу.</p>
-          </article>
-          <article class="feature-card accent-green">
-            <span class="feature-index">04</span>
-            <h3>Дневник</h3>
-            <p>Операции сохраняют понятный след и поддерживают объяснимость расчёта.</p>
-          </article>
+      <section class="section story" id="story" aria-labelledby="story-title">
+        <div class="shell story-layout">
+          <div class="section-heading sticky-heading">
+            <p class="eyebrow">Предыстория</p>
+            <h2 id="story-title">
+              Цель есть.<br />Почему денег всё равно не хватает?
+            </h2>
+          </div>
+          <div class="story-copy">
+            <p class="story-lead">
+              Я начинал с обычной задачи: регулярно откладывать деньги и не
+              забирать их обратно. Цель поставить легко. Гораздо труднее каждый
+              день понимать, сколько действительно можно потратить.
+            </p>
+            <div class="story-sequence" aria-label="Как возникает проблема">
+              <div>
+                <span class="glyph glyph-circle" aria-hidden="true"></span>
+                <p>
+                  Сегодня потратил чуть больше и решил, что завтра наверстаю.
+                </p>
+              </div>
+              <div>
+                <span class="glyph glyph-square" aria-hidden="true"></span>
+                <p>
+                  Обязательные платежи остались впереди, но в текущем остатке
+                  они не видны.
+                </p>
+              </div>
+              <div>
+                <span class="glyph glyph-triangle" aria-hidden="true"></span>
+                <p>
+                  Деньги вроде есть, а к концу цикла приходится брать их из
+                  накоплений.
+                </p>
+              </div>
+            </div>
+            <blockquote>
+              Мне нужен был не ещё один список трат. Нужен был ответ перед
+              глазами: сколько можно сегодня, чтобы до зарплаты всё сошлось.
+            </blockquote>
+            <p>
+              Так появился МФМ. Он смотрит не на календарный месяц, а на живой
+              зарплатный цикл: от полученной зарплаты до следующей выплаты.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section class="section section-ink" id="editions" aria-labelledby="editions-title">
+      <section
+        class="section principle"
+        id="principle"
+        aria-labelledby="principle-title"
+      >
         <div class="shell">
-          <div class="section-heading light">
-            <p class="eyebrow">Две честные редакции</p>
-            <h2 id="editions-title">Одна логика цикла, разные границы</h2>
+          <div class="section-heading">
+            <p class="eyebrow">Главный принцип</p>
+            <h2 id="principle-title">
+              Сначала защитить важное. Остаток превратить в понятный день.
+            </h2>
           </div>
-          <div class="edition-grid">
-            <article class="edition-card edition-personal">
-              <p class="edition-kicker">Personal · Wikmiks</p>
-              <h3>Личный</h3>
-              <p class="edition-lead">Облегчённая редакция для личного зарплатного цикла.</p>
-              <ul>
-                <li>локальное хранение в браузере;</li>
-                <li>платежи, накопления, долги и сверка;</li>
-                <li>без Подотчёта и корпоративных кейсов.</li>
-              </ul>
-              <span class="status-tag">Работает</span>
-            </article>
+          <div class="formula" aria-label="Логика расчёта МФМ">
+            <div>
+              <span class="formula-sign circle-sign" aria-hidden="true"></span
+              ><strong>Свои деньги сейчас</strong
+              ><small>то, чем человек действительно располагает</small>
+            </div>
+            <b>+</b>
+            <div>
+              <span class="formula-sign square-sign" aria-hidden="true"></span
+              ><strong>Доходы до зарплаты</strong
+              ><small>только те, которые ожидаются в этом цикле</small>
+            </div>
+            <b>−</b>
+            <div>
+              <span class="formula-sign triangle-sign" aria-hidden="true"></span
+              ><strong>Обязательства</strong
+              ><small>платежи, Подушка, планы накоплений и возвраты</small>
+            </div>
+            <b>=</b>
+            <div class="formula-result">
+              <span class="formula-sign bar-sign" aria-hidden="true"></span
+              ><strong>Свободно до зарплаты</strong
+              ><small>основа дневного ориентира «Можно сегодня»</small>
+            </div>
+          </div>
+          <p class="principle-note">
+            Это не разрешение тратить всю показанную сумму. Это честная граница,
+            внутри которой сегодняшнее решение не ломает уже известные планы.
+          </p>
+        </div>
+      </section>
 
-            <article class="edition-card edition-corporate">
-              <p class="edition-kicker">Corporate · ProKopa</p>
-              <h3>Корпоративный</h3>
-              <p class="edition-lead">Полная редакция для личных и рабочих денег с изолированными учётками по приглашению.</p>
-              <ul>
-                <li>Подотчёт и нейтральные кейсы;</li>
-                <li>поле «Код кейса», например <code>К-009</code>;</li>
-                <li>учётка владельца и до пяти изолированных пилотных учёток по приглашению.</li>
-              </ul>
-              <span class="status-tag status-pilot">Пилот серверных учёток</span>
+      <section
+        class="section capabilities"
+        id="capabilities"
+        aria-labelledby="capabilities-title"
+      >
+        <div class="shell">
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">Что делает МФМ</p>
+            <h2 id="capabilities-title">
+              Пять разделов, один связный денежный цикл
+            </h2>
+          </div>
+          <div class="capability-list">
+            <article>
+              <span
+                class="capability-shape circle-outline"
+                aria-hidden="true"
+              ></span>
+              <p class="mono">Сегодня</p>
+              <h3>Решение на текущий день</h3>
+              <p>
+                Свои деньги, свободно до зарплаты, дневной ориентир и ближайший
+                обязательный платёж.
+              </p>
+            </article>
+            <article>
+              <span
+                class="capability-shape bar-solid"
+                aria-hidden="true"
+              ></span>
+              <p class="mono">Цикл</p>
+              <h3>Платежи и долги до следующей выплаты</h3>
+              <p>
+                Обязательства не прячутся внутри общего остатка и не становятся
+                неожиданностью в конце месяца.
+              </p>
+            </article>
+            <article>
+              <span
+                class="capability-shape square-outline"
+                aria-hidden="true"
+              ></span>
+              <p class="mono">Накопления</p>
+              <h3>Котёл, цели и реальный темп</h3>
+              <p>
+                Видно не только желаемую сумму, но и то, выдерживает ли
+                фактический темп выбранный срок.
+              </p>
+            </article>
+            <article>
+              <span
+                class="capability-shape triangle-outline"
+                aria-hidden="true"
+              ></span>
+              <p class="mono">Дневник</p>
+              <h3>Объяснимый след операций</h3>
+              <p>
+                Доходы, расходы, долговые движения, накопления и сверки остаются
+                разными событиями.
+              </p>
+            </article>
+            <article>
+              <span
+                class="capability-shape half-outline"
+                aria-hidden="true"
+              ></span>
+              <p class="mono">Настройки</p>
+              <h3>Правила конкретного человека</h3>
+              <p>
+                Даты выплат, Подушка, обязательства и рубрики задаются под
+                собственный ритм, а не под усреднённую модель.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section shell" aria-labelledby="screenshots-title">
-        <div class="section-heading">
-          <p class="eyebrow">Проверяемый интерфейс</p>
-          <h2 id="screenshots-title">Две редакции на мобильном экране</h2>
-        </div>
-        <div class="screenshot-grid">
-          <figure class="screenshot-card">
-            <picture>
-              <source media="(max-width: 350px)" srcset="screenshots/mfm-personal-320.png">
-              <img src="screenshots/mfm-personal-390.png" alt="Экран Цикла в редакции Personal без Подотчёта" width="390" height="844" loading="lazy">
-            </picture>
-            <figcaption><strong>Personal / Wikmiks</strong><span>Личный цикл без Подотчёта</span></figcaption>
-          </figure>
-          <figure class="screenshot-card">
-            <picture>
-              <source media="(max-width: 350px)" srcset="screenshots/mfm-corporate-320.png">
-              <img src="screenshots/mfm-corporate-390.png" alt="Подотчётные кейсы в редакции Corporate с нейтральным кодом К-009" width="390" height="844" loading="lazy">
-            </picture>
-            <figcaption><strong>Corporate / ProKopa</strong><span>Подотчётный кейс К-009</span></figcaption>
-          </figure>
+      <section
+        class="section work-money"
+        id="work-money"
+        aria-labelledby="work-money-title"
+      >
+        <div class="shell work-money-layout">
+          <div class="section-heading">
+            <p class="eyebrow">
+              Почему рабочие деньги внутри того же приложения
+            </p>
+            <h2 id="work-money-title">
+              На руках вместе. В личном бюджете отдельно.
+            </h2>
+          </div>
+          <div class="work-money-copy">
+            <p class="story-lead">
+              Рабочие и личные деньги нередко физически лежат на одной карте или
+              в одной наличной кассе. Если учитывать их в разных местах,
+              теряется главный факт: сколько всего денег сейчас у человека и
+              какая часть из них ему не принадлежит.
+            </p>
+            <div
+              class="balance-model"
+              aria-label="Разделение личных и рабочих денег"
+            >
+              <div class="balance-total">
+                <span>Всего на руках</span
+                ><strong>весь фактический остаток</strong>
+              </div>
+              <div class="balance-own">
+                <span>Свои деньги</span
+                ><strong>участвуют в личном расчёте</strong>
+              </div>
+              <div class="balance-work">
+                <span>Рабочие деньги</span
+                ><strong>видны, но не увеличивают «Можно сегодня»</strong>
+              </div>
+            </div>
+            <ul class="plain-list">
+              <li>
+                <strong>К компенсации</strong> показывает личные деньги,
+                потраченные на рабочую задачу.
+              </li>
+              <li>
+                <strong>Должен вернуть</strong> показывает рабочие деньги,
+                временно использованные на личное.
+              </li>
+              <li>
+                <strong>Код кейса</strong> связывает выдачу, траты, возвраты и
+                компенсации с конкретной задачей.
+              </li>
+            </ul>
+            <p>
+              Поэтому рабочий контур не является второй бухгалтерией рядом с
+              личным приложением. Это дополнительный слой над той же реальностью
+              денег на руках, который не даёт чужим средствам превратиться в
+              личный бюджет.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section class="section shell" id="status" aria-labelledby="status-title">
-        <div class="section-heading">
-          <p class="eyebrow">Статус функций</p>
-          <h2 id="status-title">Работает, пилотируется, не реализовано</h2>
+      <section class="section modes" id="modes" aria-labelledby="modes-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Два режима</p>
+            <h2 id="modes-title">Личный. И личный с рабочими деньгами.</h2>
+            <p class="section-copy">
+              Основа приложения одинакова. Разница только в дополнительном учёте
+              подотчётных средств и связанных с ними кейсов.
+            </p>
+          </div>
+          <div class="mode-grid">
+            <article class="mode mode-personal">
+              <div class="mode-number">01</div>
+              <p class="eyebrow">Личный режим</p>
+              <h3>Для собственного зарплатного цикла</h3>
+              <ul>
+                <li>«Можно сегодня» и свободно до зарплаты;</li>
+                <li>обязательные платежи и долговые обязательства;</li>
+                <li>Подушка, накопления и цели;</li>
+                <li>утренняя и вечерняя сверка;</li>
+                <li>
+                  до пяти пилотных учёток можно запросить; отдельный серверный
+                  контур готовится.
+                </li>
+              </ul>
+              <a
+                href="https://github.com/Prokopa42/mfm-showcase/issues/new?template=pilot-access.yml"
+                >Запросить личный режим</a
+              >
+            </article>
+            <article class="mode mode-work">
+              <div class="mode-number">02</div>
+              <p class="eyebrow">Режим с рабочими деньгами</p>
+              <h3>Когда личный остаток соседствует с подотчётом</h3>
+              <ul>
+                <li>все возможности личного режима;</li>
+                <li>рабочие деньги не попадают в личный лимит;</li>
+                <li>кейсы, траты, компенсации и возвраты;</li>
+                <li>долг перед подотчётом внутри общей картины долгов;</li>
+                <li>до пяти уже работающих изолированных пилотных учёток.</li>
+              </ul>
+              <a
+                href="https://github.com/Prokopa42/mfm-showcase/issues/new?template=pilot-access.yml"
+                >Запросить режим с рабочими деньгами</a
+              >
+            </article>
+          </div>
+          <p class="technical-note">
+            Техническое примечание: действующие серверные экземпляры имеют
+            внутренние кодовые названия Wikmiks и ProKopa. Это адреса окружений,
+            а не названия продукта и не термины, которые пользователь обязан
+            запоминать.
+          </p>
         </div>
-        <div class="status-grid">
-          <article class="status-card">
-            <p class="status-number">01</p>
-            <h3>Работает сейчас</h3>
-            <p>Пять основных разделов, финансовый цикл, сверки, накопления, долги, дневник и границы двух редакций.</p>
-          </article>
-          <article class="status-card">
-            <p class="status-number">02</p>
-            <h3>Ограниченный пилот</h3>
-            <p>В ProKopa подтверждены учётка владельца, сохранение между устройствами и до пяти отдельных приглашённых учёток.</p>
-          </article>
-          <article class="status-card warning" id="boundaries">
-            <p class="status-number">03</p>
-            <h3>Не реализовано</h3>
-            <p>Совместные данные между учётками, общий кабинет организации, бухгалтерия и общедоступная саморегистрация.</p>
-          </article>
-        </div>
-        <p class="boundary-note">
-          МФМ не выдаётся за бухгалтерскую систему или финансовую консультацию.
-          Статус пилота не является обещанием общей многопользовательской услуги.
-        </p>
       </section>
 
-      <section class="section section-access" id="access" aria-labelledby="access-title">
+      <section class="section screens" aria-labelledby="screens-title">
+        <div class="shell">
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">Интерфейс</p>
+            <h2 id="screens-title">Один визуальный язык в обоих режимах</h2>
+          </div>
+          <div class="screenshot-grid">
+            <figure>
+              <picture>
+                <source
+                  media="(max-width: 350px)"
+                  srcset="screenshots/mfm-personal-320.png"
+                />
+                <img
+                  src="screenshots/mfm-personal-390.png"
+                  alt="Личный режим МФМ на мобильном экране"
+                  width="390"
+                  height="844"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                <strong>Личный режим</strong><span>без рабочих денег</span>
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source
+                  media="(max-width: 350px)"
+                  srcset="screenshots/mfm-corporate-320.png"
+                />
+                <img
+                  src="screenshots/mfm-corporate-390.png"
+                  alt="Режим МФМ с рабочими подотчётными деньгами"
+                  width="390"
+                  height="844"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                <strong>С рабочими деньгами</strong
+                ><span>подотчёт и кейсы</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section future"
+        id="future"
+        aria-labelledby="future-title"
+      >
+        <div class="shell">
+          <div class="future-status">
+            <span class="glyph glyph-triangle"></span>Проектируется · ещё не
+            рабочая функция
+          </div>
+          <div class="section-heading">
+            <p class="eyebrow">Следующий горизонт</p>
+            <h2 id="future-title">
+              От личного подотчёта к прозрачной сетке рабочих бюджетов
+            </h2>
+          </div>
+          <p class="future-lead">
+            Следующий вариант задуман для компаний, где несколько руководителей
+            или ответственных сотрудников ведут свои рабочие бюджеты. Каждый
+            сохраняет привычный личный интерфейс, а финансовый блок получает
+            общую картину без ручного сбора разрозненных отчётов.
+          </p>
+          <div
+            class="network-flow"
+            aria-label="Будущая схема корпоративного контура"
+          >
+            <div>
+              <span class="network-shape circle-outline"></span
+              ><strong>Сотрудники и руководители</strong>
+              <p>
+                вносят выдачи, траты, возвраты и подтверждения по своим бюджетам
+              </p>
+            </div>
+            <i aria-hidden="true">→</i>
+            <div>
+              <span class="network-shape square-outline"></span
+              ><strong>Контуры и кейсы</strong>
+              <p>
+                собирают движение денег по задачам, подразделениям и
+                ответственным
+              </p>
+            </div>
+            <i aria-hidden="true">→</i>
+            <div>
+              <span class="network-shape triangle-outline"></span
+              ><strong>Финансовый блок</strong>
+              <p>
+                видит актуальное состояние, отклонения и неподтверждённые
+                движения
+              </p>
+            </div>
+            <i aria-hidden="true">→</i>
+            <div>
+              <span class="network-shape bar-solid"></span
+              ><strong>Таблицы и отчёты</strong>
+              <p>
+                получают согласованные данные в Google Sheets или другой рабочий
+                формат
+              </p>
+            </div>
+          </div>
+          <p class="boundary-note">
+            Сейчас это направление разработки, а не обещание готовой
+            корпоративной системы. Состав ролей, права доступа, интеграции и
+            отчёты должны проектироваться под конкретный процесс финансового
+            подразделения.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="section access"
+        id="access"
+        aria-labelledby="access-title"
+      >
         <div class="shell access-layout">
-          <div class="section-heading">
+          <div>
             <p class="eyebrow">Пилотный доступ</p>
-            <h2 id="access-title">Проверить на своём сценарии</h2>
+            <h2 id="access-title">Проверить МФМ на своём сценарии</h2>
             <p class="section-copy">
-              Сейчас приглашения выдаются вручную в Corporate / ProKopa. Каждая учётка
-              изолирована: пользователь видит только собственные финансовые данные.
+              Можно запросить личный режим, режим с рабочими деньгами или
+              обсудить адаптацию под корпоративный процесс и фирменный стиль.
             </p>
           </div>
-          <div class="access-action">
-            <dl class="access-facts">
-              <div><dt>Срок приглашения</dt><dd>7 дней, одно использование</dd></div>
-              <div><dt>После активации</dt><dd>без автоматического срока окончания</dd></div>
-              <div><dt>Доступные места</dt><dd>до 5 пилотных учёток</dd></div>
-              <div><dt>Personal / Wikmiks</dt><dd>пока без серверных учёток</dd></div>
+          <div class="access-details">
+            <dl>
+              <div>
+                <dt>Личный режим</dt>
+                <dd>заявки открыты; серверные пилотные места готовятся</dd>
+              </div>
+              <div>
+                <dt>С рабочими деньгами</dt>
+                <dd>до 5 изолированных пилотных учёток уже поддерживаются</dd>
+              </div>
+              <div>
+                <dt>Приглашение</dt>
+                <dd>одноразовая ссылка действует 7 дней</dd>
+              </div>
+              <div>
+                <dt>После активации</dt>
+                <dd>учётка не истекает автоматически</dd>
+              </div>
             </dl>
-            <a class="button button-primary" href="https://github.com/Prokopa42/mfm-showcase/issues/new?template=pilot-access.yml">Запросить учётку через GitHub</a>
+            <a
+              class="button button-primary"
+              href="https://github.com/Prokopa42/mfm-showcase/issues/new?template=pilot-access.yml"
+              >Оставить запрос на GitHub</a
+            >
             <p class="access-note">
-              Запрос будет публичным. Не указывайте в нём пароли, контакты, реквизиты
-              или реальные финансовые данные. Ссылка приглашения в GitHub не публикуется.
+              Запрос в GitHub публичный. Не указывайте пароли, контакты,
+              реквизиты и реальные финансовые данные. Приглашение передаётся
+              только по закрытому каналу.
             </p>
           </div>
         </div>
-      </section>
-
-      <section class="section section-paper" id="adaptation" aria-labelledby="adaptation-title">
-        <div class="shell adaptation-layout">
-          <div class="section-heading">
-            <p class="eyebrow">Corporate adaptation</p>
-            <h2 id="adaptation-title">Под процесс и техническое задание</h2>
-            <p class="section-copy">
-              Адаптация может охватывать сценарии, терминологию, правила и фирменный стиль.
-              Граница работ и критерии приёмки фиксируются до реализации.
-            </p>
-          </div>
-          <ol class="steps">
-            <li><span>01</span><div><strong>Процесс</strong><p>Факты, роли процесса, события и исключения.</p></div></li>
-            <li><span>02</span><div><strong>Техническое задание</strong><p>Правила, данные, границы и критерии результата.</p></div></li>
-            <li><span>03</span><div><strong>Изолированная адаптация</strong><p>Изменения вне действующего пользовательского контура.</p></div></li>
-            <li><span>04</span><div><strong>Проверка и пилот</strong><p>Статус только после наблюдаемой приёмки.</p></div></li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section shell roadmap" aria-labelledby="roadmap-title">
-        <div class="section-heading">
-          <p class="eyebrow">Дорожная карта</p>
-          <h2 id="roadmap-title">Направления, а не обещания релиза</h2>
-        </div>
-        <p>
-          Расширение ролей, совместной работы и серверного контура возможно только после
-          отдельного продуктового решения, технического задания и приёмки. Сроки и состав
-          таких работ публично не заявлены.
-        </p>
       </section>
     </main>
 
     <footer>
       <div class="shell footer-grid">
         <div>
-          <strong class="brand">МФМ</strong>
-          <p>Документационная витрина. Исходный код приложения не публикуется.</p>
+          <strong class="footer-brand">МФМ</strong>
+          <p>Финансовый диспетчер зарплатного цикла.</p>
         </div>
-        <div>
-          <p>Лицензия на материалы будет определена отдельным решением владельца.</p>
-          <a href="https://github.com/Prokopa42/mfm-showcase/issues/new?template=pilot-access.yml">Запросить пилотный доступ</a><br>
-          <a href="https://github.com/Prokopa42/mfm-showcase">Открыть репозиторий</a><br>
+        <div class="footer-links">
+          <a
+            href="https://github.com/Prokopa42/mfm-showcase/issues/new?template=pilot-access.yml"
+            >Запросить доступ</a
+          >
+          <a href="https://github.com/Prokopa42/mfm-showcase"
+            >Репозиторий витрины</a
+          >
+          <a href="EDITIONS_AND_STATUS.md">Статус возможностей</a>
           <a href="LICENSE.md">Условия использования</a>
         </div>
       </div>
