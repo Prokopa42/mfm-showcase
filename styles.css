@@ -376,6 +376,54 @@ code {
   border-block: 1px solid var(--ink);
 }
 
+.section-access {
+  background: #dce7ff;
+  border-block: 1px solid var(--ink);
+}
+
+.access-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.access-action {
+  border-top: 1px solid var(--ink);
+  padding-top: 4px;
+}
+
+.access-facts {
+  margin: 0 0 28px;
+}
+
+.access-facts > div {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 20px;
+  border-bottom: 1px solid var(--ink);
+  padding-block: 16px;
+}
+
+.access-facts dt {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.access-facts dd {
+  margin: 0;
+  font-weight: 650;
+}
+
+.access-note {
+  max-width: 620px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .adaptation-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -506,6 +554,7 @@ footer {
   .edition-grid,
   .screenshot-grid,
   .adaptation-layout,
+  .access-layout,
   .footer-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -523,11 +572,20 @@ footer {
   .adaptation-layout {
     gap: 22px;
   }
+
+  .access-layout {
+    gap: 8px;
+  }
 }
 
 @media (max-width: 410px) {
-  .nav-links a:nth-child(2) {
+  .nav-links a:first-child {
     display: none;
+  }
+
+  .access-facts > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
   }
 
   .button {

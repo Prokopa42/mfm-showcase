@@ -1,0 +1,57 @@
+name: Запрос пилотного доступа
+description: Запросить изолированную учётку МФМ или обсудить корпоративную адаптацию
+title: "[Доступ] "
+assignees:
+  - Prokopa42
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Сейчас серверные пилотные учётки доступны только в Corporate / ProKopa.
+        Personal / Wikmiks пока работает локально в браузере без серверных аккаунтов.
+
+        Это публичный запрос. Не указывайте пароли, e-mail, телефон, реквизиты,
+        реальные суммы или другие личные и финансовые данные. Ссылка приглашения
+        никогда не публикуется в GitHub issue.
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Что вы хотите проверить?
+      options:
+        - Пилотная учётка Corporate / ProKopa
+        - Интерес к Personal / Wikmiks
+        - Корпоративная адаптация под свой процесс
+    validations:
+      required: true
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Сценарий проверки
+      description: Опишите задачу обезличенно, без реальных финансовых данных.
+      placeholder: "Например: хочу проверить зарплатный цикл, долги и накопления на синтетических суммах."
+    validations:
+      required: true
+  - type: dropdown
+    id: expected_period
+    attributes:
+      label: Ожидаемый формат
+      options:
+        - Короткая проверка интерфейса
+        - Пилот в течение нескольких недель
+        - Обсуждение отдельной корпоративной версии
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Публичность запроса
+      options:
+        - label: Я не публикую здесь секреты, контакты, реквизиты и реальные финансовые данные.
+          required: true
+        - label: Я понимаю, что создание учётки выполняется вручную и не гарантируется самим запросом.
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        После рассмотрения владелец ответит в issue и предложит способ перейти в закрытый канал.
+        Не просите публиковать одноразовую ссылку приглашения в открытом обсуждении.
