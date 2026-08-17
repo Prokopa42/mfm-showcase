@@ -1,0 +1,100 @@
+:root {
+  --mfm-logo-angle: 0deg;
+  --mfm-scroll-progress: 0;
+  --mfm-texture-shift: 0px;
+}
+
+.mfm-motion-logo {
+  transform: rotate(var(--mfm-logo-angle));
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.dc-texture {
+  background-position: 0 var(--mfm-texture-shift);
+  will-change: background-position;
+}
+
+.mfm-scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  height: 4px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mfm-scroll-progress__bar {
+  position: absolute;
+  inset: 0;
+  background: #0749a9;
+  transform: scaleX(var(--mfm-scroll-progress));
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.mfm-scroll-progress__marker {
+  position: absolute;
+  top: 0;
+  left: calc(var(--mfm-scroll-progress) * 100%);
+  width: 8px;
+  height: 8px;
+  background: #d63031;
+  border: 2px solid #fbbd5b;
+  transform: translate(-50%, -2px) rotate(45deg);
+  will-change: left;
+}
+
+.mfm-motion-enabled .mfm-motion-section {
+  transition: opacity 560ms ease, transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.mfm-motion-enabled .mfm-motion-section[data-mfm-motion="pending"] {
+  opacity: 0.22;
+  transform: translate3d(0, 18px, 0);
+}
+
+.mfm-motion-enabled .mfm-motion-section[data-mfm-motion="visible"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.mfm-motion-shape {
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.mfm-motion-section[data-mfm-motion="visible"] .mfm-motion-shape {
+  animation: mfm-shape-breathe 4.8s ease-in-out var(--mfm-motion-delay, 0s) infinite;
+}
+
+header nav a,
+.site-toc__links a {
+  transition: transform 180ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  header nav a:hover,
+  .site-toc__links a:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes mfm-shape-breathe {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg) scale(0.98); }
+  50% { transform: translate3d(0, -3px, 0) rotate(5deg) scale(1.07); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mfm-scroll-progress { display: none; }
+  .mfm-motion-logo,
+  .mfm-motion-shape,
+  .mfm-motion-section,
+  .dc-texture,
+  header nav a,
+  .site-toc__links a {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
