@@ -11,7 +11,10 @@
 <meta property="og:url" content="https://prokopa42.github.io/mfm-showcase/">
 <meta property="og:image" content="https://prokopa42.github.io/mfm-showcase/assets/app/mfm-personal-390.png">
 <link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/">
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta name="description" content="МФМ показывает, сколько своих денег можно потратить сегодня, чтобы до зарплаты хватило на обязательные платежи, долги, Подушку и накопления.">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <style>
@@ -20,11 +23,27 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: #f6f1e3; color: #14120d; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 a { color: #0749a9; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
 a:hover { color: #063a86; text-decoration-thickness: 2.5px; }
-[id] { scroll-margin-top: 90px; }
+[id] { scroll-margin-top: 118px; }
 :focus-visible { outline: 3px solid #0749a9; outline-offset: 2px; }
-+
 * { box-sizing:border-box; }
 img { max-width:100%; }
+.site-header { position:sticky; top:0; z-index:60; border-bottom:1px solid #d9d3bc; background:rgba(246,241,227,0.97); backdrop-filter:blur(10px); }
+.site-header__main { max-width:1264px; margin:0 auto; padding:11px 48px; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+.site-header__brand { display:flex; align-items:center; gap:10px; color:#14120d; text-decoration:none; flex:none; }
+.site-header__utility { display:flex; align-items:center; justify-content:flex-end; gap:8px 18px; flex-wrap:wrap; }
+.site-header__utility a { color:#14120d; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; text-decoration:none; text-transform:uppercase; border-bottom:2px solid transparent; padding:3px 0; }
+.site-header__utility a:hover { color:#0749a9; border-bottom-color:#0749a9; }
+.site-toc { border-top:1px solid #d9d3bc; background:#fffdf7; }
+.site-toc__inner { max-width:1264px; margin:0 auto; display:flex; min-width:0; }
+.site-toc__label { flex:none; display:flex; align-items:center; padding:9px 14px 9px 48px; background:#14120d; color:#f6f1e3; font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; }
+.site-toc__links { display:flex; min-width:0; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:thin; scroll-snap-type:x proximity; }
+.site-toc__links a { flex:none; scroll-snap-align:start; padding:9px 13px; border-right:1px solid #d9d3bc; color:#14120d; font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:700; letter-spacing:0.06em; text-decoration:none; text-transform:uppercase; white-space:nowrap; }
+.site-toc__links a:hover { background:#dce7f5; color:#0749a9; }
+.site-toc__links a[aria-current='location'] { background:#fbbd5b; color:#14120d; }
+.docs-index { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 170px), 1fr)); border:1px solid #d9d3bc; border-bottom:0; margin-top:24px; }
+.docs-index a { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:46px; padding:10px 12px; border-right:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc; color:#14120d; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.04em; text-decoration:none; }
+.docs-index a:hover { background:#dce7f5; color:#0749a9; }
+.docs-index a::after { content:'→'; color:#0749a9; }
 .dc-scroll-top { display:none !important; }
 .dc-scroll-top.is-visible { display:inline-flex !important; }
 @media (max-width:1023px) {
@@ -32,6 +51,14 @@ img { max-width:100%; }
   .dc-scroll-top.is-visible::before { content:'↑'; color:#f6f1e3; font-size:20px; line-height:1; }
 }
 @media (max-width:430px) { .dc-texture { opacity:0.25 !important; } }
+@media (max-width:720px) {
+  [id] { scroll-margin-top:108px; }
+  .site-header__main { padding:9px 14px; }
+  .site-header__utility { gap:6px 12px; }
+  .site-header__utility a { font-size:9.5px; }
+  .site-toc__label { padding:9px 10px 9px 14px; font-size:9px; }
+  .site-toc__links a { padding:9px 11px; font-size:9.5px; }
+}
 .dc-state-1:focus-visible { outline:3px solid #0749a9; outline-offset:2px; }
 .dc-state-2:hover { border-bottom-color:#0749a9; color:#0749a9; }
 .dc-state-3:hover { background:#063a86; border-color:#063a86; }
@@ -88,22 +115,36 @@ img { max-width:100%; }
 
 
 <!-- ═══ ШАПКА ═══ -->
-<header id="верх" data-screen-label="Шапка" style="border-bottom:1px solid #d9d3bc; background:#f6f1e3; position:relative; z-index:5;">
-  <div style="max-width:1264px; margin:0 auto; padding:14px clamp(20px,4vw,48px); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
-    <a href="#ответ" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#14120d;" class="dc-state-1">
+<header id="верх" class="site-header" data-screen-label="Шапка">
+  <div class="site-header__main">
+    <a href="#ответ" class="site-header__brand dc-state-1" aria-label="МФМ, к началу страницы">
       <img src="assets/app/mfm-brand-mark.png" alt="Знак МФМ: круг и точка в квадрате" width="34" height="26" style="display:block; width:34px; height:auto;">
       <span style="font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:19px; letter-spacing:0.02em;">МФМ</span>
     </a>
-    <nav aria-label="Разделы страницы" style="display:flex; gap:4px 18px; flex-wrap:wrap;">
-      <a href="#пример" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Пример</a>
-      <a href="#приложение" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Приложение</a>
-      <a href="#режимы" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Режимы</a>
-      <a href="#экраны" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Экраны</a>
-      <a href="#история" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">История</a>
-      <a href="#доступ" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Доступ</a>
-      <a href="docs/glossary.html" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Словарь</a>
+    <nav class="site-header__utility" aria-label="Быстрые переходы">
+      <a href="#приложение">Документация</a>
+      <a href="docs/glossary.html">Словарь</a>
+      <a href="#доступ">Доступ</a>
     </nav>
   </div>
+  <nav class="site-toc" aria-label="Содержание страницы">
+    <div class="site-toc__inner">
+      <span class="site-toc__label">Содержание</span>
+      <div class="site-toc__links">
+        <a href="#ответ">Начало</a>
+        <a href="#ситуация">Задача</a>
+        <a href="#пример">Расчёт</a>
+        <a href="#отличие">Отличие</a>
+        <a href="#приложение">Разделы</a>
+        <a href="#режимы">Режимы</a>
+        <a href="#рабочие-деньги">Рабочие деньги</a>
+        <a href="#экраны">Экраны</a>
+        <a href="#история">История</a>
+        <a href="#будущее">Развитие</a>
+        <a href="#доступ">Доступ</a>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <main>
@@ -174,7 +215,7 @@ img { max-width:100%; }
 </section>
 
 <!-- ═══ 02 СИТУАЦИЯ ═══ -->
-<section data-screen-label="02 Узнаваемая ситуация" aria-labelledby="h-ситуация">
+<section id="ситуация" data-screen-label="02 Узнаваемая ситуация" aria-labelledby="h-ситуация">
   <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
     <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>02</span><span>СИТУАЦИЯ</span>
@@ -265,7 +306,7 @@ img { max-width:100%; }
 </section>
 
 <!-- ═══ 04 ОТЛИЧИЕ ═══ -->
-<section data-screen-label="04 Чем ответ отличается" aria-labelledby="h-отличие">
+<section id="отличие" data-screen-label="04 Чем ответ отличается" aria-labelledby="h-отличие">
   <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
     <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>04</span><span>ОТЛИЧИЕ</span>
@@ -300,6 +341,18 @@ img { max-width:100%; }
     </div>
     <h2 id="h-маршрут" style="margin:20px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.1; text-wrap:balance; max-width:26ch;" class="dc-type-6">Пять разделов — вход в документацию</h2>
     <p style="margin:18px 0 0; font-size:17px; line-height:1.6; max-width:60ch;">Дневной ответ поддержан полноценным приложением. У каждого раздела есть своя страница: карта экрана, формулы, полный пример, состояния и частые вопросы.</p>
+    <nav class="docs-index" aria-label="Все страницы документации">
+      <a href="docs/today.html">Сегодня</a>
+      <a href="docs/cycle.html">Цикл</a>
+      <a href="docs/payments.html">Платежи</a>
+      <a href="docs/debts.html">Долги</a>
+      <a href="docs/work-money.html">Рабочие деньги</a>
+      <a href="docs/savings.html">Накопления</a>
+      <a href="docs/history.html">Дневник</a>
+      <a href="docs/settings.html">Настройки</a>
+      <a href="docs/glossary.html">Словарь и формулы</a>
+      <a href="access.html">Режимы и доступ</a>
+    </nav>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap:0 0; margin-top:40px;">
       <a href="docs/today.html" style="display:flex; flex-direction:column; align-items:flex-start; border-top:2px solid #14120d; padding:0 18px 16px 0; color:inherit; text-decoration:none;" class="dc-state-8 dc-state-9">
         <span aria-hidden="true" style="display:inline-flex; align-items:center; justify-content:center; height:30px; margin-top:-16px; background:#f6f1e3; padding-right:10px;"><span style="width:20px; height:20px; border:3.5px solid #0749a9; border-radius:50%; box-sizing:border-box;"></span></span>
@@ -397,7 +450,7 @@ img { max-width:100%; }
 </section>
 
 <!-- ═══ 07 ПОЧЕМУ РАБОЧИЕ ДЕНЬГИ РЯДОМ ═══ -->
-<section data-screen-label="07 Рабочие деньги рядом" aria-labelledby="h-подотчет" style="background:#fde7bb;">
+<section id="рабочие-деньги" data-screen-label="07 Рабочие деньги рядом" aria-labelledby="h-подотчет" style="background:#fde7bb;">
   <div style="max-width:1264px; margin:0 auto; padding:0 clamp(20px,4vw,48px) clamp(48px,7vw,96px); box-sizing:border-box;">
     <div style="border-top:1px solid rgba(20,18,13,0.25); padding-top:clamp(36px,5vw,64px);">
       <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
@@ -600,9 +653,30 @@ img { max-width:100%; }
 <script>
 (() => {
   const button = document.querySelector('.dc-scroll-top');
-  if (!button) return;
+  const tocScroller = document.querySelector('.site-toc__links');
+  const tocLinks = [...document.querySelectorAll('.site-toc__links a[href^="#"]')];
+  const tocTargets = tocLinks
+    .map((link) => ({ link, target: document.querySelector(link.getAttribute('href')) }))
+    .filter((item) => item.target);
+  let activeLink = null;
   const update = () => {
-    button.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.9 && window.innerWidth < 1024);
+    if (button) {
+      button.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.9 && window.innerWidth < 1024);
+    }
+    const marker = window.scrollY + 150;
+    let current = tocTargets[0];
+    for (const item of tocTargets) {
+      if (item.target.offsetTop <= marker) current = item;
+    }
+    for (const item of tocTargets) {
+      if (item === current) item.link.setAttribute('aria-current', 'location');
+      else item.link.removeAttribute('aria-current');
+    }
+    if (tocScroller && current && activeLink !== current.link) {
+      activeLink = current.link;
+      const left = current.link.offsetLeft - tocScroller.offsetLeft - (tocScroller.clientWidth - current.link.offsetWidth) / 2;
+      tocScroller.scrollLeft = Math.max(0, left);
+    }
   };
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
