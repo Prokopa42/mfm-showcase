@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Долги · Документация МФМ</title>
+<meta name="theme-color" content="#f6f1e3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Долги · Документация МФМ">
+<meta property="og:description" content="Цикл → Долги: из чего состоит общий долг, что его увеличивает и уменьшает, переносы и комиссии.">
+<meta property="og:url" content="https://prokopa42.github.io/mfm-showcase/docs/debts.html">
+<meta property="og:image" content="https://prokopa42.github.io/mfm-showcase/assets/app/mfm-personal-390.png">
+<link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/docs/debts.html">
+<link rel="icon" href="data:,">
+<meta name="description" content="Цикл → Долги: из чего состоит общий долг, что его увеличивает и уменьшает, переносы и комиссии.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: #f6f1e3; color: #14120d; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #0749a9; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { color: #063a86; text-decoration-thickness: 2.5px; }
+[id] { scroll-margin-top: 24px; }
+:focus-visible { outline: 3px solid #0749a9; outline-offset: 2px; }
++
+* { box-sizing:border-box; }
+img { max-width:100%; }
+.dc-scroll-top { display:none !important; }
+.dc-scroll-top.is-visible { display:inline-flex !important; }
+@media (max-width:1023px) {
+  .dc-scroll-top.is-visible { width:48px; height:48px; padding:0 !important; justify-content:center; overflow:hidden; font-size:0 !important; }
+  .dc-scroll-top.is-visible::before { content:'↑'; color:#f6f1e3; font-size:20px; line-height:1; }
+}
+@media (max-width:430px) { .dc-texture { opacity:0.25 !important; } }
+.dc-state-1:focus-visible { outline:3px solid #0749a9; outline-offset:2px; }
+.dc-state-2:hover { border-bottom-color:#0749a9; color:#0749a9; }
+.dc-state-3:hover { border-color:#14120d; background:#fffdf7; }
+.dc-state-4:hover { color:#0749a9; }
+.dc-state-5:hover { box-shadow:5px 5px 0 #0749a9; }
+.dc-state-6:focus-visible { outline:3px solid #0749a9; outline-offset:3px; }
+.dc-state-7:hover { background:#0749a9; border-color:#0749a9; }
+.dc-type-1 { font-size:64px; }
+.dc-type-2 { font-size:22px; }
+.dc-type-3 { font-size:38px; }
+@media (max-width:1024px) {
+.dc-type-1 { font-size:51px; }
+.dc-type-2 { font-size:20px; }
+.dc-type-3 { font-size:32px; }
+}
+@media (max-width:430px) {
+.dc-type-1 { font-size:34px; }
+.dc-type-2 { font-size:18px; }
+.dc-type-3 { font-size:24px; }
+}
+</style>
+</head>
+<body>
+<div style="position:relative; overflow:clip;">
+
+
+<div class="dc-texture" aria-hidden="true" style="position:fixed; inset:0; z-index:40; pointer-events:none; opacity:0.5; mix-blend-mode:multiply; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+
+<header id="верх" data-screen-label="Шапка документации" style="border-bottom:2px solid #14120d; background:#f6f1e3; position:relative; z-index:5;">
+  <div style="max-width:1264px; margin:0 auto; padding:14px clamp(20px,4vw,48px) 0; box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <a href="../index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#14120d;" class="dc-state-1">
+      <img src="../assets/app/mfm-brand-mark.png" alt="Знак МФМ" width="34" height="26" style="display:block; width:34px; height:auto;">
+      <span style="font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:19px; letter-spacing:0.02em;">МФМ</span>
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.14em; color:rgba(20,18,13,0.55); border-left:2px solid #d9d3bc; padding-left:10px;">ДОКУМЕНТАЦИЯ</span>
+    </a>
+    <a href="../index.html" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">← На главную</a>
+  </div>
+  <nav aria-label="Страницы документации" style="max-width:1264px; margin:0 auto; padding:12px clamp(20px,4vw,48px) 14px; box-sizing:border-box; display:flex; gap:6px; flex-wrap:wrap;">
+    <a href="today.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">СЕГОДНЯ</a>
+    <a href="cycle.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ЦИКЛ</a>
+    <a href="payments.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ПЛАТЕЖИ</a>
+    <span aria-current="page" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; background:#14120d; color:#f6f1e3; padding:6px 9px;">ДОЛГИ</span>
+    <a href="work-money.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">РАБОЧИЕ ДЕНЬГИ</a>
+    <a href="savings.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">НАКОПЛЕНИЯ</a>
+    <a href="history.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ДНЕВНИК</a>
+    <a href="settings.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">НАСТРОЙКИ</a>
+    <a href="glossary.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">СЛОВАРЬ</a>
+    <a href="../access.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ДОСТУП</a>
+  </nav>
+</header>
+
+<main>
+
+<section data-screen-label="Заголовок: ответ страницы" style="border-bottom:2px solid #14120d; background:#fffdf7;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(32px,5vw,56px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.16em; color:rgba(20,18,13,0.55);">ЭКРАН 02 · ЦИКЛ → ДОЛГИ</p>
+    <h1 style="margin:12px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.05; letter-spacing:0;" class="dc-type-1"><span style="text-shadow:4px 4px 0 #fbbd5b;">Долги</span></h1>
+    <div style="display:flex; gap:16px; margin-top:22px; max-width:72ch;">
+      <span aria-hidden="true" style="flex:none; width:18px; height:18px; border:3px solid #14120d; box-sizing:border-box; margin-top:4px;"></span>
+      <p style="margin:0;  line-height:1.5; text-wrap:pretty;" class="dc-type-2">Сколько я должен сейчас, <strong>из чего состоит долг</strong> и уменьшается он или растёт?</p>
+    </div>
+    <p style="margin:18px 0 0; font-size:16px; line-height:1.6; max-width:66ch; color:rgba(20,18,13,0.8);">Долг — это обязательство вернуть деньги. Он может быть перед человеком, сервисом, организацией или подотчётом — модель «карта / банк / кредитка» не обязательна.</p>
+  </div>
+</section>
+
+<div style="max-width:1264px; margin:0 auto; padding:0 clamp(20px,4vw,48px); box-sizing:border-box;">
+  <div style="display:flex; flex-wrap:wrap; gap:clamp(24px,3vw,44px); align-items:stretch;">
+
+    <aside data-screen-label="Содержание" style="flex:1 1 230px; min-width:0;">
+      <nav id="содержание" aria-label="Содержание страницы" style="position:sticky; top:14px; border:2px solid #14120d; background:#fffdf7; padding:16px 18px; margin-top:clamp(24px,3vw,40px);">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em;">СОДЕРЖАНИЕ</p>
+        <div style="display:flex; flex-direction:column; margin-top:10px;">
+          <a href="#главная-цифра" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Общий долг</a>
+          <a href="#экран" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">2</span>Карта экрана</a>
+          <a href="#действия" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>Операции</a>
+          <a href="#комиссии" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">4</span>Комиссии переноса</a>
+          <a href="#пример" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">5</span>Пример переноса</a>
+          <a href="#подотчётный-долг" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">6</span>Подотчётный долг</a>
+          <a href="#вопросы" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">7</span>Частые вопросы</a>
+          <a href="#связано" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">8</span>Дальше</a>
+        </div>
+      </nav>
+    </aside>
+
+    <div style="flex:999 1 min(100%, 620px); min-width:0; max-width:860px;">
+
+      <section id="главная-цифра" data-screen-label="1 Общий долг" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>1</span><span>ГЛАВНАЯ ЦИФРА</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Общий долг — одна сумма из двух частей</h2>
+        <div id="общий-долг" style="margin-top:26px; border:2px solid #14120d; background:#fffdf7;">
+          <div style="padding:14px 16px; display:flex; flex-direction:column; gap:8px; font-family:'JetBrains Mono', monospace; font-size:13px;">
+            <div style="display:flex; justify-content:space-between; gap:12px;"><span>Обычные долговые обязательства</span><strong>40&nbsp;000&nbsp;₽</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:12px;"><span>+ Долг перед подотчётом</span><strong>5&nbsp;000&nbsp;₽</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:12px; border-top:1px solid #d9d3bc; padding-top:8px; color:#d63031;"><span>= Общий долг</span><strong>45&nbsp;000&nbsp;₽</strong></div>
+          </div>
+          <p style="margin:0; padding:0 16px 14px; font-size:14px; line-height:1.55; color:rgba(20,18,13,0.8);">Подотчётный долг отображается как виртуальная долговая позиция. Отдельный обычный долг-дубль не создаётся — сумма не считается дважды.</p>
+        </div>
+        <div id="обязательство" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:16px; margin-top:18px;">
+          <div style="border:2px solid #14120d; background:#fffdf7; padding:16px;">
+            <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em; color:#d63031;">ЧТО УВЕЛИЧИВАЕТ ДОЛГ</p>
+            <div style="margin-top:10px; display:flex; flex-direction:column; gap:8px; font-size:14.5px; line-height:1.5;">
+              <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid #d63031; margin-top:5px;"></span>получение денег в долг</p>
+              <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid #d63031; margin-top:5px;"></span>покупка или расход в долг</p>
+              <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid #d63031; margin-top:5px;"></span>комиссия, добавленная в долг</p>
+              <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid #d63031; margin-top:5px;"></span>использование рабочих денег на личное — долг перед подотчётом</p>
+            </div>
+          </div>
+          <div style="border:2px solid #14120d; background:#fffdf7; padding:16px;">
+            <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em; color:#0749a9;">ЧТО УМЕНЬШАЕТ ДОЛГ</p>
+            <div style="margin-top:10px; display:flex; flex-direction:column; gap:8px; font-size:14.5px; line-height:1.5;">
+              <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:12px; height:12px; border:2.5px solid #0749a9; border-radius:50%; box-sizing:border-box; margin-top:4px;"></span>погашение основной суммы</p>
+              <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:12px; height:12px; border:2.5px solid #0749a9; border-radius:50%; box-sizing:border-box; margin-top:4px;"></span>возврат личного долга в подотчёт</p>
+            </div>
+            <p style="margin:12px 0 0; padding-top:10px; border-top:1px solid #d9d3bc; font-size:14px; line-height:1.55; color:rgba(20,18,13,0.8);">Комиссия, оплаченная своими деньгами, уменьшает «Свои деньги», но <strong>не основной долг</strong> — она не считается погашением.</p>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="экран" data-screen-label="2 Карта экрана" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>2</span><span>КАРТА ЭКРАНА · СВЕРХУ ВНИЗ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Четыре зоны страницы долгов</h2>
+        <div style="margin-top:26px; display:flex; flex-direction:column;">
+          <div style="display:flex; gap:14px; padding:14px 0; border-top:1px solid #d9d3bc;">
+            <span aria-hidden="true" style="flex:none; display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#14120d; color:#f6f1e3; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">1</span>
+            <div><p style="margin:0; font-size:15.5px; font-weight:600;">Действия</p><p style="margin:4px 0 0; font-size:14.5px; line-height:1.55; color:rgba(20,18,13,0.8);">«Получил деньги в долг», «Перенести долг», «Новый долг».</p></div>
+          </div>
+          <div style="display:flex; gap:14px; padding:14px 0; border-top:1px solid #d9d3bc;">
+            <span aria-hidden="true" style="flex:none; display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#14120d; color:#f6f1e3; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">2</span>
+            <div><p style="margin:0; font-size:15.5px; font-weight:600;">Тренд</p><p style="margin:4px 0 0; font-size:14.5px; line-height:1.55; color:rgba(20,18,13,0.8);">Линия общего долга по дням за 30, 90, 180 дней или весь срок. При короткой истории приложение не делает уверенный прогноз — и говорит об этом.</p></div>
+          </div>
+          <div style="display:flex; gap:14px; padding:14px 0; border-top:1px solid #d9d3bc;">
+            <span aria-hidden="true" style="flex:none; display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#14120d; color:#f6f1e3; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">3</span>
+            <div><p style="margin:0; font-size:15.5px; font-weight:600;">Показатели</p><p style="margin:4px 0 0; font-size:14.5px; line-height:1.55; color:rgba(20,18,13,0.8);">Общий долг · обычные долги · перед подотчётом · изменение · темп · новых долгов · погашено · комиссии.</p></div>
+          </div>
+          <div style="display:flex; gap:14px; padding:14px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc;">
+            <span aria-hidden="true" style="flex:none; display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#14120d; color:#f6f1e3; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">4</span>
+            <div><p style="margin:0; font-size:15.5px; font-weight:600;">Активные долги</p><p style="margin:4px 0 0; font-size:14.5px; line-height:1.55; color:rgba(20,18,13,0.8);">Для каждого обязательства: название, остаток, исходная сумма, лимит и доступная часть (если применимо), дата, действия «изменить» и «закрыть». Нулевой остаток не исчезает молча — долг закрывается явно и находится в закрытых.</p></div>
+          </div>
+        </div>
+        <div style="margin-top:22px; max-width:520px; border:2px solid #14120d; background:#fffdf7;">
+          <div style="padding:10px 16px; border-bottom:2px solid #14120d; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.12em;">КАРТОЧКА ДОЛГА · МАКЕТ</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; color:rgba(20,18,13,0.55);">синтетические данные</span></div>
+          <div style="padding:14px 16px;">
+            <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;"><span style="font-size:15.5px; font-weight:600;">Ремонт у Сергея</span><span style="font-family:'JetBrains Mono', monospace; font-size:14px; font-weight:700; color:#d63031;">15&nbsp;000&nbsp;₽</span></div>
+            <div style="margin-top:10px; display:flex; height:14px; border:1.5px solid #14120d; box-sizing:border-box; max-width:380px;">
+              <div style="width:50%; background:#d63031;"></div>
+              <div style="width:50%; background:#ece7d2; border-left:1.5px solid #14120d;"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; gap:10px; margin-top:6px; max-width:380px; font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:0.05em; color:rgba(20,18,13,0.55); flex-wrap:wrap;"><span>ОСТАТОК 15 000 ИЗ 30 000 ₽</span><span>ОТ 2 ИЮЛЯ</span></div>
+            <div style="display:flex; gap:8px; margin-top:12px;">
+              <span style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.06em; border:1.5px solid #14120d; padding:7px 10px;">ИЗМЕНИТЬ</span>
+              <span style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.06em; border:1.5px solid #14120d; padding:7px 10px;">ЗАКРЫТЬ</span>
+            </div>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="действия" data-screen-label="3 Операции" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>3</span><span>ОПЕРАЦИИ И ИХ ЭФФЕКТЫ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Четыре долговых движения</h2>
+        <div style="margin-top:26px; display:flex; flex-direction:column;">
+          <div id="получить-деньги" style="padding:14px 0; border-top:1px solid #d9d3bc; display:flex; flex-direction:column; gap:8px;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Получил деньги в долг</p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:4px 8px;">всего на руках ↑</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px;">долг ↑</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.6); padding:4px 8px;">свободный расход дня =</span></div>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Касса и долг растут вместе: деньги появились, но они не заработаны.</p>
+          </div>
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc; display:flex; flex-direction:column; gap:8px;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Потратил в долг</p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.6); padding:4px 8px;">всего на руках обычно =</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px;">долг ↑</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #14120d; padding:4px 8px;">потрачено сегодня ↑</span></div>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Покупка отражает сегодняшнее потребление, поэтому входит в траты дня, хотя свои деньги и «Свободно до зарплаты» не уменьшаются.</p>
+          </div>
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc; display:flex; flex-direction:column; gap:8px;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Погасил долг своими</p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px;">всего на руках ↓</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px;">свои деньги ↓</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:4px 8px;">долг ↓</span></div>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Отдельное долговое движение: уменьшает деньги и долг, но не искажает статистику повседневных трат.</p>
+          </div>
+          <div id="перенос" style="padding:14px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc; display:flex; flex-direction:column; gap:8px;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Перенёс долг</p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:4px 8px;">исходный долг ↓</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px;">целевой долг ↑</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.6); padding:4px 8px;">без комиссии общий долг =</span></div>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Поля формы: какой долг уменьшаем · в какой переносим · сумма · комиссия · как учесть комиссию · дата · комментарий.</p>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="комиссии" data-screen-label="4 Комиссии переноса" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>4</span><span>КОМИССИИ ПЕРЕНОСА</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Куда падает комиссия — то и растёт</h2>
+        <div style="margin-top:26px; border:2px solid #14120d; background:#fffdf7;">
+          <div style="display:flex; gap:12px; padding:12px 16px; border-bottom:1px solid #d9d3bc; flex-wrap:wrap;"><span style="flex:0 0 210px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Оплачена своими</span><span style="flex:1 1 240px; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">свои деньги уменьшаются; общий долг не растёт</span></div>
+          <div style="display:flex; gap:12px; padding:12px 16px; border-bottom:1px solid #d9d3bc; flex-wrap:wrap;"><span style="flex:0 0 210px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Добавлена в целевой долг</span><span style="flex:1 1 240px; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">целевой долг растёт на сумму комиссии</span></div>
+          <div style="display:flex; gap:12px; padding:12px 16px; border-bottom:1px solid #d9d3bc; flex-wrap:wrap;"><span style="flex:0 0 210px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Добавлена в исходный долг</span><span style="flex:1 1 240px; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">исходный долг уменьшается меньше; общий долг растёт на комиссию</span></div>
+          <div style="display:flex; gap:12px; padding:12px 16px; flex-wrap:wrap;"><span style="flex:0 0 210px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; color:#0749a9;">Без комиссии</span><span style="flex:1 1 240px; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">общий долг сохраняется</span></div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="пример" data-screen-label="5 Пример переноса" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>5</span><span>ПОЛНЫЙ СЦЕНАРИЙ · ПЕРЕНОС</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Перенос 5 000 ₽ из долга А в долг Б</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:16px; margin-top:26px;">
+          <div style="border:2px solid #14120d; background:#fffdf7;">
+            <div style="padding:9px 14px; border-bottom:1.5px solid #14120d; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.1em;">БЕЗ КОМИССИИ</div>
+            <div style="padding:12px 14px; display:flex; flex-direction:column; gap:6px; font-family:'JetBrains Mono', monospace; font-size:12.5px;">
+              <div style="display:flex; justify-content:space-between; gap:10px;"><span>Долг А: 10&nbsp;000 →</span><strong>5&nbsp;000&nbsp;₽</strong></div>
+              <div style="display:flex; justify-content:space-between; gap:10px;"><span>Долг Б: 0 →</span><strong>5&nbsp;000&nbsp;₽</strong></div>
+              <div style="display:flex; justify-content:space-between; gap:10px; border-top:1px solid #d9d3bc; padding-top:6px;"><span>Общий долг</span><strong style="color:#0749a9;">10&nbsp;000&nbsp;₽ · не изменился</strong></div>
+            </div>
+          </div>
+          <div style="border:2px solid #14120d; background:#fffdf7;">
+            <div style="padding:9px 14px; border-bottom:1.5px solid #14120d; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.1em;">КОМИССИЯ 300&nbsp;₽ В ЦЕЛЕВОЙ ДОЛГ</div>
+            <div style="padding:12px 14px; display:flex; flex-direction:column; gap:6px; font-family:'JetBrains Mono', monospace; font-size:12.5px;">
+              <div style="display:flex; justify-content:space-between; gap:10px;"><span>Долг А: 10&nbsp;000 →</span><strong>5&nbsp;000&nbsp;₽</strong></div>
+              <div style="display:flex; justify-content:space-between; gap:10px;"><span>Долг Б: 0 →</span><strong>5&nbsp;300&nbsp;₽</strong></div>
+              <div style="display:flex; justify-content:space-between; gap:10px; border-top:1px solid #d9d3bc; padding-top:6px;"><span>Общий долг</span><strong style="color:#d63031;">10&nbsp;300&nbsp;₽ · вырос на комиссию</strong></div>
+            </div>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="подотчётный-долг" data-screen-label="6 Подотчётный долг" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>6</span><span>ПОДОТЧЁТНЫЙ ДОЛГ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Долг перед подотчётом</h2>
+        <p style="margin:16px 0 0;"><span style="display:inline-block; font-family:'JetBrains Mono', monospace; font-size:10.5px; font-weight:700; letter-spacing:0.08em; background:#fde7bb; border:1.5px solid #14120d; padding:3px 7px;">ДОСТУПНО В РЕЖИМЕ «ЛИЧНЫЕ + РАБОЧИЕ ДЕНЬГИ»</span></p>
+        <div style="margin-top:18px; display:flex; flex-direction:column; gap:8px; max-width:66ch; font-size:15px; line-height:1.6;">
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#fbbd5b; border:1.5px solid #14120d; margin-top:6px;"></span>«Взял рабочие деньги на личное» увеличивает долг перед подотчётом.</p>
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#fbbd5b; border:1.5px solid #14120d; margin-top:6px;"></span>«Вернул личный долг» уменьшает его.</p>
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#fbbd5b; border:1.5px solid #14120d; margin-top:6px;"></span>Перенос между обычным и подотчётным долгом меняет состав, но без комиссии не меняет общий долг.</p>
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#fbbd5b; border:1.5px solid #14120d; margin-top:6px;"></span>Этот долг уменьшает «Свободно до зарплаты» один раз и не создаёт автоматический обязательный платёж.</p>
+        </div>
+        <p style="margin:18px 0 0; font-size:15px; line-height:1.6; color:rgba(20,18,13,0.8);">Откуда берётся этот долг — на странице <a href="work-money.html">«Рабочие деньги»</a>.</p>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="вопросы" data-screen-label="7 Частые вопросы" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>7</span><span>ЧАСТЫЕ ВОПРОСЫ</span></div>
+        <div style="margin-top:22px; display:flex; flex-direction:column;">
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Почему долг вырос, а денег на руках нет?</p>
+            <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Это мог быть расход в долг, а не получение наличных. Долг вырос, но личная касса не пополнилась.</p>
+          </div>
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Почему после переноса общий долг тот же?</p>
+            <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Изменился кредитор или долговая позиция, а не сумма обязательств. Рост возможен только из-за комиссии, добавленной в долг.</p>
+          </div>
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Почему погашение не считается свободным расходом?</p>
+            <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Это отдельное долговое движение. Оно уменьшает деньги и долг, но не искажает статистику повседневных трат.</p>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="связано" data-screen-label="8 Дальше" style="padding:clamp(24px,3vw,40px) 0 clamp(32px,4vw,56px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>8</span><span>СВЯЗАННЫЕ СТРАНИЦЫ</span></div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:14px; margin-top:22px;">
+          <a href="today.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-5 dc-state-6"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">СЕГОДНЯ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">компактный общий долг на экране дня</span></a>
+          <a href="payments.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-5 dc-state-6"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">ПЛАТЕЖИ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">плановое погашение долга</span></a>
+          <a href="work-money.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-5 dc-state-6"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">РАБОЧИЕ ДЕНЬГИ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">источник подотчётного долга</span></a>
+          <a href="history.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-5 dc-state-6"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">ДНЕВНИК →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">сгруппированные долговые события</span></a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+
+<a class="dc-scroll-top dc-state-7 dc-state-1" href="#содержание" aria-label="Вернуться к содержанию страницы" style="position:fixed; right:14px; bottom:16px; z-index:70; display:inline-flex; align-items:center; gap:8px; background:#14120d; color:#f6f1e3; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; padding:14px 16px; border:2px solid #14120d; box-shadow:4px 4px 0 rgba(20,18,13,0.3);">↑ К содержанию</a>
+
+
+<footer data-screen-label="Нижняя навигация" style="border-top:2px solid #14120d; background:#fffdf7;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(20px,3vw,28px) clamp(20px,4vw,48px); box-sizing:border-box; display:flex; justify-content:space-between; align-items:center; gap:12px 20px; flex-wrap:wrap;">
+    <a href="payments.html" style="font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1">← Платежи</a>
+    <a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:13px; color:rgba(20,18,13,0.7); text-decoration:none;" class="dc-state-4 dc-state-1">К содержанию ↑</a>
+    <a href="work-money.html" style="font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1">Рабочие деньги →</a>
+  </div>
+  <div style="border-top:1px solid #d9d3bc;">
+    <div style="max-width:1264px; margin:0 auto; padding:14px clamp(20px,4vw,48px); box-sizing:border-box; display:flex; justify-content:space-between; gap:10px 20px; flex-wrap:wrap;">
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">МФМ · ДОКУМЕНТАЦИЯ · ЦИКЛ → ДОЛГИ</span>
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">ДАННЫЕ В ПРИМЕРАХ СИНТЕТИЧЕСКИЕ</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script>
+(() => {
+  const button = document.querySelector('.dc-scroll-top');
+  if (!button) return;
+  const update = () => {
+    button.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.9 && window.innerWidth < 1024);
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>

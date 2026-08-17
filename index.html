@@ -1,44 +1,107 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="МФМ показывает, сколько своих денег можно потратить сегодня, чтобы до зарплаты хватило на обязательные платежи, долги, Подушку и накопления.">
-  <meta name="theme-color" content="#f6f1e3">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="МФМ · Сколько можно потратить сегодня">
-  <meta property="og:description" content="МФМ показывает, сколько своих денег можно потратить сегодня, чтобы до зарплаты хватило на обязательные платежи, долги, Подушку и накопления.">
-  <meta property="og:url" content="https://prokopa42.github.io/mfm-showcase/">
-  <meta property="og:image" content="https://prokopa42.github.io/mfm-showcase/assets/app/mfm-personal-390.png">
-  <link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/">
-  <link rel="icon" href="data:,">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <title>МФМ · Сколько можно потратить сегодня</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>МФМ · Сколько можно потратить сегодня</title>
+<meta name="theme-color" content="#f6f1e3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="МФМ · Сколько можно потратить сегодня">
+<meta property="og:description" content="МФМ показывает, сколько своих денег можно потратить сегодня, чтобы до зарплаты хватило на обязательные платежи, долги, Подушку и накопления.">
+<meta property="og:url" content="https://prokopa42.github.io/mfm-showcase/">
+<meta property="og:image" content="https://prokopa42.github.io/mfm-showcase/assets/app/mfm-personal-390.png">
+<link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/">
+<link rel="icon" href="data:,">
+<meta name="description" content="МФМ показывает, сколько своих денег можно потратить сегодня, чтобы до зарплаты хватило на обязательные платежи, долги, Подушку и накопления.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: #f6f1e3; color: #14120d; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #0749a9; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { color: #063a86; text-decoration-thickness: 2.5px; }
+[id] { scroll-margin-top: 90px; }
+:focus-visible { outline: 3px solid #0749a9; outline-offset: 2px; }
++
+* { box-sizing:border-box; }
+img { max-width:100%; }
+.dc-scroll-top { display:none !important; }
+.dc-scroll-top.is-visible { display:inline-flex !important; }
+@media (max-width:1023px) {
+  .dc-scroll-top.is-visible { width:48px; height:48px; padding:0 !important; justify-content:center; overflow:hidden; font-size:0 !important; }
+  .dc-scroll-top.is-visible::before { content:'↑'; color:#f6f1e3; font-size:20px; line-height:1; }
+}
+@media (max-width:430px) { .dc-texture { opacity:0.25 !important; } }
+.dc-state-1:focus-visible { outline:3px solid #0749a9; outline-offset:2px; }
+.dc-state-2:hover { border-bottom-color:#0749a9; color:#0749a9; }
+.dc-state-3:hover { background:#063a86; border-color:#063a86; }
+.dc-state-4:active { transform:translate(1px,1px); }
+.dc-state-5:focus-visible { outline:3px solid #14120d; outline-offset:2px; }
+.dc-state-6:hover { background:#14120d; color:#f6f1e3; }
+.dc-state-7:hover { color:#0749a9; }
+.dc-state-8:hover { background:linear-gradient(rgba(7,73,169,0.06), rgba(7,73,169,0.06)); }
+.dc-state-9:focus-visible { outline:3px solid #0749a9; outline-offset:3px; }
+.dc-state-10:hover { box-shadow:6px 6px 0 #0749a9; }
+.dc-state-11:hover { color:#fbbd5b; }
+.dc-state-12:focus-visible { outline:3px solid #f6f1e3; outline-offset:2px; }
+.dc-state-13:hover { background:#fbbd5b; border-color:#fbbd5b; }
+.dc-state-14:focus-visible { outline:3px solid #fbbd5b; outline-offset:2px; }
+.dc-state-15:hover { background:#f6f1e3; color:#14120d; }
+.dc-state-16:hover { background:#0749a9; border-color:#0749a9; }
+.dc-type-1 { font-size:72px; }
+.dc-type-2 { font-size:20px; }
+.dc-type-3 { font-size:58px; }
+.dc-type-4 { font-size:50px; }
+.dc-type-5 { font-size:54px; }
+.dc-type-6 { font-size:44px; }
+.dc-type-7 { font-size:42px; }
+.dc-type-8 { font-size:26px; }
+@media (max-width:1024px) {
+.dc-type-1 { font-size:53px; }
+.dc-type-2 { font-size:19px; }
+.dc-type-3 { font-size:52px; }
+.dc-type-4 { font-size:40px; }
+.dc-type-5 { font-size:48px; }
+.dc-type-6 { font-size:36px; }
+.dc-type-7 { font-size:35px; }
+.dc-type-8 { font-size:23px; }
+}
+@media (max-width:430px) {
+.dc-type-1 { font-size:30px; }
+.dc-type-2 { font-size:17px; }
+.dc-type-3 { font-size:44px; }
+.dc-type-4 { font-size:28px; }
+.dc-type-5 { font-size:40px; }
+.dc-type-6 { font-size:26px; }
+.dc-type-7 { font-size:26px; }
+.dc-type-8 { font-size:19px; }
+}
+</style>
 </head>
 <body>
-<div class="s001">
+<div style="position:relative; overflow:clip;">
 
 
-<div aria-hidden="true" class="s002 site-texture"></div>
+<div class="dc-texture" aria-hidden="true" style="position:fixed; inset:0; z-index:40; pointer-events:none; opacity:0.5; mix-blend-mode:multiply; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
 
 
 
 
 <!-- ═══ ШАПКА ═══ -->
-<header data-screen-label="Шапка" class="s003">
-  <div class="s004">
-    <a href="#ответ" class="s005 f001">
-      <img src="assets/app/mfm-brand-mark.png" alt="Знак МФМ: круг и точка в квадрате" width="34" height="26" class="s006">
-      <span class="s007">МФМ</span>
+<header id="верх" data-screen-label="Шапка" style="border-bottom:1px solid #d9d3bc; background:#f6f1e3; position:relative; z-index:5;">
+  <div style="max-width:1264px; margin:0 auto; padding:14px clamp(20px,4vw,48px); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <a href="#ответ" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#14120d;" class="dc-state-1">
+      <img src="assets/app/mfm-brand-mark.png" alt="Знак МФМ: круг и точка в квадрате" width="34" height="26" style="display:block; width:34px; height:auto;">
+      <span style="font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:19px; letter-spacing:0.02em;">МФМ</span>
     </a>
-    <nav aria-label="Разделы страницы" class="s008">
-      <a href="#пример" class="s009 h001 f001">Пример</a>
-      <a href="#приложение" class="s009 h001 f001">Приложение</a>
-      <a href="#режимы" class="s009 h001 f001">Режимы</a>
-      <a href="#экраны" class="s009 h001 f001">Экраны</a>
-      <a href="#история" class="s009 h001 f001">История</a>
-      <a href="#доступ" class="s009 h001 f001">Доступ</a>
+    <nav aria-label="Разделы страницы" style="display:flex; gap:4px 18px; flex-wrap:wrap;">
+      <a href="#пример" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Пример</a>
+      <a href="#приложение" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Приложение</a>
+      <a href="#режимы" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Режимы</a>
+      <a href="#экраны" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Экраны</a>
+      <a href="#история" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">История</a>
+      <a href="#доступ" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Доступ</a>
+      <a href="docs/glossary.html" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">Словарь</a>
     </nav>
   </div>
 </header>
@@ -46,269 +109,287 @@
 <main>
 
 <!-- ═══ 01 ПЕРВЫЙ ЭКРАН: ответ + доказательство ═══ -->
-<section id="ответ" data-screen-label="01 Первый экран" aria-label="Главный ответ МФМ" class="s010">
-  <div class="s011">
-    <p class="s012">Личные деньги · от зарплаты до зарплаты</p>
-    <h1 class="s013">
-      <span class="s014">МФМ.</span> Сколько можно потратить сегодня, чтобы до зарплаты хватило на всё важное.
+<section id="ответ" data-screen-label="01 Первый экран" aria-label="Главный ответ МФМ" style="position:relative;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(36px,6vw,72px) clamp(20px,4vw,48px) 0; box-sizing:border-box;">
+    <p style="margin:0 0 18px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(20,18,13,0.55);">Личные деньги · от зарплаты до зарплаты</p>
+    <h1 style="margin:0; max-width:21ch; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.04; letter-spacing:0; text-wrap:balance; overflow-wrap:break-word;" class="dc-type-1">
+      <span style="text-shadow:4px 4px 0 #fbbd5b;">МФМ.</span> Сколько можно потратить сегодня, чтобы до зарплаты хватило на всё важное.
     </h1>
-    <div class="s015">
-      <div class="s016">
-        <p class="s017">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:clamp(28px,4vw,56px); align-items:start; margin-top:clamp(28px,4vw,48px);">
+      <div style="max-width:56ch;">
+        <p style="margin:0;  line-height:1.6;" class="dc-type-2">
           Приложение заранее учитывает обязательные платежи, долги, Подушку и накопления, а затем показывает понятный дневной ориентир.
         </p>
-        <div class="s018">
-          <a href="#пример" class="s019 h002 a001 f002">Посмотреть на примере ↓</a>
-          <a href="#доступ" class="s020 h003 a001 f001">Запросить пилотный доступ</a>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;">
+          <a href="#пример" style="display:inline-block; background:#0749a9; color:#fffdf7; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:15px 22px; border:2px solid #0749a9;" class="dc-state-3 dc-state-4 dc-state-5">Посмотреть на примере ↓</a>
+          <a href="#доступ" style="display:inline-block; background:transparent; color:#14120d; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:15px 22px; border:2px solid #14120d;" class="dc-state-6 dc-state-4 dc-state-1">Запросить пилотный доступ</a>
         </div>
-        <p class="s021">Сейчас приложение работает в пилотном режиме. Доступ — по запросу.</p>
+        <p style="margin:20px 0 0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.06em; color:rgba(20,18,13,0.55);">Сейчас приложение работает в пилотном режиме. Доступ — по запросу.</p>
       </div>
 
       <!-- Фрагмент расчёта: экран «Сегодня» -->
-      <div class="s022">
-        <div role="group" aria-label="Фрагмент экрана «Сегодня» из приложения МФМ" class="s023">
-          <div class="s024">
-            <span class="s025">СЕГОДНЯ</span>
-            <span class="s026">ЦИКЛ · 5 АВГ → 19 АВГ</span>
+      <div style="justify-self:end; width:min(430px, 100%); position:relative; z-index:3;">
+        <div aria-label="Фрагмент экрана «Сегодня» из приложения МФМ" style="background:#fffdf7; border:2px solid #14120d; box-shadow:12px 12px 0 #0749a9;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px 18px; border-bottom:1px solid #d9d3bc; flex-wrap:wrap;">
+            <span style="background:#14120d; color:#f6f1e3; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.14em; padding:5px 10px;">СЕГОДНЯ</span>
+            <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.1em; color:rgba(20,18,13,0.55);">ЦИКЛ · 5 АВГ → 19 АВГ</span>
           </div>
-          <div class="s027">
-            <p class="s028">МОЖНО СЕГОДНЯ</p>
-            <p class="s029">2&nbsp;000&nbsp;₽</p>
-            <p class="s030">из 28&nbsp;000&nbsp;₽, свободных до зарплаты · 14 дн</p>
+          <div style="padding:20px 18px 14px;">
+            <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">МОЖНО СЕГОДНЯ</p>
+            <p style="margin:4px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif;  line-height:1;" class="dc-type-3">2&nbsp;000&nbsp;₽</p>
+            <p style="margin:10px 0 0; font-family:'JetBrains Mono', monospace; font-size:12.5px; line-height:1.55; color:rgba(20,18,13,0.8);">из 28&nbsp;000&nbsp;₽, свободных до зарплаты · 14 дн</p>
           </div>
-          <div class="s031">
-            <div class="s032">
-              <span class="s033">ПОТРАЧЕНО СЕГОДНЯ</span><span class="s034">0&nbsp;₽</span>
+          <div style="border-top:1px solid #d9d3bc; padding:12px 18px; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono', monospace; font-size:12px;">
+              <span style="color:rgba(20,18,13,0.55); letter-spacing:0.06em;">ПОТРАЧЕНО СЕГОДНЯ</span><span style="font-weight:700;">0&nbsp;₽</span>
             </div>
-            <div class="s032">
-              <span class="s033"><span aria-hidden="true" class="s035"></span>БЛИЖАЙШИЙ ПЛАТЁЖ</span><span class="s034">аренда · 12 авг</span>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono', monospace; font-size:12px;">
+              <span style="color:rgba(20,18,13,0.55); letter-spacing:0.06em;"><span aria-hidden="true" style="display:inline-block; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid #d63031; margin-right:6px;"></span>БЛИЖАЙШИЙ ПЛАТЁЖ</span><span style="font-weight:700;">аренда · 12 авг</span>
             </div>
-            <div class="s036">
-              <div class="s037">
-                <div class="s038"></div>
-                <div class="s039"></div>
-                <div title="Сегодня" class="s040"></div>
-                <div class="s041"></div>
+            <div style="margin-top:8px;">
+              <div style="position:relative; height:20px;">
+                <div style="position:absolute; left:0; right:0; top:9px; height:2px; background:#14120d;"></div>
+                <div style="position:absolute; left:0; top:4px; width:12px; height:12px; background:#14120d; border-radius:50%;"></div>
+                <div title="Сегодня" style="position:absolute; left:4%; top:2px; width:14px; height:14px; background:#0749a9; border:2px solid #fffdf7; border-radius:50%; box-shadow:0 0 0 2px #0749a9;"></div>
+                <div style="position:absolute; right:0; top:4px; width:12px; height:12px; border:2.5px solid #14120d; border-radius:50%; background:#fffdf7; box-sizing:border-box;"></div>
               </div>
-              <div class="s042">
+              <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">
                 <span>ЗП · 5 АВГ</span><span>СЕГОДНЯ</span><span>ЗП · 19 АВГ</span>
               </div>
             </div>
           </div>
-          <div class="s043">
-            <span class="s044"><span aria-hidden="true" class="s045"></span>СЕГОДНЯ</span>
-            <span class="s046"><span aria-hidden="true" class="s047"></span>ЦИКЛ</span>
-            <span class="s046"><span aria-hidden="true" class="s048"></span>НАКОПЛЕНИЯ</span>
-            <span class="s046"><span aria-hidden="true" class="s049"></span>ДНЕВНИК</span>
-            <span class="s046"><span aria-hidden="true" class="s050"></span>НАСТРОЙКИ</span>
+          <div style="border-top:2px solid #14120d; padding:10px 14px; display:flex; justify-content:space-between; gap:6px;">
+            <span style="display:flex; flex-direction:column; align-items:center; gap:4px; font-family:'JetBrains Mono', monospace; font-size:9px; letter-spacing:0.08em;"><span aria-hidden="true" style="width:13px; height:13px; border:2.5px solid #14120d; border-radius:50%; box-sizing:border-box;"></span>СЕГОДНЯ</span>
+            <span style="display:flex; flex-direction:column; align-items:center; gap:4px; font-family:'JetBrains Mono', monospace; font-size:9px; letter-spacing:0.08em; color:rgba(20,18,13,0.45);"><span aria-hidden="true" style="width:14px; height:7px; background:rgba(20,18,13,0.45); margin-top:3px;"></span>ЦИКЛ</span>
+            <span style="display:flex; flex-direction:column; align-items:center; gap:4px; font-family:'JetBrains Mono', monospace; font-size:9px; letter-spacing:0.08em; color:rgba(20,18,13,0.45);"><span aria-hidden="true" style="width:12px; height:12px; border:2.5px solid rgba(20,18,13,0.45); box-sizing:border-box;"></span>НАКОПЛЕНИЯ</span>
+            <span style="display:flex; flex-direction:column; align-items:center; gap:4px; font-family:'JetBrains Mono', monospace; font-size:9px; letter-spacing:0.08em; color:rgba(20,18,13,0.45);"><span aria-hidden="true" style="width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-bottom:12px solid rgba(20,18,13,0.45);"></span>ДНЕВНИК</span>
+            <span style="display:flex; flex-direction:column; align-items:center; gap:4px; font-family:'JetBrains Mono', monospace; font-size:9px; letter-spacing:0.08em; color:rgba(20,18,13,0.45);"><span aria-hidden="true" style="width:15px; height:8px; border:2.5px solid rgba(20,18,13,0.45); border-bottom:0; border-radius:15px 15px 0 0; margin-top:3px; box-sizing:border-box;"></span>НАСТРОЙКИ</span>
           </div>
         </div>
-        <p class="s051">Достоверная визуализация экрана «Сегодня». Настоящие обезличенные снимки — в разделе <a href="#экраны" class="s052">«Экраны»</a>.</p>
+        <p style="margin:12px 0 0; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.05em; line-height:1.6; color:rgba(20,18,13,0.55);">Схема экрана «Сегодня» на условных данных. Обезличенные снимки приложения — в разделе <a href="#экраны" style="color:inherit;">«Экраны»</a>.</p>
       </div>
     </div>
   </div>
-  <div aria-hidden="true" class="s053"></div>
+  <div aria-hidden="true" style="height:2px; background:#14120d; margin-top:clamp(28px,4vw,56px);"></div>
 </section>
 
 <!-- ═══ 02 СИТУАЦИЯ ═══ -->
 <section data-screen-label="02 Узнаваемая ситуация" aria-labelledby="h-ситуация">
-  <div class="s054">
-    <div class="s055">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>02</span><span>СИТУАЦИЯ</span>
     </div>
-    <div class="s056">
-      <h2 id="h-ситуация" class="s057">Остаток есть. Но какая часть действительно свободна?</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:clamp(28px,4vw,56px); margin-top:20px;">
+      <h2 id="h-ситуация" style="margin:0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.08; text-wrap:balance; max-width:16ch;" class="dc-type-4">Остаток есть. Но какая часть действительно свободна?</h2>
       <div>
-        <div class="s058">
-          <span aria-hidden="true" class="s059"></span>
-          <p class="s060">Сегодня потратил чуть больше — решил, что завтра наверстаю.</p>
+        <div style="display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-top:1px solid #d9d3bc;">
+          <span aria-hidden="true" style="flex:none; width:18px; height:18px; border:3px solid #0749a9; border-radius:50%; box-sizing:border-box; margin-top:2px;"></span>
+          <p style="margin:0; font-size:17px; line-height:1.55;">Сегодня потратил чуть больше — решил, что завтра наверстаю.</p>
         </div>
-        <div class="s058">
-          <span aria-hidden="true" class="s061"></span>
-          <p class="s060">Обязательные платежи впереди, но в текущем остатке их не видно.</p>
+        <div style="display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-top:1px solid #d9d3bc;">
+          <span aria-hidden="true" style="flex:none; width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-bottom:17px solid #d63031; margin-top:2px;"></span>
+          <p style="margin:0; font-size:17px; line-height:1.55;">Обязательные платежи впереди, но в текущем остатке их не видно.</p>
         </div>
-        <div class="s062">
-          <span aria-hidden="true" class="s063"></span>
-          <p class="s060">Деньги вроде есть, а в конце цикла достаю их из накоплений.</p>
+        <div style="display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc;">
+          <span aria-hidden="true" style="flex:none; width:18px; height:18px; border:3px solid #14120d; box-sizing:border-box; margin-top:2px;"></span>
+          <p style="margin:0; font-size:17px; line-height:1.55;">Деньги вроде есть, а в конце цикла достаю их из накоплений.</p>
         </div>
-        <p class="s064">Банковский остаток на эти вопросы не отвечает. Нужен ответ на сегодня — <a href="#пример">один расчёт ниже</a> показывает, как он устроен.</p>
+        <p style="margin:24px 0 0; font-size:17px; line-height:1.6; max-width:52ch;">Банковский остаток на эти вопросы не отвечает. Нужен ответ на сегодня — <a href="#пример">один расчёт ниже</a> показывает, как он устроен.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ 03 ЧИСЛОВОЙ ПРИМЕР ═══ -->
-<section id="пример" data-screen-label="03 Числовой пример" aria-labelledby="h-пример" class="s065">
-  <div class="s054">
-    <div class="s055">
+<section id="пример" data-screen-label="03 Числовой пример" aria-labelledby="h-пример" style="background:#fffdf7; border-top:2px solid #14120d; border-bottom:2px solid #14120d;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>03</span><span>ОДИН ЦИКЛ · ОДИН РАСЧЁТ</span>
     </div>
-    <div class="s066">
-      <div class="s067">
-        <h2 id="h-пример" class="s068">Сначала защитить важное. Остаток превратить в понятный день.</h2>
-        <p class="s069">Зарплата 5 августа, следующая — 19-го. На руках 64&nbsp;000&nbsp;₽ своих денег. Что из них действительно можно тратить?</p>
-        <div class="s070">
-          <p class="s071">64&nbsp;000&nbsp;₽ не означают, что их можно свободно тратить: часть уже занята будущими платежами.</p>
-          <p class="s071">Важное защищается заранее — а не оправдывается в конце месяца.</p>
-          <p class="s072">Остаток не делится механически: после каждой реальной операции расчёт обновляется.</p>
-          <p class="s072">«Можно сегодня» — ориентир внутри текущего цикла. Не отдельный кошелёк и не обещание банка.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap:clamp(28px,4vw,64px); margin-top:20px; align-items:start;">
+      <div style="max-width:54ch;">
+        <h2 id="h-пример" style="margin:0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.08; text-wrap:balance;" class="dc-type-4">Сначала защитить важное. Остаток превратить в понятный день.</h2>
+        <p style="margin:22px 0 0; font-size:17px; line-height:1.6;">Зарплата 5 августа, следующая — 19-го. На руках 64&nbsp;000&nbsp;₽ своих денег. Что из них действительно можно тратить?</p>
+        <div style="margin-top:26px; display:flex; flex-direction:column; gap:14px;">
+          <p style="margin:0; padding-left:16px; border-left:3px solid #d63031; font-size:16px; line-height:1.55;">64&nbsp;000&nbsp;₽ не означают, что их можно свободно тратить: часть уже занята будущими платежами.</p>
+          <p style="margin:0; padding-left:16px; border-left:3px solid #d63031; font-size:16px; line-height:1.55;">Важное защищается заранее — а не оправдывается в конце месяца.</p>
+          <p style="margin:0; padding-left:16px; border-left:3px solid #0749a9; font-size:16px; line-height:1.55;">Остаток не делится механически: после каждой реальной операции расчёт обновляется.</p>
+          <p style="margin:0; padding-left:16px; border-left:3px solid #0749a9; font-size:16px; line-height:1.55;">«Можно сегодня» — ориентир внутри текущего цикла. Не отдельный кошелёк и не обещание банка.</p>
         </div>
       </div>
 
-      <div role="group" aria-label="Числовой пример расчёта" class="s073">
-        <div class="s074">ПРИМЕР · ЦИКЛ 5 АВГ → 19 АВГ · 14 ДНЕЙ</div>
-        <div class="s075">
+      <div aria-label="Числовой пример расчёта" style="border:2px solid #14120d; background:#fffdf7;">
+        <div style="padding:12px 18px; border-bottom:2px solid #14120d; font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.12em; color:rgba(20,18,13,0.8);">ПРИМЕР · ЦИКЛ 5 АВГ → 19 АВГ · 14 ДНЕЙ</div>
+        <div style="padding:18px; display:flex; flex-direction:column; gap:14px;">
           <div>
-            <div class="s076"><span>Свои деньги сейчас</span><strong class="s077">64&nbsp;000&nbsp;₽</strong></div>
-            <div class="s078"></div>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13px;"><span>Свои деньги сейчас</span><strong style="white-space:nowrap;">64&nbsp;000&nbsp;₽</strong></div>
+            <div style="margin-top:6px; height:12px; background:#ece7d2; border:1px solid #d9d3bc;"></div>
           </div>
           <div>
-            <div class="s079"><span>− Обязательные платежи до зарплаты</span><strong class="s077">24&nbsp;000&nbsp;₽</strong></div>
-            <div class="s080"></div>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13px; color:#d63031;"><span>− Обязательные платежи до зарплаты</span><strong style="white-space:nowrap;">24&nbsp;000&nbsp;₽</strong></div>
+            <div style="margin-top:6px; height:12px; width:37.5%; background:#d63031;"></div>
           </div>
           <div>
-            <div class="s079"><span>− Подушка</span><strong class="s077">5&nbsp;000&nbsp;₽</strong></div>
-            <div class="s081"></div>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13px; color:#d63031;"><span>− Подушка</span><strong style="white-space:nowrap;">5&nbsp;000&nbsp;₽</strong></div>
+            <div style="margin-top:6px; height:12px; width:7.8%; min-width:24px; background:#f6dada; border:1px solid #d63031; box-sizing:border-box;"></div>
           </div>
           <div>
-            <div class="s079"><span>− План накоплений</span><strong class="s077">7&nbsp;000&nbsp;₽</strong></div>
-            <div class="s082"></div>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13px; color:#d63031;"><span>− План накоплений</span><strong style="white-space:nowrap;">7&nbsp;000&nbsp;₽</strong></div>
+            <div style="margin-top:6px; height:12px; width:10.9%; min-width:32px; background:#f6dada; border:1px solid #d63031; box-sizing:border-box;"></div>
           </div>
-          <div class="s083">
-            <div class="s084"><span>= Свободно на 14 дней</span><strong class="s077">28&nbsp;000&nbsp;₽</strong></div>
-            <div class="s085"></div>
+          <div style="border-top:1px solid #d9d3bc; padding-top:14px;">
+            <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13px; color:#0749a9;"><span>= Свободно на 14 дней</span><strong style="white-space:nowrap;">28&nbsp;000&nbsp;₽</strong></div>
+            <div style="margin-top:6px; height:12px; width:43.8%; background:#0749a9;"></div>
           </div>
         </div>
-        <div class="s086">
-          <div class="s087">
-            <span class="s088">МОЖНО СЕГОДНЯ</span>
-            <span class="s089">28&nbsp;000 ÷ 14 дней</span>
+        <div style="background:#0749a9; color:#fffdf7; padding:18px; background-image:radial-gradient(rgba(255,253,247,0.16) 1px, transparent 1.4px); background-size:9px 9px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em;">МОЖНО СЕГОДНЯ</span>
+            <span style="font-family:'JetBrains Mono', monospace; font-size:11.5px; opacity:0.85;">28&nbsp;000 ÷ 14 дней</span>
           </div>
-          <p class="s090">2&nbsp;000&nbsp;₽</p>
+          <p style="margin:6px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif;  line-height:1;" class="dc-type-5">2&nbsp;000&nbsp;₽</p>
         </div>
-        <div class="s091">
-          <div class="s092">
-            <span aria-hidden="true" class="s093"></span>
+        <div style="padding:14px 18px; border-top:2px solid #14120d; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono', monospace; font-size:12.5px; flex-wrap:wrap;">
+            <span aria-hidden="true" style="width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-bottom:12px solid #14120d;"></span>
             <span>Потратил 600&nbsp;₽ — кофе и обед</span>
             <span aria-hidden="true">→</span>
-            <strong class="s094">можно сегодня: 1&nbsp;400&nbsp;₽</strong>
+            <strong style="color:#0749a9; white-space:nowrap;">можно сегодня: 1&nbsp;400&nbsp;₽</strong>
           </div>
-          <p class="s095">Ориентир пересчитывается после каждой записанной операции.</p>
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.05em; color:rgba(20,18,13,0.55);">Ориентир пересчитывается после каждой записанной операции.</p>
         </div>
       </div>
     </div>
+    <p style="margin:28px 0 0; text-align:right;"><a href="#верх" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-7 dc-state-1">↑ К содержанию</a></p>
   </div>
 </section>
 
 <!-- ═══ 04 ОТЛИЧИЕ ═══ -->
 <section data-screen-label="04 Чем ответ отличается" aria-labelledby="h-отличие">
-  <div class="s054">
-    <div class="s055">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>04</span><span>ОТЛИЧИЕ</span>
     </div>
-    <h2 id="h-отличие" class="s096">Привычные способы отвечают на другие вопросы</h2>
-    <div class="s097">
-      <div class="s098">
-        <p class="s099">БАНКОВСКИЙ ОСТАТОК</p>
-        <p class="s100">показывает, сколько денег лежит сейчас.</p>
+    <h2 id="h-отличие" style="margin:20px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.1; text-wrap:balance; max-width:24ch;" class="dc-type-6">Привычные способы отвечают на другие вопросы</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap:20px; margin-top:36px;">
+      <div style="border-top:3px solid #14120d; padding-top:14px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.12em; color:rgba(20,18,13,0.55);">БАНКОВСКИЙ ОСТАТОК</p>
+        <p style="margin:8px 0 0; font-size:16.5px; line-height:1.5;">показывает, сколько денег лежит сейчас.</p>
       </div>
-      <div class="s098">
-        <p class="s099">СПИСОК ТРАТ</p>
-        <p class="s100">показывает, куда деньги уже ушли.</p>
+      <div style="border-top:3px solid #14120d; padding-top:14px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.12em; color:rgba(20,18,13,0.55);">СПИСОК ТРАТ</p>
+        <p style="margin:8px 0 0; font-size:16.5px; line-height:1.5;">показывает, куда деньги уже ушли.</p>
       </div>
-      <div class="s098">
-        <p class="s099">ТАБЛИЦА БЮДЖЕТА</p>
-        <p class="s100">требует держать будущие платежи в голове.</p>
+      <div style="border-top:3px solid #14120d; padding-top:14px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.12em; color:rgba(20,18,13,0.55);">ТАБЛИЦА БЮДЖЕТА</p>
+        <p style="margin:8px 0 0; font-size:16.5px; line-height:1.5;">требует держать будущие платежи в голове.</p>
       </div>
-      <div class="s101">
-        <p class="s102">МФМ</p>
-        <p class="s100">отвечает, сколько можно потратить сегодня — после защиты уже известных обязательств.</p>
+      <div style="border-top:3px solid #0749a9; padding-top:14px; background:#dce7f5; margin-top:-14px; padding:14px 16px 16px; border:0; border-top:3px solid #0749a9;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#0749a9;">МФМ</p>
+        <p style="margin:8px 0 0; font-size:16.5px; line-height:1.5;">отвечает, сколько можно потратить сегодня — после защиты уже известных обязательств.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ 05 МАРШРУТ ПО ПРИЛОЖЕНИЮ ═══ -->
-<section id="приложение" data-screen-label="05 Пять разделов" aria-labelledby="h-маршрут" class="s103">
-  <div class="s054">
-    <div class="s055">
+<section id="приложение" data-screen-label="05 Пять разделов" aria-labelledby="h-маршрут" style="border-top:2px solid #14120d;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>05</span><span>МАРШРУТ</span>
     </div>
-    <h2 id="h-маршрут" class="s104">Пять разделов — один связный денежный цикл</h2>
-    <p class="s105">Дневной ответ поддержан полноценным приложением. Каждый раздел отвечает на свой вопрос внутри одного и того же цикла.</p>
-    <div class="s106">
-      <div class="s107">
-        <span aria-hidden="true" class="s108"><span class="s109"></span></span>
-        <p class="s110">01 · СЕГОДНЯ</p>
-        <p class="s111">Ответ на день и ближайший обязательный платёж.</p>
+    <h2 id="h-маршрут" style="margin:20px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.1; text-wrap:balance; max-width:26ch;" class="dc-type-6">Пять разделов — вход в документацию</h2>
+    <p style="margin:18px 0 0; font-size:17px; line-height:1.6; max-width:60ch;">Дневной ответ поддержан полноценным приложением. У каждого раздела есть своя страница: карта экрана, формулы, полный пример, состояния и частые вопросы.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap:0 0; margin-top:40px;">
+      <a href="docs/today.html" style="display:flex; flex-direction:column; align-items:flex-start; border-top:2px solid #14120d; padding:0 18px 16px 0; color:inherit; text-decoration:none;" class="dc-state-8 dc-state-9">
+        <span aria-hidden="true" style="display:inline-flex; align-items:center; justify-content:center; height:30px; margin-top:-16px; background:#f6f1e3; padding-right:10px;"><span style="width:20px; height:20px; border:3.5px solid #0749a9; border-radius:50%; box-sizing:border-box;"></span></span>
+        <p style="margin:6px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; letter-spacing:0.12em;">01 · СЕГОДНЯ</p>
+        <p style="margin:8px 0 0; font-size:15.5px; line-height:1.5; color:rgba(20,18,13,0.8);">Ответ на день и ближайший обязательный платёж.</p>
+        <span style="margin-top:auto; padding-top:12px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0749a9;">Открыть страницу →</span>
+      </a>
+      <div style="border-top:2px solid #14120d; padding:0 18px 16px 0; display:flex; flex-direction:column; align-items:flex-start;">
+        <a href="docs/cycle.html" style="display:flex; flex-direction:column; align-items:flex-start; color:inherit; text-decoration:none;" class="dc-state-8 dc-state-9">
+          <span aria-hidden="true" style="display:inline-flex; align-items:center; justify-content:center; height:30px; margin-top:-16px; background:#f6f1e3; padding-right:10px;"><span style="width:22px; height:10px; background:#14120d;"></span></span>
+          <p style="margin:6px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; letter-spacing:0.12em;">02 · ЦИКЛ</p>
+          <p style="margin:8px 0 0; font-size:15.5px; line-height:1.5; color:rgba(20,18,13,0.8);">Путь от зарплаты до зарплаты: что оплачено, что впереди.</p>
+          <span style="padding-top:12px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0749a9;">Открыть страницу →</span>
+        </a>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;">
+          <a href="docs/payments.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #14120d; padding:6px 9px;" class="dc-state-6 dc-state-1">ПЛАТЕЖИ</a>
+          <a href="docs/debts.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #14120d; padding:6px 9px;" class="dc-state-6 dc-state-1">ДОЛГИ</a>
+          <a href="docs/work-money.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #14120d; background:#fde7bb; padding:6px 9px;" class="dc-state-6 dc-state-1">РАБОЧИЕ ДЕНЬГИ</a>
+        </div>
       </div>
-      <div class="s107">
-        <span aria-hidden="true" class="s108"><span class="s112"></span></span>
-        <p class="s110">02 · ЦИКЛ</p>
-        <p class="s111">Платежи и долги до следующей выплаты — ничего не прячется в остатке.</p>
-      </div>
-      <div class="s107">
-        <span aria-hidden="true" class="s108"><span class="s113"></span></span>
-        <p class="s110">03 · НАКОПЛЕНИЯ</p>
-        <p class="s111">Фактический запас, цели и реальный темп — а не только желание.</p>
-      </div>
-      <div class="s107">
-        <span aria-hidden="true" class="s108"><span class="s114"></span></span>
-        <p class="s110">04 · ДНЕВНИК</p>
-        <p class="s111">Объяснимый след операций: видно, откуда взялась каждая цифра.</p>
-      </div>
-      <div class="s115">
-        <span aria-hidden="true" class="s108"><span class="s116"></span></span>
-        <p class="s110">05 · НАСТРОЙКИ</p>
-        <p class="s111">Даты выплат, Подушка и правила конкретного человека.</p>
-      </div>
+      <a href="docs/savings.html" style="display:flex; flex-direction:column; align-items:flex-start; border-top:2px solid #14120d; padding:0 18px 16px 0; color:inherit; text-decoration:none;" class="dc-state-8 dc-state-9">
+        <span aria-hidden="true" style="display:inline-flex; align-items:center; justify-content:center; height:30px; margin-top:-16px; background:#f6f1e3; padding-right:10px;"><span style="width:19px; height:19px; border:3.5px solid #14120d; box-sizing:border-box;"></span></span>
+        <p style="margin:6px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; letter-spacing:0.12em;">03 · НАКОПЛЕНИЯ</p>
+        <p style="margin:8px 0 0; font-size:15.5px; line-height:1.5; color:rgba(20,18,13,0.8);">Фактический запас, цели и реальный темп — а не только желание.</p>
+        <span style="margin-top:auto; padding-top:12px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0749a9;">Открыть страницу →</span>
+      </a>
+      <a href="docs/history.html" style="display:flex; flex-direction:column; align-items:flex-start; border-top:2px solid #14120d; padding:0 18px 16px 0; color:inherit; text-decoration:none;" class="dc-state-8 dc-state-9">
+        <span aria-hidden="true" style="display:inline-flex; align-items:center; justify-content:center; height:30px; margin-top:-16px; background:#f6f1e3; padding-right:10px;"><span style="width:0; height:0; border-left:11px solid transparent; border-right:11px solid transparent; border-bottom:19px solid #14120d;"></span></span>
+        <p style="margin:6px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; letter-spacing:0.12em;">04 · ДНЕВНИК</p>
+        <p style="margin:8px 0 0; font-size:15.5px; line-height:1.5; color:rgba(20,18,13,0.8);">Объяснимый след операций: видно, откуда взялась каждая цифра.</p>
+        <span style="margin-top:auto; padding-top:12px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0749a9;">Открыть страницу →</span>
+      </a>
+      <a href="docs/settings.html" style="display:flex; flex-direction:column; align-items:flex-start; border-top:2px solid #14120d; padding:0 0 16px 0; color:inherit; text-decoration:none;" class="dc-state-8 dc-state-9">
+        <span aria-hidden="true" style="display:inline-flex; align-items:center; justify-content:center; height:30px; margin-top:-16px; background:#f6f1e3; padding-right:10px;"><span style="width:22px; height:11px; border:3.5px solid #14120d; border-bottom:0; border-radius:22px 22px 0 0; box-sizing:border-box; margin-top:8px;"></span></span>
+        <p style="margin:6px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; letter-spacing:0.12em;">05 · НАСТРОЙКИ</p>
+        <p style="margin:8px 0 0; font-size:15.5px; line-height:1.5; color:rgba(20,18,13,0.8);">Даты выплат, Подушка и правила конкретного человека.</p>
+        <span style="margin-top:auto; padding-top:12px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0749a9;">Открыть страницу →</span>
+      </a>
     </div>
-    <p class="s117">Внизу приложения всегда пять разделов. Рабочие деньги не становятся шестой вкладкой — в расширенном режиме они живут внутри «Цикла».</p>
+    <p style="margin:32px 0 0; font-family:'JetBrains Mono', monospace; font-size:12.5px; line-height:1.7; letter-spacing:0.03em; color:rgba(20,18,13,0.8); max-width:74ch;">Внизу приложения всегда пять разделов. Рабочие деньги не становятся шестой вкладкой — в расширенном режиме они живут внутри «Цикла».</p>
+    <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:26px;">
+      <a href="docs/glossary.html" style="display:inline-block; background:transparent; color:#14120d; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:700; letter-spacing:0.08em; padding:12px 16px; border:2px solid #14120d;" class="dc-state-6 dc-state-4 dc-state-1">Словарь и формулы →</a>
+      <a href="access.html" style="display:inline-block; background:transparent; color:#14120d; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:700; letter-spacing:0.08em; padding:12px 16px; border:2px solid #14120d;" class="dc-state-6 dc-state-4 dc-state-1">Режимы и доступ →</a>
+    </div>
+    <p style="margin:28px 0 0; text-align:right;"><a href="#верх" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-7 dc-state-1">↑ К содержанию</a></p>
   </div>
 </section>
 
 <!-- ═══ 06 ДВА РЕЖИМА ═══ -->
-<section id="режимы" data-screen-label="06 Два режима" aria-labelledby="h-режимы" class="s118">
-  <div class="s054">
-    <div class="s055">
+<section id="режимы" data-screen-label="06 Два режима" aria-labelledby="h-режимы" style="background:#fde7bb; border-top:2px solid #14120d;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>06</span><span>ДВА РЕЖИМА</span>
     </div>
-    <h2 id="h-режимы" class="s119">Одно приложение. Рабочие деньги — только тем, кому они нужны.</h2>
+    <h2 id="h-режимы" style="margin:20px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.08; text-wrap:balance; max-width:22ch;" class="dc-type-4">Одно приложение. Рабочие деньги — только тем, кому они нужны.</h2>
 
-    <div role="group" aria-label="Всего на руках: свои и рабочие деньги" class="s120">
-      <div class="s121">
-        <span class="s122">ВСЕГО НА РУКАХ</span><strong class="s077">84&nbsp;000&nbsp;₽</strong>
+    <div aria-label="Всего на руках: свои и рабочие деньги" style="margin-top:40px; background:#fffdf7; border:2px solid #14120d; padding:18px;">
+      <div style="display:flex; justify-content:space-between; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13px; flex-wrap:wrap;">
+        <span style="letter-spacing:0.1em;">ВСЕГО НА РУКАХ</span><strong style="white-space:nowrap;">84&nbsp;000&nbsp;₽</strong>
       </div>
-      <div class="s123">
-        <div class="s124">
-          <span class="s125">СВОИ · 64&nbsp;000&nbsp;₽</span>
+      <div style="display:flex; margin-top:10px; height:44px; border:2px solid #14120d; box-sizing:border-box;">
+        <div style="width:76.2%; background:#0749a9; display:flex; align-items:center; padding:0 12px; min-width:0;">
+          <span style="font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.08em; color:#fffdf7; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">СВОИ · 64&nbsp;000&nbsp;₽</span>
         </div>
-        <div class="s126">
-          <span class="s127"><span class="s127-full">РАБОЧИЕ · </span>20&nbsp;000&nbsp;₽</span>
+        <div style="width:23.8%; background:#fbbd5b; border-left:2px solid #14120d; display:flex; align-items:center; padding:0 10px; min-width:0;">
+          <span style="font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.06em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">РАБОЧИЕ · 20&nbsp;000&nbsp;₽</span>
         </div>
       </div>
-      <div class="s128">
-        <span class="s129">участвуют в личном расчёте</span>
-        <span class="s130">видны, но не входят в «Можно сегодня»</span>
+      <div style="display:flex; justify-content:space-between; gap:12px; margin-top:10px; flex-wrap:wrap;">
+        <span style="font-family:'JetBrains Mono', monospace; font-size:11.5px; color:#0749a9; letter-spacing:0.04em;">участвуют в личном расчёте</span>
+        <span style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.04em;">видны, но не входят в «Можно сегодня»</span>
       </div>
     </div>
-    <p class="s131">Рабочие 20&nbsp;000&nbsp;₽ видны, потому что они физически находятся у человека. Но они не участвуют в личном «Можно сегодня».</p>
+    <p style="margin:18px 0 0; font-size:17px; line-height:1.6; max-width:64ch;">Рабочие 20&nbsp;000&nbsp;₽ видны, потому что они физически находятся у человека. Но они не участвуют в личном «Можно сегодня».</p>
 
-    <div class="s132">
-      <div class="s133">
-        <div class="s134"></div>
-        <div class="s135">
-          <p class="s136">РЕЖИМ 1</p>
-          <p class="s137">Личные деньги</p>
-          <p class="s138">Полное ядро: цикл и «Можно сегодня», обязательные платежи, долги, Подушка, накопления, утренняя и вечерняя сверка, дневник операций.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:24px; margin-top:36px;">
+      <div style="background:#fffdf7; border:2px solid #14120d;">
+        <div style="height:6px; background:#0749a9;"></div>
+        <div style="padding:20px;">
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">РЕЖИМ 1</p>
+          <p style="margin:8px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:24px; line-height:1.15;">Личные деньги</p>
+          <p style="margin:12px 0 0; font-size:15.5px; line-height:1.55; color:rgba(20,18,13,0.8);">Полное ядро: цикл и «Можно сегодня», обязательные платежи, долги, Подушка, накопления, утренняя и вечерняя сверка, дневник операций.</p>
         </div>
       </div>
-      <div class="s133">
-        <div class="s139"><div class="s140"></div><div class="s141"></div></div>
-        <div class="s135">
-          <p class="s136">РЕЖИМ 2</p>
-          <p class="s137">Личные + рабочие деньги</p>
-          <p class="s138">То же ядро — плюс слой рабочих денег: выдачи, траты по рабочим задачам, возвраты и компенсации. Личный расчёт остаётся личным.</p>
+      <div style="background:#fffdf7; border:2px solid #14120d;">
+        <div style="display:flex; height:6px;"><div style="width:70%; background:#0749a9;"></div><div style="width:30%; background:#fbbd5b;"></div></div>
+        <div style="padding:20px;">
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">РЕЖИМ 2</p>
+          <p style="margin:8px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:24px; line-height:1.15;">Личные + рабочие деньги</p>
+          <p style="margin:12px 0 0; font-size:15.5px; line-height:1.55; color:rgba(20,18,13,0.8);">То же ядро — плюс слой рабочих денег: выдачи, траты по рабочим задачам, возвраты и компенсации. Личный расчёт остаётся личным.</p>
         </div>
       </div>
     </div>
@@ -316,197 +397,217 @@
 </section>
 
 <!-- ═══ 07 ПОЧЕМУ РАБОЧИЕ ДЕНЬГИ РЯДОМ ═══ -->
-<section data-screen-label="07 Рабочие деньги рядом" aria-labelledby="h-подотчет" class="s142">
-  <div class="s143">
-    <div class="s144">
-      <div class="s055">
+<section data-screen-label="07 Рабочие деньги рядом" aria-labelledby="h-подотчет" style="background:#fde7bb;">
+  <div style="max-width:1264px; margin:0 auto; padding:0 clamp(20px,4vw,48px) clamp(48px,7vw,96px); box-sizing:border-box;">
+    <div style="border-top:1px solid rgba(20,18,13,0.25); padding-top:clamp(36px,5vw,64px);">
+      <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
         <span>07</span><span>ЗАЧЕМ ЭТО В ОДНОМ ПРИЛОЖЕНИИ</span>
       </div>
-      <div class="s145">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:clamp(28px,4vw,56px); margin-top:20px; align-items:start;">
         <div>
-          <h2 id="h-подотчет" class="s146">На руках вместе. В личном бюджете отдельно.</h2>
-          <p class="s147">Рабочий аванс и свои деньги часто лежат на одной карте или в одной наличной сумме. Рабочие деньги — это деньги, выданные человеку для рабочих расходов; внутри компаний их обычно называют подотчётными.</p>
-          <p class="s148">МФМ сохраняет обе правды: сколько всего денег на руках — и какая часть из них действительно ваша.</p>
+          <h2 id="h-подотчет" style="margin:0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.1; text-wrap:balance; max-width:18ch;" class="dc-type-7">На руках вместе. В личном бюджете отдельно.</h2>
+          <p style="margin:18px 0 0; font-size:17px; line-height:1.6; max-width:54ch;">Рабочий аванс и свои деньги часто лежат на одной карте или в одной наличной сумме. Рабочие деньги — это деньги, выданные человеку для рабочих расходов; внутри компаний их обычно называют подотчётными.</p>
+          <p style="margin:14px 0 0; font-size:17px; line-height:1.6; max-width:54ch;">МФМ сохраняет обе правды: сколько всего денег на руках — и какая часть из них действительно ваша.</p>
         </div>
-        <div class="s133">
-          <div class="s074">ОДИН СЦЕНАРИЙ · СМЕШАННАЯ ОПЛАТА</div>
-          <div class="s149">
-            <div class="s150">
-              <span aria-hidden="true" class="s151"></span>
-              <p class="s152">Купил материалы для рабочей задачи — <strong class="s077">3&nbsp;000&nbsp;₽</strong> со своей карты.</p>
+        <div style="background:#fffdf7; border:2px solid #14120d;">
+          <div style="padding:12px 18px; border-bottom:2px solid #14120d; font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.12em; color:rgba(20,18,13,0.8);">ОДИН СЦЕНАРИЙ · СМЕШАННАЯ ОПЛАТА</div>
+          <div style="padding:18px; display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span aria-hidden="true" style="flex:none; width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent; border-bottom:14px solid #14120d; margin-top:3px;"></span>
+              <p style="margin:0; font-size:16px; line-height:1.55;">Купил материалы для рабочей задачи — <strong style="white-space:nowrap;">3&nbsp;000&nbsp;₽</strong> со своей карты.</p>
             </div>
-            <div class="s153">
-              <span class="s154">К КОМПЕНСАЦИИ</span>
-              <strong class="s155">+&nbsp;3&nbsp;000&nbsp;₽</strong>
+            <div style="border:1px solid #d9d3bc; padding:12px 14px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.1em;">К КОМПЕНСАЦИИ</span>
+              <strong style="font-family:'JetBrains Mono', monospace; font-size:13px; white-space:nowrap;">+&nbsp;3&nbsp;000&nbsp;₽</strong>
             </div>
-            <p class="s156">Свои деньги, потраченные на рабочую задачу, помечены и ожидают возврата. Личный план не пострадал — приложение помнит, что эти траты не ваши.</p>
-            <p class="s157">Обратная ситуация — взял из рабочих денег на личное — становится строкой <strong>«Должен вернуть»</strong> и виден как личный долг.</p>
+            <p style="margin:0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Свои деньги, потраченные на рабочую задачу, помечены и ожидают возврата. Личный план не пострадал — приложение помнит, что эти траты не ваши.</p>
+            <p style="margin:0; padding-top:12px; border-top:1px solid #d9d3bc; font-size:14px; line-height:1.6; color:rgba(20,18,13,0.8);">Обратная ситуация — взял из рабочих денег на личное — становится строкой <strong>«Должен вернуть»</strong> и виден как личный долг. Подробный разбор — на странице <a href="docs/work-money.html">«Рабочие деньги»</a>.</p>
           </div>
         </div>
       </div>
+      <p style="margin:28px 0 0; text-align:right;"><a href="#верх" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-7 dc-state-1">↑ К содержанию</a></p>
     </div>
   </div>
 </section>
 
 <!-- ═══ 08 НАСТОЯЩИЕ ЭКРАНЫ + ГРАНИЦЫ ═══ -->
-<section id="экраны" data-screen-label="08 Настоящие экраны" aria-labelledby="h-экраны" class="s103">
-  <div class="s054">
-    <div class="s055">
+<section id="экраны" data-screen-label="08 Настоящие экраны" aria-labelledby="h-экраны" style="border-top:2px solid #14120d;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>08</span><span>НАСТОЯЩИЕ ЭКРАНЫ</span>
     </div>
-    <h2 id="h-экраны" class="s096">Один и тот же «Цикл» — в двух режимах</h2>
-    <p class="s158">Обезличенные снимки пилотной версии · ширина 390 px · синтетические данные</p>
-    <div class="s159">
-      <figure class="s160">
-        <div class="s161">
-          <img src="assets/app/mfm-personal-390.png" alt="Экран «Цикл» в личном режиме: вкладки «Платежи» и «Долги», свободно до зарплаты и лента цикла" loading="lazy" class="s162">
-        </div>
-        <figcaption class="s163">
-          <span class="s164">ЛИЧНЫЕ</span>
-          <span class="s165">Здесь человек видит платежи и долги своего цикла — только личные деньги.</span>
+    <h2 id="h-экраны" style="margin:20px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.1; text-wrap:balance; max-width:24ch;" class="dc-type-6">Один и тот же «Цикл» — в двух режимах</h2>
+    <p style="margin:16px 0 0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.06em; color:rgba(20,18,13,0.55);">Обезличенные снимки пилотной версии · ширина 390 px · синтетические данные</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:clamp(24px,3vw,40px); margin-top:36px; align-items:start;">
+      <figure style="margin:0;">
+        <a href="docs/cycle.html" aria-label="Открыть разбор экрана «Цикл»" style="display:block; border:2px solid #14120d; background:#fffdf7; padding:10px; text-decoration:none;" class="dc-state-10 dc-state-9">
+          <img src="assets/app/mfm-personal-390.png" alt="Экран «Цикл» в личном режиме: вкладки «Платежи» и «Долги», свободно до зарплаты и лента цикла" style="display:block; width:100%; height:auto; border:1px solid #d9d3bc; box-sizing:border-box;" loading="lazy">
+        </a>
+        <figcaption style="margin-top:12px; display:flex; gap:10px; align-items:baseline;">
+          <span style="flex:none; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; color:#0749a9;">ЛИЧНЫЕ</span>
+          <span style="font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">Здесь человек видит платежи и долги своего цикла — только личные деньги. <a href="docs/cycle.html">Разбор экрана →</a></span>
         </figcaption>
       </figure>
-      <figure class="s160">
-        <div class="s161">
-          <img src="assets/app/mfm-corporate-390.png" alt="Экран «Цикл» в режиме с рабочими деньгами: добавлена вкладка «Подотчёт» с рабочим кейсом" loading="lazy" class="s162">
-        </div>
-        <figcaption class="s163">
-          <span class="s166">+ РАБОЧИЕ</span>
-          <span class="s165">Тот же «Цикл», но появляется вкладка «Подотчёт»: кейсы, выдачи, возвраты.</span>
+      <figure style="margin:0;">
+        <a href="docs/work-money.html" aria-label="Открыть разбор рабочих денег" style="display:block; border:2px solid #14120d; background:#fffdf7; padding:10px; text-decoration:none;" class="dc-state-10 dc-state-9">
+          <img src="assets/app/mfm-corporate-390.png" alt="Экран «Цикл» в режиме с рабочими деньгами: добавлена вкладка «Подотчёт» с рабочим кейсом" style="display:block; width:100%; height:auto; border:1px solid #d9d3bc; box-sizing:border-box;" loading="lazy">
+        </a>
+        <figcaption style="margin-top:12px; display:flex; gap:10px; align-items:baseline;">
+          <span style="flex:none; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; background:#fbbd5b; padding:2px 6px;">+ РАБОЧИЕ</span>
+          <span style="font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">Тот же «Цикл», но появляется вкладка «Подотчёт»: кейсы, выдачи, возвраты. <a href="docs/work-money.html">Разбор экрана →</a></span>
         </figcaption>
       </figure>
-      <div id="доверие" data-screen-label="08a Честные границы" class="s167">
-        <p class="s136">ЧЕСТНЫЕ ГРАНИЦЫ</p>
-        <p class="s168">Что можно попробовать сейчас — и чего продукт не обещает:</p>
-        <div class="s169">
-          <p class="s170">Приложение работает в пилотном режиме; доступ выдаётся вручную по запросу.</p>
-          <p class="s170">Учётки пилота изолированы: никто не видит чужие данные.</p>
-          <p class="s170">Публичный репозиторий содержит витрину — не код приложения и не финансовые данные.</p>
-          <p class="s170">МФМ — не банковское приложение и не бухгалтерия.</p>
-          <p class="s170">Здесь описано только подтверждённое. Планы помечены словом «проектируется».</p>
+      <div id="доверие" data-screen-label="08a Честные границы" style="border:2px solid #14120d; background:#fffdf7; padding:20px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">ЧЕСТНЫЕ ГРАНИЦЫ</p>
+        <p style="margin:12px 0 0; font-size:15.5px; line-height:1.55;">Что можно попробовать сейчас — и чего продукт не обещает:</p>
+        <div style="margin-top:14px; display:flex; flex-direction:column;">
+          <p style="margin:0; padding:10px 0; border-top:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">Приложение работает в пилотном режиме; доступ выдаётся вручную по запросу.</p>
+          <p style="margin:0; padding:10px 0; border-top:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">Учётки пилота изолированы: никто не видит чужие данные.</p>
+          <p style="margin:0; padding:10px 0; border-top:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">Публичный репозиторий содержит витрину — не код приложения и не финансовые данные.</p>
+          <p style="margin:0; padding:10px 0; border-top:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">МФМ — не банковское приложение и не бухгалтерия.</p>
+          <p style="margin:0; padding:10px 0; border-top:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">Здесь описано только подтверждённое. Планы помечены словом «проектируется».</p>
         </div>
       </div>
     </div>
+    <p style="margin:28px 0 0; text-align:right;"><a href="#верх" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-7 dc-state-1">↑ К содержанию</a></p>
   </div>
 </section>
 
 <!-- ═══ 09 ИСТОРИЯ ═══ -->
-<section id="история" data-screen-label="09 История автора" aria-labelledby="h-история" class="s171">
-  <div class="s054">
-    <div class="s055">
+<section id="история" data-screen-label="09 История автора" aria-labelledby="h-история" style="border-top:1px solid #d9d3bc;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>09</span><span>ОТКУДА ВЗЯЛСЯ МФМ</span>
     </div>
-    <div class="s056">
-      <div class="s172">
-        <p class="s173">Я начинал с обычной задачи: регулярно откладывать деньги и не забирать их обратно. Цель поставить легко. Труднее каждый день понимать, сколько действительно можно потратить.</p>
-        <p class="s174">Мысль «сегодня чуть больше, завтра наверстаю» раз за разом ломала план. Отчёты о прошлом не помогали — нужен был ответ на сегодня.</p>
-        <p class="s174">Позже добавился слой рабочих денег: авансы и личные деньги часто лежали вместе, и их нужно было видеть рядом, не смешивая.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:clamp(28px,4vw,56px); margin-top:20px;">
+      <div style="max-width:58ch;">
+        <p style="margin:0; font-size:17px; line-height:1.65;">Я начинал с обычной задачи: регулярно откладывать деньги и не забирать их обратно. Цель поставить легко. Труднее каждый день понимать, сколько действительно можно потратить.</p>
+        <p style="margin:16px 0 0; font-size:17px; line-height:1.65;">Мысль «сегодня чуть больше, завтра наверстаю» раз за разом ломала план. Отчёты о прошлом не помогали — нужен был ответ на сегодня.</p>
+        <p style="margin:16px 0 0; font-size:17px; line-height:1.65;">Позже добавился слой рабочих денег: авансы и личные деньги часто лежали вместе, и их нужно было видеть рядом, не смешивая.</p>
       </div>
-      <blockquote class="s175">
-        <p class="s176">«Мне нужен был не ещё один список трат. Нужен был ответ перед глазами: сколько можно сегодня, чтобы до зарплаты всё сошлось.»</p>
-        <footer class="s177">АВТОР МФМ</footer>
+      <blockquote style="margin:0; align-self:center; border-top:2px solid #14120d; border-bottom:2px solid #14120d; padding:24px 0;">
+        <p style="margin:0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.35; text-wrap:pretty;" class="dc-type-8">«Мне нужен был не ещё один список трат. Нужен был ответ перед глазами: сколько можно сегодня, чтобы до зарплаты всё сошлось.»</p>
+        <footer style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.1em; color:rgba(20,18,13,0.55);">АВТОР МФМ</footer>
       </blockquote>
     </div>
   </div>
 </section>
 
 <!-- ═══ 10 БУДУЩЕЕ ═══ -->
-<section id="будущее" data-screen-label="10 Будущее направление" aria-labelledby="h-будущее" class="s171">
-  <div class="s054">
-    <div class="s055">
+<section id="будущее" data-screen-label="10 Будущее направление" aria-labelledby="h-будущее" style="border-top:1px solid #d9d3bc;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);">
       <span>10</span><span>НАПРАВЛЕНИЕ РАЗВИТИЯ</span>
     </div>
-    <p class="s178"><span class="s179"><span aria-hidden="true" class="s180"></span>ПРОЕКТИРУЕТСЯ · ЕЩЁ НЕ РАБОЧАЯ ФУНКЦИЯ</span></p>
-    <h2 id="h-будущее" class="s181">Дальше: общая сетка рабочих бюджетов</h2>
-    <p class="s131">Идея для компаний, где несколько сотрудников ведут рабочие бюджеты: каждый сохраняет привычный личный интерфейс, а финансовый блок видит общую картину без ручного сбора отчётов.</p>
-    <div class="s182">
-      <div class="s183">
-        <p class="s184">СОТРУДНИКИ</p>
-        <p class="s185">вносят выдачи, траты, возвраты по своим бюджетам</p>
+    <p style="margin:20px 0 0;"><span style="display:inline-flex; align-items:center; gap:10px; border:2px dashed #14120d; padding:8px 14px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; background:#f6f1e3;"><span aria-hidden="true" style="width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-bottom:12px solid #d63031;"></span>ПРОЕКТИРУЕТСЯ · ЕЩЁ НЕ РАБОЧАЯ ФУНКЦИЯ</span></p>
+    <h2 id="h-будущее" style="margin:18px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.1; text-wrap:balance; max-width:26ch;" class="dc-type-6">Дальше: общая сетка рабочих бюджетов</h2>
+    <p style="margin:18px 0 0; font-size:17px; line-height:1.6; max-width:64ch;">Идея для компаний, где несколько сотрудников ведут рабочие бюджеты: каждый сохраняет привычный личный интерфейс, а финансовый блок видит общую картину без ручного сбора отчётов.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap:16px; margin-top:32px;">
+      <div style="border:2px dashed rgba(20,18,13,0.45); padding:16px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em; color:rgba(20,18,13,0.8);">СОТРУДНИКИ</p>
+        <p style="margin:8px 0 0; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">вносят выдачи, траты, возвраты по своим бюджетам</p>
       </div>
-      <div class="s183">
-        <p class="s184">КОНТУРЫ И КЕЙСЫ</p>
-        <p class="s185">собирают движение денег по задачам и ответственным</p>
+      <div style="border:2px dashed rgba(20,18,13,0.45); padding:16px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em; color:rgba(20,18,13,0.8);">КОНТУРЫ И КЕЙСЫ</p>
+        <p style="margin:8px 0 0; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">собирают движение денег по задачам и ответственным</p>
       </div>
-      <div class="s183">
-        <p class="s184">ФИНАНСОВЫЙ БЛОК</p>
-        <p class="s185">видит состояние, отклонения и неподтверждённые движения</p>
+      <div style="border:2px dashed rgba(20,18,13,0.45); padding:16px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em; color:rgba(20,18,13,0.8);">ФИНАНСОВЫЙ БЛОК</p>
+        <p style="margin:8px 0 0; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">видит состояние, отклонения и неподтверждённые движения</p>
       </div>
-      <div class="s183">
-        <p class="s184">ТАБЛИЦЫ И ОТЧЁТЫ</p>
-        <p class="s185">получают согласованные данные в рабочем формате</p>
+      <div style="border:2px dashed rgba(20,18,13,0.45); padding:16px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em; color:rgba(20,18,13,0.8);">ТАБЛИЦЫ И ОТЧЁТЫ</p>
+        <p style="margin:8px 0 0; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">получают согласованные данные в рабочем формате</p>
       </div>
     </div>
-    <p class="s186">Это направление разработки, а не готовый общий кабинет. Роли, права доступа и отчёты проектируются под конкретный процесс.</p>
+    <p style="margin:24px 0 0; font-family:'JetBrains Mono', monospace; font-size:12.5px; line-height:1.7; letter-spacing:0.03em; color:rgba(20,18,13,0.8); max-width:76ch;">Это направление разработки, а не готовый общий кабинет. Роли, права доступа и отчёты проектируются под конкретный процесс.</p>
+    <p style="margin:28px 0 0; text-align:right;"><a href="#верх" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-7 dc-state-1">↑ К содержанию</a></p>
   </div>
 </section>
 
 <!-- ═══ 11 ДОСТУП ═══ -->
-<section id="доступ" data-screen-label="11 Пилотный доступ" aria-labelledby="h-доступ" class="s187">
-  <div class="s054">
-    <div class="s188">
+<section id="доступ" data-screen-label="11 Пилотный доступ" aria-labelledby="h-доступ" style="background:#14120d; color:#f6f1e3;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(246,241,227,0.55);">
       <span>11</span><span>СЛЕДУЮЩИЙ ШАГ</span>
     </div>
-    <h2 id="h-доступ" class="s189">Выберите режим и отправьте заявку прямо в МФМ</h2>
+    <h2 id="h-доступ" style="margin:20px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.08; text-wrap:balance; max-width:20ch; color:#fffdf7;" class="dc-type-4">Проверить МФМ на своём сценарии</h2>
 
-    <div class="s190">
-      <div class="s191">
-        <p class="s192">КАК ЭТО РАБОТАЕТ</p>
-        <p class="s193">Без GitHub и переписки вручную</p>
-        <p class="s194">Вы выбираете режим, оставляете имя и электронную почту. МФМ сразу показывает номер и сохраняет страницу статуса на устройстве. Решение появляется там автоматически; письмо лишь дублирует его, когда почта доступна.</p>
-      </div>
-      <div class="s191">
-        <p class="s192">РЕЖИМ 1</p>
-        <p class="s193">Только личные деньги</p>
-        <p class="s194">Зарплатный цикл, платежи, долги, Подушка и накопления. Без учёта рабочих денег. Доступно до пяти изолированных пилотных учёток.</p>
-        <p class="s195">
-          <a href="https://mfm.wikmiks.ru/#mfm-access=request" target="_blank" rel="noopener" class="s196 h004 f003">Запросить личный доступ&nbsp;↗</a>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:clamp(20px,3vw,32px); margin-top:40px;">
+      <div style="border:1px solid rgba(246,241,227,0.35); padding:22px; display:flex; flex-direction:column; gap:12px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(246,241,227,0.55);">МАРШРУТ 1</p>
+        <p style="margin:0; font-size:18px; font-weight:600; color:#fffdf7;">Посмотреть живой интерфейс</p>
+        <p style="margin:0; font-size:15px; line-height:1.55; color:rgba(246,241,227,0.75);">Пилотные окружения открываются в браузере:</p>
+        <p style="margin:0; display:flex; flex-direction:column; gap:8px;">
+          <a href="https://mfm.wikmiks.ru/" target="_blank" rel="noopener" style="color:#dce7f5; font-family:'JetBrains Mono', monospace; font-size:13px;" class="dc-state-11 dc-state-12">Личные деньги&nbsp;↗</a>
+          <a href="https://mfm.prokopa.ru/" target="_blank" rel="noopener" style="color:#dce7f5; font-family:'JetBrains Mono', monospace; font-size:13px;" class="dc-state-11 dc-state-12">Личные + рабочие деньги&nbsp;↗</a>
         </p>
       </div>
-      <div class="s191">
-        <p class="s192">РЕЖИМ 2</p>
-        <p class="s193">Личные + рабочие деньги</p>
-        <p class="s194">Тот же личный расчёт плюс отдельный учёт выданных на работу денег, рабочих трат, возвратов и компенсаций. Доступно до пяти изолированных пилотных учёток.</p>
-        <a href="https://mfm.prokopa.ru/#mfm-access=request" target="_blank" rel="noopener" class="s197 h005 a001 f004">Запросить доступ с рабочими деньгами ↗</a>
+      <div style="border:1px solid rgba(246,241,227,0.35); padding:22px; display:flex; flex-direction:column; gap:12px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(246,241,227,0.55);">МАРШРУТ 2</p>
+        <p style="margin:0; font-size:18px; font-weight:600; color:#fffdf7;">Запросить личный пилот</p>
+        <p style="margin:0; font-size:15px; line-height:1.55; color:rgba(246,241,227,0.75);">Заявка подаётся в самом приложении — по-русски, без учётной записи GitHub.</p>
+        <a href="https://mfm.wikmiks.ru/#mfm-access=request" target="_blank" rel="noopener" style="margin-top:auto; display:inline-block; background:#f6f1e3; color:#14120d; text-decoration:none; text-align:center; font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:14px 18px; border:2px solid #f6f1e3;" class="dc-state-13 dc-state-4 dc-state-14">Запросить личный доступ ↗</a>
+      </div>
+      <div style="border:1px solid rgba(246,241,227,0.35); padding:22px; display:flex; flex-direction:column; gap:12px;">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(246,241,227,0.55);">МАРШРУТ 3</p>
+        <p style="margin:0; font-size:18px; font-weight:600; color:#fffdf7;">Режим с рабочими деньгами</p>
+        <p style="margin:0; font-size:15px; line-height:1.55; color:rgba(246,241,227,0.75);">До 5 изолированных пилотных учёток уже работают. Можно обсудить адаптацию под процесс компании.</p>
+        <a href="https://mfm.prokopa.ru/#mfm-access=request" target="_blank" rel="noopener" style="margin-top:auto; display:inline-block; background:transparent; color:#f6f1e3; text-decoration:none; text-align:center; font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:14px 18px; border:2px solid #f6f1e3;" class="dc-state-15 dc-state-4 dc-state-14">Запросить доступ ↗</a>
       </div>
     </div>
 
-    <div class="s199">
-      <p class="s200">Каждый режим хранит пользователей и данные отдельно. Поэтому заявка отправляется именно в тот режим, который вы хотите проверить.</p>
-      <p class="s201">Владелец видит новую заявку прямо на экране «Сегодня», рассматривает её внутри МФМ и одной кнопкой открывает доступ или сообщает причину отказа.</p>
-      <p class="s201">Приглашение действует 7 дней. После создания учётная запись продолжает работать, пока владелец пилота не закроет доступ.</p>
+    <div style="margin-top:28px; border:1px dashed rgba(246,241,227,0.45); padding:16px 18px; display:flex; flex-direction:column; gap:6px;">
+      <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12.5px; line-height:1.7; color:rgba(246,241,227,0.85);">Заявка и её статус живут в самом МФМ: после отправки сохраните код заявки или ссылку статуса. Не указывайте пароли, реквизиты и реальные финансовые данные.</p>
+      <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12.5px; line-height:1.7; color:rgba(246,241,227,0.55);">Решение принимает владелец. Различия режимов и путь заявки — на странице <a href="access.html" style="color:#dce7f5;" class="dc-state-11">«Режимы и доступ»</a>.</p>
     </div>
   </div>
 </section>
 
 </main>
 
+
+<a class="dc-scroll-top dc-state-16 dc-state-1" href="#верх" aria-label="Вернуться к содержанию страницы" style="position:fixed; right:14px; bottom:16px; z-index:70; display:inline-flex; align-items:center; gap:8px; background:#14120d; color:#f6f1e3; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; padding:14px 16px; border:2px solid #14120d; box-shadow:4px 4px 0 rgba(20,18,13,0.3);">↑ К содержанию</a>
+
+
 <!-- ═══ 12 ПОДВАЛ ═══ -->
-<footer data-screen-label="12 Подвал" class="s103">
-  <div class="s202">
-    <div class="s203">
+<footer data-screen-label="12 Подвал" style="border-top:2px solid #14120d;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(36px,5vw,56px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:clamp(24px,3vw,48px); align-items:start;">
       <div>
-        <div class="s204">
-          <img src="assets/app/mfm-brand-mark.png" alt="" width="30" height="23" class="s205">
-          <span class="s206">МФМ</span>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <img src="assets/app/mfm-brand-mark.png" alt="" width="30" height="23" style="display:block; width:30px; height:auto;">
+          <span style="font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:17px;">МФМ</span>
         </div>
-        <p class="s207">Личный финансовый диспетчер зарплатного цикла: ответ на сегодня, а не отчёт о прошлом.</p>
+        <p style="margin:12px 0 0; font-size:14.5px; line-height:1.55; color:rgba(20,18,13,0.8); max-width:40ch;">Личный финансовый диспетчер зарплатного цикла: ответ на сегодня, а не отчёт о прошлом.</p>
       </div>
-      <nav aria-label="Ссылки подвала" class="s208">
-        <a href="https://mfm.wikmiks.ru/#mfm-access=request" target="_blank" rel="noopener" class="s209 h007">Запросить личный доступ ↗</a>
-        <a href="https://mfm.prokopa.ru/#mfm-access=request" target="_blank" rel="noopener" class="s209 h007">Запросить доступ с рабочими деньгами ↗</a>
-        <a href="https://github.com/Prokopa42/mfm-showcase" target="_blank" rel="noopener" class="s209 h007">Репозиторий витрины ↗</a>
-        <a href="https://github.com/Prokopa42/mfm-showcase/blob/main/EDITIONS_AND_STATUS.md" target="_blank" rel="noopener" class="s209 h007">Статус возможностей ↗</a>
-        <a href="https://github.com/Prokopa42/mfm-showcase/blob/main/LICENSE.md" target="_blank" rel="noopener" class="s209 h007">Условия использования ↗</a>
+      <nav aria-label="Ссылки подвала" style="display:flex; flex-direction:column; gap:10px;">
+        <a href="access.html" style="font-family:'JetBrains Mono', monospace; font-size:13px; color:#14120d;" class="dc-state-7">Режимы и доступ</a>
+        <a href="docs/glossary.html" style="font-family:'JetBrains Mono', monospace; font-size:13px; color:#14120d;" class="dc-state-7">Словарь и формулы</a>
+        <a href="https://github.com/Prokopa42/mfm-showcase" target="_blank" rel="noopener" style="font-family:'JetBrains Mono', monospace; font-size:13px; color:#14120d;" class="dc-state-7">Репозиторий витрины ↗</a>
+        <a href="https://github.com/Prokopa42/mfm-showcase/blob/main/EDITIONS_AND_STATUS.md" target="_blank" rel="noopener" style="font-family:'JetBrains Mono', monospace; font-size:13px; color:#14120d;" class="dc-state-7">Статус возможностей ↗</a>
+        <a href="https://github.com/Prokopa42/mfm-showcase/blob/main/LICENSE.md" target="_blank" rel="noopener" style="font-family:'JetBrains Mono', monospace; font-size:13px; color:#14120d;" class="dc-state-7">Условия использования ↗</a>
       </nav>
       <div>
-        <p class="s210">Техническая справка: серверные окружения имеют внутренние кодовые адреса Wikmiks (личный режим) и ProKopa (с рабочими деньгами). Это адреса, а не названия продукта.</p>
-        <p class="s211">© 2026 · МФМ · ПИЛОТНАЯ ВИТРИНА</p>
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; line-height:1.7; color:rgba(20,18,13,0.55); max-width:44ch;">Техническая справка: серверные окружения имеют внутренние кодовые адреса Wikmiks (личный режим) и ProKopa (с рабочими деньгами). Это адреса, а не названия продукта.</p>
+        <p style="margin:14px 0 0; font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">© 2026 · МФМ · ПИЛОТНАЯ ВИТРИНА</p>
       </div>
     </div>
   </div>
 </footer>
 
 </div>
+<script>
+(() => {
+  const button = document.querySelector('.dc-scroll-top');
+  if (!button) return;
+  const update = () => {
+    button.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.9 && window.innerWidth < 1024);
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>

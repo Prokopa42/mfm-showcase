@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Словарь и формулы · Документация МФМ</title>
+<meta name="theme-color" content="#f6f1e3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Словарь и формулы · Документация МФМ">
+<meta property="og:description" content="Единая денежная модель МФМ: термины, базовые формулы, сверка дня, долги, рабочие деньги, накопления и эффекты операций.">
+<meta property="og:url" content="https://prokopa42.github.io/mfm-showcase/docs/glossary.html">
+<meta property="og:image" content="https://prokopa42.github.io/mfm-showcase/assets/app/mfm-personal-390.png">
+<link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/docs/glossary.html">
+<link rel="icon" href="data:,">
+<meta name="description" content="Единая денежная модель МФМ: термины, базовые формулы, сверка дня, долги, рабочие деньги, накопления и эффекты операций.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: #f6f1e3; color: #14120d; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #0749a9; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { color: #063a86; text-decoration-thickness: 2.5px; }
+[id] { scroll-margin-top: 24px; }
+:focus-visible { outline: 3px solid #0749a9; outline-offset: 2px; }
++
+* { box-sizing:border-box; }
+img { max-width:100%; }
+.dc-scroll-top { display:none !important; }
+.dc-scroll-top.is-visible { display:inline-flex !important; }
+@media (max-width:1023px) {
+  .dc-scroll-top.is-visible { width:48px; height:48px; padding:0 !important; justify-content:center; overflow:hidden; font-size:0 !important; }
+  .dc-scroll-top.is-visible::before { content:'↑'; color:#f6f1e3; font-size:20px; line-height:1; }
+}
+@media (max-width:430px) { .dc-texture { opacity:0.25 !important; } }
+.dc-state-1:focus-visible { outline:3px solid #0749a9; outline-offset:2px; }
+.dc-state-2:hover { border-bottom-color:#0749a9; color:#0749a9; }
+.dc-state-3:hover { border-color:#14120d; background:#fffdf7; }
+.dc-state-4:hover { color:#0749a9; }
+.dc-state-5:hover { box-shadow:5px 5px 0 #0749a9; }
+.dc-state-6:focus-visible { outline:3px solid #0749a9; outline-offset:3px; }
+.dc-state-7:hover { background:#0749a9; border-color:#0749a9; }
+.dc-type-1 { font-size:58px; }
+.dc-type-2 { font-size:22px; }
+.dc-type-3 { font-size:38px; }
+@media (max-width:1024px) {
+.dc-type-1 { font-size:45px; }
+.dc-type-2 { font-size:20px; }
+.dc-type-3 { font-size:32px; }
+}
+@media (max-width:430px) {
+.dc-type-1 { font-size:28px; }
+.dc-type-2 { font-size:18px; }
+.dc-type-3 { font-size:24px; }
+}
+</style>
+</head>
+<body>
+<div style="position:relative; overflow:clip;">
+
+
+<div class="dc-texture" aria-hidden="true" style="position:fixed; inset:0; z-index:40; pointer-events:none; opacity:0.5; mix-blend-mode:multiply; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+
+<header id="верх" data-screen-label="Шапка документации" style="border-bottom:2px solid #14120d; background:#f6f1e3; position:relative; z-index:5;">
+  <div style="max-width:1264px; margin:0 auto; padding:14px clamp(20px,4vw,48px) 0; box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <a href="../index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#14120d;" class="dc-state-1">
+      <img src="../assets/app/mfm-brand-mark.png" alt="Знак МФМ" width="34" height="26" style="display:block; width:34px; height:auto;">
+      <span style="font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:19px; letter-spacing:0.02em;">МФМ</span>
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.14em; color:rgba(20,18,13,0.55); border-left:2px solid #d9d3bc; padding-left:10px;">ДОКУМЕНТАЦИЯ</span>
+    </a>
+    <a href="../index.html" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">← На главную</a>
+  </div>
+  <nav aria-label="Страницы документации" style="max-width:1264px; margin:0 auto; padding:12px clamp(20px,4vw,48px) 14px; box-sizing:border-box; display:flex; gap:6px; flex-wrap:wrap;">
+    <a href="today.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">СЕГОДНЯ</a>
+    <a href="cycle.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ЦИКЛ</a>
+    <a href="payments.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ПЛАТЕЖИ</a>
+    <a href="debts.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ДОЛГИ</a>
+    <a href="work-money.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">РАБОЧИЕ ДЕНЬГИ</a>
+    <a href="savings.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">НАКОПЛЕНИЯ</a>
+    <a href="history.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ДНЕВНИК</a>
+    <a href="settings.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">НАСТРОЙКИ</a>
+    <span aria-current="page" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; background:#14120d; color:#f6f1e3; padding:6px 9px;">СЛОВАРЬ</span>
+    <a href="../access.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ДОСТУП</a>
+  </nav>
+</header>
+
+<main>
+
+<section data-screen-label="Заголовок: ответ страницы" style="border-bottom:2px solid #14120d; background:#fffdf7;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(32px,5vw,56px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.16em; color:rgba(20,18,13,0.55);">СПРАВОЧНИК · ЕДИНАЯ МОДЕЛЬ ДЕНЕГ</p>
+    <h1 style="margin:12px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.05; letter-spacing:0;" class="dc-type-1"><span style="text-shadow:4px 4px 0 #fbbd5b;">Словарь и формулы</span></h1>
+    <div style="display:flex; gap:16px; margin-top:22px; max-width:72ch;">
+      <span aria-hidden="true" style="flex:none; width:18px; height:18px; border:3.5px solid #0749a9; border-radius:50%; box-sizing:border-box; margin-top:4px;"></span>
+      <p style="margin:0;  line-height:1.5; text-wrap:pretty;" class="dc-type-2">Один термин — один смысл. Все страницы документации считают <strong>по этим формулам</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<div style="max-width:1264px; margin:0 auto; padding:0 clamp(20px,4vw,48px); box-sizing:border-box;">
+  <div style="display:flex; flex-wrap:wrap; gap:clamp(24px,3vw,44px); align-items:stretch;">
+
+    <aside data-screen-label="Содержание" style="flex:1 1 230px; min-width:0;">
+      <nav id="содержание" aria-label="Содержание страницы" style="position:sticky; top:14px; border:2px solid #14120d; background:#fffdf7; padding:16px 18px; margin-top:clamp(24px,3vw,40px);">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em;">СОДЕРЖАНИЕ</p>
+        <div style="display:flex; flex-direction:column; margin-top:10px;">
+          <a href="#модель" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Денежная модель</a>
+          <a href="#термины" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">2</span>Термины</a>
+          <a href="#формулы" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>Базовые формулы</a>
+          <a href="#сверка" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">4</span>Дневная сверка</a>
+          <a href="#долги-формулы" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">5</span>Долги</a>
+          <a href="#рабочие-формулы" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">6</span>Рабочие деньги</a>
+          <a href="#накопления-формулы" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">7</span>Накопления</a>
+          <a href="#эффекты" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">8</span>Эффекты операций</a>
+          <a href="#связано" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">9</span>Дальше</a>
+        </div>
+      </nav>
+    </aside>
+
+    <div style="flex:999 1 min(100%, 620px); min-width:0; max-width:860px;">
+
+      <section id="модель" data-screen-label="1 Денежная модель" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>1</span><span>ДЕНЕЖНАЯ МОДЕЛЬ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Два контура: деньги на руках и накопления</h2>
+        <div style="margin-top:26px; border:2px solid #14120d; background:#fffdf7; padding:18px;">
+          <div style="border:2px solid #14120d;">
+            <div style="padding:10px 14px; border-bottom:2px solid #14120d; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">ВСЕГО НА РУКАХ</div>
+            <div style="display:flex; flex-wrap:wrap;">
+              <div style="flex:1 1 240px; min-width:0; padding:12px 14px;">
+                <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.08em; color:#0749a9;">СВОИ ДЕНЬГИ</p>
+                <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px;">
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px; align-self:flex-start;">− обязательные платежи</span>
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #14120d; background:#fde7bb; padding:4px 8px; align-self:flex-start;">− Подушка</span>
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px; align-self:flex-start;">− плановые накопления</span>
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:11px; background:#0749a9; color:#fffdf7; padding:5.5px 8px; align-self:flex-start;">= свободно до зарплаты</span>
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:4px 8px; align-self:flex-start; margin-left:16px;">÷ дни → дневной лимит</span>
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:4px 8px; align-self:flex-start; margin-left:32px;">− потрачено → можно сегодня</span>
+                </div>
+              </div>
+              <div style="flex:0 1 220px; min-width:0; padding:12px 14px; border-left:2px solid #14120d; background:#fde7bb;">
+                <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.08em;">РАБОЧИЕ ДЕНЬГИ</p>
+                <p style="margin:8px 0 0; font-size:13.5px; line-height:1.5;">видны в общем остатке, но не входят в личный расчёт</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:14px; border:2px solid #14120d;">
+            <div style="padding:10px 14px; border-bottom:2px solid #14120d; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">НАКОПЛЕНИЯ · ОТДЕЛЬНЫЙ КОТЁЛ</div>
+            <div style="padding:12px 14px; display:flex; gap:8px; flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #14120d; background:#fde7bb; padding:4px 8px;">КОПИЛКА</span>
+              <span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #14120d; padding:4px 8px;">ЦЕЛИ</span>
+              <span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.6); padding:4px 8px;">НЕ РАСПРЕДЕЛЕНО</span>
+            </div>
+          </div>
+          <p style="margin:14px 0 0; font-size:14.5px; line-height:1.6; color:rgba(20,18,13,0.8);">Рабочие деньги и накопления видимы рядом с личным контуром, но не превращаются в свободные деньги для повседневных трат.</p>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="термины" data-screen-label="2 Термины" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>2</span><span>ТЕРМИНЫ · ЧТО ОЗНАЧАЕТ И ЧТО НЕ ОЗНАЧАЕТ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Шестнадцать постоянных терминов</h2>
+        <div style="margin-top:26px; border:2px solid #14120d; background:#fffdf7;">
+          <div style="display:flex; gap:10px 16px; padding:10px 16px; border-bottom:2px solid #14120d; flex-wrap:wrap; font-family:'JetBrains Mono', monospace; font-size:10.5px; font-weight:700; letter-spacing:0.1em; color:rgba(20,18,13,0.55);"><span style="flex:0 0 170px;">ТЕРМИН</span><span style="flex:1 1 200px;">ПРОСТОЕ ОПРЕДЕЛЕНИЕ</span><span style="flex:1 1 160px; color:#d63031;">НЕ ОЗНАЧАЕТ</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Всего на руках</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">все деньги, которые физически есть сейчас</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">сколько можно потратить лично</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Свои деньги сейчас</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">личная часть денег на руках</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">свободно до зарплаты</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Рабочие / подотчётные деньги</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">чужие деньги для рабочих расходов</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">доход пользователя</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Свободно до зарплаты</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">свои деньги после защищённых сумм</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">остаток на карте</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Дневной лимит</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">доля свободных денег, выделенная дню</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">неизменная норма на весь цикл</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; color:#0749a9;">Можно сегодня</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">остаток дневного лимита после трат</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">весь свободный остаток</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Подушка</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">защищённая часть текущих своих денег</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">накопительный счёт</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Общий котёл</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">все фактические накопления</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">текущие деньги на расходы</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Копилка</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">защищённый конверт внутри накоплений</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">Подушка в текущих деньгах</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Цель</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">конверт накоплений с суммой и сроком</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">отдельный банковский счёт</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Обязательный платёж</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">известное обязательное списание</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">любая повседневная покупка</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Долг</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">обязательство вернуть деньги</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">только банковский кредит</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">К компенсации</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">свои деньги, потраченные на работу</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">долг пользователя</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Должен вернуть в подотчёт</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">рабочие деньги, взятые на личное</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">обычный рабочий расход</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Рабочий кейс</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">группа операций и лимит по одной задаче</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">обязательный код «ЗРС»</span></div>
+          <div style="display:flex; gap:10px 16px; padding:11px 16px; flex-wrap:wrap;"><span style="flex:0 0 170px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Сверка</span><span style="flex:1 1 200px; font-size:14px; line-height:1.5;">сравнение фактического остатка с расчётным</span><span style="flex:1 1 160px; font-size:13.5px; line-height:1.5; color:rgba(214,48,49,0.9);">доход или расход сама по себе</span></div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="формулы" data-screen-label="3 Базовые формулы" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>3</span><span>БАЗОВЫЕ ФОРМУЛЫ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">От своих денег к «Можно сегодня»</h2>
+        <div style="margin-top:26px; display:flex; flex-direction:column; gap:16px;">
+          <div style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px;">
+            <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em;">СВОИ ДЕНЬГИ</p>
+            <p style="margin:8px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.7;">Свои деньги сейчас = Всего на руках − Рабочие деньги на руках</p>
+            <p style="margin:6px 0 0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">В личном режиме рабочая часть равна нулю.</p>
+          </div>
+          <div style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px;">
+            <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em;">СВОБОДНО ДО ЗАРПЛАТЫ</p>
+            <p style="margin:8px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Сырые свободные деньги = Свои деньги сейчас<br>+ ожидаемые доходы до зарплаты<br>− неоплаченные обязательные платежи до зарплаты<br>− желаемая Подушка<br>− активные плановые переводы в накопления<br>− долг перед подотчётом</p>
+            <p style="margin:10px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.7; color:#0749a9;">Свободно до зарплаты = max(0, Сырые свободные деньги)<br>Не хватает до защищённого минимума = max(0, −Сырые свободные деньги)</p>
+            <p style="margin:8px 0 0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Долг перед подотчётом вычитается один раз — он не создаёт второй обязательный платёж.</p>
+          </div>
+          <div style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px;">
+            <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em;">ЧИСЛО РАСЧЁТНЫХ ДНЕЙ</p>
+            <p style="margin:8px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">«Сегодня входит в расчёт» включено: дни = календарные дни до зарплаты<br>Выключено: дни = календарные дни до зарплаты − 1</p>
+            <p style="margin:6px 0 0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Делитель не бывает меньше единицы.</p>
+          </div>
+          <div style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px;">
+            <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em; color:#0749a9;">МОЖНО СЕГОДНЯ</p>
+            <p style="margin:8px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Текущая доля дня = Свободно до зарплаты / расчётные дни<br>Можно сегодня = max(0, Дневной лимит − Потрачено сегодня)<br>Превышение = max(0, Потрачено сегодня − Дневной лимит)</p>
+            <p style="margin:8px 0 0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Дневной лимит восстанавливается так, чтобы уже записанная трата не вычиталась второй раз. Покупка в долг считается тратой дня, хотя «Свои деньги» и «Свободно до зарплаты» при ней не уменьшаются.</p>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="сверка" data-screen-label="4 Дневная сверка" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>4</span><span>ДНЕВНАЯ СВЕРКА</span></div>
+        <div style="margin-top:22px; border:2px solid #14120d; background:#fffdf7; padding:14px 16px;">
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Расчётный вечер = Утро + известные поступления − известные списания<br>Сверка вечера = Фактический вечер − Расчётный вечер</p>
+          <p style="margin:10px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Сверка &lt; 0 → Неучтённый расход = −Сверка<br>Сверка &gt; 0 → Излишек сверки = Сверка</p>
+          <p style="margin:8px 0 0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Известные расходы не исчезают при положительной сверке.</p>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="долги-формулы" data-screen-label="5 Долги" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>5</span><span>ДОЛГИ</span></div>
+        <div style="margin-top:22px; border:2px solid #14120d; background:#fffdf7; padding:14px 16px;">
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Баланс одного долга = стартовый долг + покупки в долг + полученные в долг деньги + комиссии, добавленные в долг − погашения</p>
+          <p style="margin:10px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Общий долг = сумма обычных долгов + долг перед подотчётом</p>
+          <p style="margin:10px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8; color:rgba(20,18,13,0.8);">Перенос без комиссии: исходный − сумма · целевой + сумма · общий долг без изменения</p>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="рабочие-формулы" data-screen-label="6 Рабочие деньги" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>6</span><span>РАБОЧИЕ ДЕНЬГИ</span></div>
+        <div style="margin-top:22px; border:2px solid #14120d; background:#fffdf7; padding:14px 16px;">
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Рабочие деньги у меня = получено − потрачено из рабочих − возвращено − взято на личное</p>
+          <p style="margin:10px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">К компенсации = оплачено рабочее своими − получено компенсаций</p>
+          <p style="margin:10px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Долг перед подотчётом = взято на личное − возвращено личного долга</p>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="накопления-формулы" data-screen-label="7 Накопления" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>7</span><span>НАКОПЛЕНИЯ</span></div>
+        <div style="margin-top:22px; border:2px solid #14120d; background:#fffdf7; padding:14px 16px;">
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Общий котёл = начальная сумма + выполненные переводы − снятия<br>Не распределено = общий котёл − Копилка − суммы по целям</p>
+          <p style="margin:10px 0 0; font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.8;">Фактический темп в месяц = чистое изменение накоплений / длительность истории в месяцах<br>Нужный темп цели = (целевая сумма − уже выделено) / месяцев до срока<br>Номинальный прогноз = текущий котёл + фактический темп × месяцев до срока</p>
+          <p style="margin:8px 0 0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Темп показывается только при достаточном числе движений и сроке истории. Прогноз в сегодняшних деньгах дополнительно учитывает коэффициент покупательной силы.</p>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="эффекты" data-screen-label="8 Эффекты операций" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>8</span><span>ЭФФЕКТЫ ОПЕРАЦИЙ · СВОДНАЯ ТАБЛИЦА</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Одиннадцать операций — пять эффектов</h2>
+        <p style="margin:14px 0 0; font-size:14.5px; line-height:1.55; max-width:66ch; color:rgba(20,18,13,0.8);">Порядок меток: <strong>всего на руках · свои деньги · накопления · долг · трата дня</strong>. Знаки показывают направление, а не всегда одинаковую сумму: составная операция может затрагивать несколько источников.</p>
+        <div style="margin-top:22px; border:2px solid #14120d; background:#fffdf7;">
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Доход получен</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Свободный расход своими</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #14120d; padding:3px 7px;">+</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Покупка в долг</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #14120d; padding:3px 7px;">+</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Получил деньги в долг</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Погасил долг</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Перевёл в накопления</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Снял из накоплений</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Получил рабочие деньги</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Потратил рабочие деньги</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; border-bottom:1px solid #ece7d2; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Оплатил рабочее своими</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">−</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+          <div style="display:flex; gap:10px 14px; padding:11px 16px; flex-wrap:wrap; align-items:center;"><span style="flex:1 1 220px; font-size:14.5px; font-weight:600;">Взял рабочие на личное</span><span style="display:flex; gap:5px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:3px 7px;">+</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d9d3bc; color:rgba(20,18,13,0.5); padding:3px 7px;">0</span></span></div>
+        </div>
+        <p style="margin:14px 0 0; font-size:14px; line-height:1.55; max-width:70ch; color:rgba(20,18,13,0.8);">«Взял рабочие на личное»: общий остаток в момент переклассификации не меняется — доступная личная часть растёт, долг перед подотчётом растёт.</p>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="связано" data-screen-label="9 Дальше" style="padding:clamp(24px,3vw,40px) 0 clamp(32px,4vw,56px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>9</span><span>СВЯЗАННЫЕ СТРАНИЦЫ</span></div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:14px; margin-top:22px;">
+          <a href="today.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-5 dc-state-6"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">СЕГОДНЯ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">формулы в работе на экране дня</span></a>
+          <a href="debts.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-5 dc-state-6"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">ДОЛГИ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">переносы и комиссии подробно</span></a>
+          <a href="work-money.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-5 dc-state-6"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">РАБОЧИЕ ДЕНЬГИ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">рабочий контур целиком</span></a>
+          <a href="settings.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-5 dc-state-6"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">НАСТРОЙКИ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">параметры, которые входят в формулы</span></a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+
+<a class="dc-scroll-top dc-state-7 dc-state-1" href="#содержание" aria-label="Вернуться к содержанию страницы" style="position:fixed; right:14px; bottom:16px; z-index:70; display:inline-flex; align-items:center; gap:8px; background:#14120d; color:#f6f1e3; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; padding:14px 16px; border:2px solid #14120d; box-shadow:4px 4px 0 rgba(20,18,13,0.3);">↑ К содержанию</a>
+
+
+<footer data-screen-label="Нижняя навигация" style="border-top:2px solid #14120d; background:#fffdf7;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(20px,3vw,28px) clamp(20px,4vw,48px); box-sizing:border-box; display:flex; justify-content:space-between; align-items:center; gap:12px 20px; flex-wrap:wrap;">
+    <a href="settings.html" style="font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1">← Настройки</a>
+    <a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:13px; color:rgba(20,18,13,0.7); text-decoration:none;" class="dc-state-4 dc-state-1">К содержанию ↑</a>
+    <a href="../access.html" style="font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1">Режимы и доступ →</a>
+  </div>
+  <div style="border-top:1px solid #d9d3bc;">
+    <div style="max-width:1264px; margin:0 auto; padding:14px clamp(20px,4vw,48px); box-sizing:border-box; display:flex; justify-content:space-between; gap:10px 20px; flex-wrap:wrap;">
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">МФМ · ДОКУМЕНТАЦИЯ · СЛОВАРЬ И ФОРМУЛЫ</span>
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">ДАННЫЕ В ПРИМЕРАХ СИНТЕТИЧЕСКИЕ</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script>
+(() => {
+  const button = document.querySelector('.dc-scroll-top');
+  if (!button) return;
+  const update = () => {
+    button.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.9 && window.innerWidth < 1024);
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>

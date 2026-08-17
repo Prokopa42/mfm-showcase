@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Режимы и доступ · Документация МФМ</title>
+<meta name="theme-color" content="#f6f1e3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Режимы и доступ · Документация МФМ">
+<meta property="og:description" content="Два режима МФМ — «Личные деньги» и «Личные + рабочие деньги», подача заявки на пилотный доступ и границы доверия.">
+<meta property="og:url" content="https://prokopa42.github.io/mfm-showcase/access.html">
+<meta property="og:image" content="https://prokopa42.github.io/mfm-showcase/assets/app/mfm-personal-390.png">
+<link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/access.html">
+<link rel="icon" href="data:,">
+<meta name="description" content="Два режима МФМ — «Личные деньги» и «Личные + рабочие деньги», подача заявки на пилотный доступ и границы доверия.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: #f6f1e3; color: #14120d; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #0749a9; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { color: #063a86; text-decoration-thickness: 2.5px; }
+[id] { scroll-margin-top: 24px; }
+:focus-visible { outline: 3px solid #0749a9; outline-offset: 2px; }
++
+* { box-sizing:border-box; }
+img { max-width:100%; }
+.dc-scroll-top { display:none !important; }
+.dc-scroll-top.is-visible { display:inline-flex !important; }
+@media (max-width:1023px) {
+  .dc-scroll-top.is-visible { width:48px; height:48px; padding:0 !important; justify-content:center; overflow:hidden; font-size:0 !important; }
+  .dc-scroll-top.is-visible::before { content:'↑'; color:#f6f1e3; font-size:20px; line-height:1; }
+}
+@media (max-width:430px) { .dc-texture { opacity:0.25 !important; } }
+.dc-state-1:focus-visible { outline:3px solid #0749a9; outline-offset:2px; }
+.dc-state-2:hover { border-bottom-color:#0749a9; color:#0749a9; }
+.dc-state-3:hover { border-color:#14120d; background:#fffdf7; }
+.dc-state-4:hover { color:#0749a9; }
+.dc-state-5:hover { background:#063a86; border-color:#063a86; }
+.dc-state-6:active { transform:translate(1px,1px); }
+.dc-state-7:focus-visible { outline:3px solid #14120d; outline-offset:2px; }
+.dc-state-8:hover { background:#14120d; color:#f6f1e3; }
+.dc-state-9:hover { box-shadow:5px 5px 0 #0749a9; }
+.dc-state-10:focus-visible { outline:3px solid #0749a9; outline-offset:3px; }
+.dc-state-11:hover { background:#0749a9; border-color:#0749a9; }
+.dc-type-1 { font-size:58px; }
+.dc-type-2 { font-size:22px; }
+.dc-type-3 { font-size:38px; }
+@media (max-width:1024px) {
+.dc-type-1 { font-size:45px; }
+.dc-type-2 { font-size:20px; }
+.dc-type-3 { font-size:32px; }
+}
+@media (max-width:430px) {
+.dc-type-1 { font-size:28px; }
+.dc-type-2 { font-size:18px; }
+.dc-type-3 { font-size:24px; }
+}
+</style>
+</head>
+<body>
+<div style="position:relative; overflow:clip;">
+
+
+<div class="dc-texture" aria-hidden="true" style="position:fixed; inset:0; z-index:40; pointer-events:none; opacity:0.5; mix-blend-mode:multiply; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+
+<header id="верх" data-screen-label="Шапка документации" style="border-bottom:2px solid #14120d; background:#f6f1e3; position:relative; z-index:5;">
+  <div style="max-width:1264px; margin:0 auto; padding:14px clamp(20px,4vw,48px) 0; box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#14120d;" class="dc-state-1">
+      <img src="assets/app/mfm-brand-mark.png" alt="Знак МФМ" width="34" height="26" style="display:block; width:34px; height:auto;">
+      <span style="font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:19px; letter-spacing:0.02em;">МФМ</span>
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.14em; color:rgba(20,18,13,0.55); border-left:2px solid #d9d3bc; padding-left:10px;">ДОКУМЕНТАЦИЯ</span>
+    </a>
+    <a href="index.html" style="font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#14120d; text-decoration:none; border-bottom:2px solid transparent; padding:2px 0;" class="dc-state-2 dc-state-1">← На главную</a>
+  </div>
+  <nav aria-label="Страницы документации" style="max-width:1264px; margin:0 auto; padding:12px clamp(20px,4vw,48px) 14px; box-sizing:border-box; display:flex; gap:6px; flex-wrap:wrap;">
+    <a href="docs/today.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">СЕГОДНЯ</a>
+    <a href="docs/cycle.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ЦИКЛ</a>
+    <a href="docs/payments.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ПЛАТЕЖИ</a>
+    <a href="docs/debts.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ДОЛГИ</a>
+    <a href="docs/work-money.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">РАБОЧИЕ ДЕНЬГИ</a>
+    <a href="docs/savings.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">НАКОПЛЕНИЯ</a>
+    <a href="docs/history.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">ДНЕВНИК</a>
+    <a href="docs/settings.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">НАСТРОЙКИ</a>
+    <a href="docs/glossary.html" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; color:#14120d; text-decoration:none; border:1.5px solid #d9d3bc; padding:6px 9px;" class="dc-state-3 dc-state-1">СЛОВАРЬ</a>
+    <span aria-current="page" style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; background:#14120d; color:#f6f1e3; padding:6px 9px;">ДОСТУП</span>
+  </nav>
+</header>
+
+<main>
+
+<section data-screen-label="Заголовок: ответ страницы" style="border-bottom:2px solid #14120d; background:#fffdf7;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(32px,5vw,56px) clamp(20px,4vw,48px); box-sizing:border-box;">
+    <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.16em; color:rgba(20,18,13,0.55);">ДОСТУП · ПИЛОТНАЯ СТАДИЯ</p>
+    <h1 style="margin:12px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.05; letter-spacing:0;" class="dc-type-1"><span style="text-shadow:4px 4px 0 #fbbd5b;">Режимы и доступ</span></h1>
+    <div style="display:flex; gap:16px; margin-top:22px; max-width:72ch;">
+      <span aria-hidden="true" style="flex:none; width:18px; height:18px; border:3.5px solid #0749a9; border-radius:50%; box-sizing:border-box; margin-top:4px;"></span>
+      <p style="margin:0;  line-height:1.5; text-wrap:pretty;" class="dc-type-2">Какой режим выбрать и <strong>что произойдёт после заявки</strong> на тестовый доступ?</p>
+    </div>
+  </div>
+</section>
+
+<div style="max-width:1264px; margin:0 auto; padding:0 clamp(20px,4vw,48px); box-sizing:border-box;">
+  <div style="display:flex; flex-wrap:wrap; gap:clamp(24px,3vw,44px); align-items:stretch;">
+
+    <aside data-screen-label="Содержание" style="flex:1 1 230px; min-width:0;">
+      <nav id="содержание" aria-label="Содержание страницы" style="position:sticky; top:14px; border:2px solid #14120d; background:#fffdf7; padding:16px 18px; margin-top:clamp(24px,3vw,40px);">
+        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em;">СОДЕРЖАНИЕ</p>
+        <div style="display:flex; flex-direction:column; margin-top:10px;">
+          <a href="#режимы" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Одно приложение, два режима</a>
+          <a href="#кому" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">2</span>Кому какой режим</a>
+          <a href="#заявка" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>Как подать заявку</a>
+          <a href="#после" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">4</span>Что после отправки</a>
+          <a href="#пилот" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">5</span>Что такое пилот</a>
+          <a href="#доверие" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">6</span>Доверие и границы</a>
+          <a href="#будущее" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">7</span>Направление развития</a>
+          <a href="#связано" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">8</span>Дальше</a>
+        </div>
+      </nav>
+    </aside>
+
+    <div style="flex:999 1 min(100%, 620px); min-width:0; max-width:860px;">
+
+      <section id="режимы" data-screen-label="1 Одно приложение, два режима" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>1</span><span>ОДНО ПРИЛОЖЕНИЕ, ДВА РЕЖИМА</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Отличается только рабочий контур</h2>
+        <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:66ch;">Расчётное ядро, пять нижних вкладок, долги, накопления, Дневник и учётная запись одинаковы.</p>
+        <div style="margin-top:22px; border:2px solid #14120d; background:#fffdf7;">
+          <div style="display:flex; gap:10px 16px; padding:10px 16px; border-bottom:2px solid #14120d; font-family:'JetBrains Mono', monospace; font-size:10.5px; font-weight:700; letter-spacing:0.1em; color:rgba(20,18,13,0.55);"><span style="flex:1 1 240px;">ВОЗМОЖНОСТЬ</span><span style="flex:0 0 90px; text-align:center;">ЛИЧНЫЕ</span><span style="flex:0 0 110px; text-align:center;">+ РАБОЧИЕ</span></div>
+          <div style="display:flex; gap:10px 16px; padding:10px 16px; border-bottom:1px solid #ece7d2; align-items:center;"><span style="flex:1 1 240px; font-size:14.5px;">Сегодня · Платежи · Долги · Накопления · Дневник · Настройки и синхронизация</span><span style="flex:0 0 90px; text-align:center;"><span aria-hidden="true" style="display:inline-block; width:12px; height:12px; background:#0749a9; border-radius:50%;"></span></span><span style="flex:0 0 110px; text-align:center;"><span aria-hidden="true" style="display:inline-block; width:12px; height:12px; background:#0749a9; border-radius:50%;"></span></span></div>
+          <div style="display:flex; gap:10px 16px; padding:10px 16px; border-bottom:1px solid #ece7d2; align-items:center;"><span style="flex:1 1 240px; font-size:14.5px;">Рабочие деньги / Подотчёт</span><span style="flex:0 0 90px; text-align:center; font-family:'JetBrains Mono', monospace; color:rgba(20,18,13,0.45);">—</span><span style="flex:0 0 110px; text-align:center;"><span aria-hidden="true" style="display:inline-block; width:12px; height:12px; background:#fbbd5b; border:1.5px solid #14120d; box-sizing:border-box;"></span></span></div>
+          <div style="display:flex; gap:10px 16px; padding:10px 16px; align-items:center;"><span style="flex:1 1 240px; font-size:14.5px;">Рабочие кейсы, компенсации и долг перед подотчётом</span><span style="flex:0 0 90px; text-align:center; font-family:'JetBrains Mono', monospace; color:rgba(20,18,13,0.45);">—</span><span style="flex:0 0 110px; text-align:center;"><span aria-hidden="true" style="display:inline-block; width:12px; height:12px; background:#fbbd5b; border:1.5px solid #14120d; box-sizing:border-box;"></span></span></div>
+        </div>
+        <p style="margin:16px 0 0; font-family:'JetBrains Mono', monospace; font-size:12px; line-height:1.7; letter-spacing:0.03em; color:rgba(20,18,13,0.55); max-width:76ch;">Технические адреса экземпляров — mfm.wikmiks.ru (личный) и mfm.prokopa.ru (с рабочими деньгами) — не названия продукта. Они показываются только у кнопок перехода.</p>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="кому" data-screen-label="2 Кому какой режим" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>2</span><span>КОМУ КАКОЙ РЕЖИМ</span></div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:16px; margin-top:22px;">
+          <div style="border:2px solid #14120d; background:#fffdf7;">
+            <div style="height:6px; background:#0749a9;"></div>
+            <div style="padding:18px;">
+              <p style="margin:0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:20px; line-height:1.2;">Личные деньги</p>
+              <p style="margin:10px 0 0; font-size:15px; line-height:1.6; color:rgba(20,18,13,0.85);">Тем, кто хочет связать зарплату, текущий остаток, обязательные платежи, долги, Подушку и накопления в один ежедневный расчёт.</p>
+            </div>
+          </div>
+          <div style="border:2px solid #14120d; background:#fffdf7;">
+            <div style="display:flex; height:6px;"><div style="width:70%; background:#0749a9;"></div><div style="width:30%; background:#fbbd5b;"></div></div>
+            <div style="padding:18px;">
+              <p style="margin:0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-size:20px; line-height:1.2;">Личные + рабочие деньги</p>
+              <p style="margin:10px 0 0; font-size:15px; line-height:1.6; color:rgba(20,18,13,0.85);">Тем, у кого деньги организации физически смешиваются с личным остатком. Контур помогает: не принять рабочий аванс за личный доход · не увеличить им дневной лимит · учитывать траты из двух источников · видеть сумму к компенсации · видеть личный долг перед подотчётом · группировать операции по рабочим кейсам.</p>
+            </div>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="заявка" data-screen-label="3 Как подать заявку" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>3</span><span>КАК ПОДАТЬ ЗАЯВКУ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Заявка живёт в самом приложении</h2>
+        <div style="margin-top:26px; display:flex; flex-direction:column;">
+          <p style="margin:0; display:flex; gap:12px; padding:11px 0; border-top:1px solid #d9d3bc; font-size:15px; line-height:1.55;"><span style="flex:none; font-family:'JetBrains Mono', monospace; font-weight:700; color:rgba(20,18,13,0.45);">1</span>Выбрать нужный режим.</p>
+          <p style="margin:0; display:flex; gap:12px; padding:11px 0; border-top:1px solid #d9d3bc; font-size:15px; line-height:1.55;"><span style="flex:none; font-family:'JetBrains Mono', monospace; font-weight:700; color:rgba(20,18,13,0.45);">2</span>Открыть русскоязычную форму в самом МФМ.</p>
+          <p style="margin:0; display:flex; gap:12px; padding:11px 0; border-top:1px solid #d9d3bc; font-size:15px; line-height:1.55;"><span style="flex:none; font-family:'JetBrains Mono', monospace; font-weight:700; color:rgba(20,18,13,0.45);">3</span>Указать контактные данные и согласие на обработку заявки.</p>
+          <p style="margin:0; display:flex; gap:12px; padding:11px 0; border-top:1px solid #d9d3bc; font-size:15px; line-height:1.55;"><span style="flex:none; font-family:'JetBrains Mono', monospace; font-weight:700; color:rgba(20,18,13,0.45);">4</span>Сохранить код заявки или ссылку статуса.</p>
+          <p style="margin:0; display:flex; gap:12px; padding:11px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc; font-size:15px; line-height:1.55;"><span style="flex:none; font-family:'JetBrains Mono', monospace; font-weight:700; color:rgba(20,18,13,0.45);">5</span>Дождаться решения владельца.</p>
+        </div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px;">
+          <a href="https://mfm.wikmiks.ru/#mfm-access=request" target="_blank" rel="noopener" style="display:inline-block; background:#0749a9; color:#fffdf7; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:14px 18px; border:2px solid #0749a9;" class="dc-state-5 dc-state-6 dc-state-7">Запросить личный доступ ↗</a>
+          <a href="https://mfm.prokopa.ru/#mfm-access=request" target="_blank" rel="noopener" style="display:inline-block; background:transparent; color:#14120d; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:14px 18px; border:2px solid #14120d;" class="dc-state-8 dc-state-6 dc-state-1">Запросить доступ с рабочими деньгами ↗</a>
+        </div>
+        <p style="margin:16px 0 0; font-size:14px; line-height:1.6; max-width:70ch; color:rgba(20,18,13,0.8);">Следить за GitHub или понимать англоязычный интерфейс не нужно: заявка и её статус живут в самом приложении. Не указывайте пароли, реквизиты и реальные финансовые данные.</p>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="после" data-screen-label="4 Что после отправки" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>4</span><span>ЧТО ПРОИСХОДИТ ПОСЛЕ ОТПРАВКИ</span></div>
+        <div style="margin-top:22px; display:flex; flex-direction:column; gap:8px; max-width:70ch; font-size:15px; line-height:1.6;">
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#0749a9; border-radius:50%; margin-top:6px;"></span>Заявка получает понятный статус.</p>
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#0749a9; border-radius:50%; margin-top:6px;"></span>Владелец видит её в «Настройки → Данные → Заявки на доступ».</p>
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#0749a9; border-radius:50%; margin-top:6px;"></span>После решения приходит инструкция по указанному каналу.</p>
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#0749a9; border-radius:50%; margin-top:6px;"></span>Одобренный пользователь создаёт или активирует вход в выбранном режиме.</p>
+          <p style="margin:0; display:flex; gap:10px;"><span aria-hidden="true" style="flex:none; width:11px; height:11px; background:#0749a9; border-radius:50%; margin-top:6px;"></span>Данные двух режимов не смешиваются.</p>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="пилот" data-screen-label="5 Что такое пилот" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>5</span><span>ЧТО ОЗНАЧАЕТ ТЕСТОВЫЙ ДОСТУП</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Полноценная учётка, ограничено число мест</h2>
+        <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:68ch;">Тестовый доступ — полноценная изолированная учётная запись выбранного режима, выданная для пилотной проверки. Ограничение относится к числу пилотных мест и праву владельца отключить доступ, <strong>а не к упрощённой арифметике приложения</strong>.</p>
+        <p style="margin:14px 0 0; font-size:15px; line-height:1.6; max-width:68ch; color:rgba(20,18,13,0.8);">Пилотная учётка не превращается в коммерческую постоянную автоматически — такое решение владелец принимает отдельно. При отключении вход закрывается; политика хранения и возврата данных излагается пользователю до пилота.</p>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="доверие" data-screen-label="6 Доверие и границы" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>6</span><span>ДОВЕРИЕ И ГРАНИЦЫ</span></div>
+        <div style="margin-top:22px; border:2px solid #14120d; background:#fffdf7;">
+          <p style="margin:0; padding:11px 16px; border-bottom:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">У каждого экземпляра отдельное серверное хранилище; данные одной учётной записи не видны другой.</p>
+          <p style="margin:0; padding:11px 16px; border-bottom:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">Локальная копия позволяет продолжать работу при временной потере сети.</p>
+          <p style="margin:0; padding:11px 16px; border-bottom:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">Экспорт JSON остаётся ручным средством переноса и резервирования.</p>
+          <p style="margin:0; padding:11px 16px; border-bottom:1px solid #d9d3bc; font-size:14.5px; line-height:1.55;">Продукт находится в пилотной стадии.</p>
+          <p style="margin:0; padding:11px 16px; font-size:14.5px; line-height:1.55;">Будущая общая сетка рабочих бюджетов пока не является действующей функцией.</p>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="будущее" data-screen-label="7 Направление развития" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>7</span><span>НАПРАВЛЕНИЕ РАЗВИТИЯ РАБОЧЕГО РЕЖИМА</span></div>
+        <p style="margin:20px 0 0;"><span style="display:inline-flex; align-items:center; gap:10px; border:2px dashed #14120d; padding:8px 14px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; background:#f6f1e3;"><span aria-hidden="true" style="width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-bottom:12px solid #d63031;"></span>ПРОЕКТИРУЕТСЯ · ЕЩЁ НЕ РАБОЧАЯ ФУНКЦИЯ</span></p>
+        <p style="margin:18px 0 0; font-size:15.5px; line-height:1.6; max-width:70ch;">Будущее направление: несколько ответственных сотрудников ведут свои рабочие бюджеты, а финансовый блок видит согласованную картину расходов и получает данные в удобном табличном виде. Это концепция, а не текущая возможность.</p>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
+      </section>
+
+      <section id="связано" data-screen-label="8 Дальше" style="padding:clamp(24px,3vw,40px) 0 clamp(32px,4vw,56px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>8</span><span>СВЯЗАННЫЕ СТРАНИЦЫ</span></div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:14px; margin-top:22px;">
+          <a href="index.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-9 dc-state-10"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">ГЛАВНАЯ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">история и философия продукта</span></a>
+          <a href="docs/work-money.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-9 dc-state-10"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">РАБОЧИЕ ДЕНЬГИ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">подробная модель дополнительного контура</span></a>
+          <a href="docs/settings.html" style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px; text-decoration:none; color:#14120d;" class="dc-state-9 dc-state-10"><span style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">НАСТРОЙКИ →</span><span style="display:block; margin-top:6px; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">учётная запись, серверная копия, резервирование</span></a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+
+<a class="dc-scroll-top dc-state-11 dc-state-1" href="#содержание" aria-label="Вернуться к содержанию страницы" style="position:fixed; right:14px; bottom:16px; z-index:70; display:inline-flex; align-items:center; gap:8px; background:#14120d; color:#f6f1e3; text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em; padding:14px 16px; border:2px solid #14120d; box-shadow:4px 4px 0 rgba(20,18,13,0.3);">↑ К содержанию</a>
+
+
+<footer data-screen-label="Нижняя навигация" style="border-top:2px solid #14120d; background:#fffdf7;">
+  <div style="max-width:1264px; margin:0 auto; padding:clamp(20px,3vw,28px) clamp(20px,4vw,48px); box-sizing:border-box; display:flex; justify-content:space-between; align-items:center; gap:12px 20px; flex-wrap:wrap;">
+    <a href="docs/glossary.html" style="font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1">← Словарь</a>
+    <a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:13px; color:rgba(20,18,13,0.7); text-decoration:none;" class="dc-state-4 dc-state-1">К содержанию ↑</a>
+    <a href="index.html" style="font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:700; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1">Главная →</a>
+  </div>
+  <div style="border-top:1px solid #d9d3bc;">
+    <div style="max-width:1264px; margin:0 auto; padding:14px clamp(20px,4vw,48px); box-sizing:border-box; display:flex; justify-content:space-between; gap:10px 20px; flex-wrap:wrap;">
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">МФМ · ДОКУМЕНТАЦИЯ · РЕЖИМЫ И ДОСТУП</span>
+      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">ДАННЫЕ В ПРИМЕРАХ СИНТЕТИЧЕСКИЕ</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script>
+(() => {
+  const button = document.querySelector('.dc-scroll-top');
+  if (!button) return;
+  const update = () => {
+    button.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.9 && window.innerWidth < 1024);
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>
