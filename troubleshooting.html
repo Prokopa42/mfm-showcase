@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Если цифры не сходятся · МФМ</title>
+<meta name="description" content="Как пошагово проверить остаток, рабочие деньги, платежи, накопления, долги и сверку дня в МФМ.">
+<meta name="theme-color" content="#f6f1e3">
+<link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/troubleshooting.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide.css">
+<link rel="stylesheet" href="assets/site-motion.css">
+<script defer src="assets/site-motion.js"></script>
+</head>
+<body>
+<div class="guide-shell">
+<header id="верх" class="guide-header">
+  <div class="guide-header__main"><a class="guide-brand" href="index.html"><img src="assets/app/mfm-brand-mark.png" alt="Знак МФМ" width="34" height="26"><strong>МФМ</strong><span>ДОКУМЕНТАЦИЯ</span></a><a class="guide-home" href="index.html">← На главную</a></div>
+  <nav class="guide-nav" aria-label="Основные страницы"><a href="quick-start.html">Быстрый старт</a><a href="status.html">Статус</a><a href="docs/today.html">Сегодня</a><a href="docs/payments.html">Платежи</a><a href="docs/debts.html">Долги</a><a href="access.html">Доступ</a><span aria-current="page">Если не сходится</span></nav>
+</header>
+<main>
+  <section class="guide-hero" data-screen-label="Диагностика"><div class="guide-hero__inner">
+    <p class="guide-kicker">ДИАГНОСТИКА БЕЗ ДОГАДОК</p><h1 class="guide-title">Если цифры не сходятся</h1><p class="guide-lead">Не ищите «правильную» цифру в одном месте. Пройдите цепочку: фактический остаток → чьи это деньги → что защищено → что уже потрачено.</p>
+    <div class="guide-index"><a href="#цепочка">Проверка</a><a href="#рабочие">Рабочие деньги</a><a href="#накопления">Накопления</a><a href="#долги">Долги</a><a href="#сверка">Сверка</a></div>
+  </div></section>
+
+  <section id="цепочка" class="guide-section" data-screen-label="Цепочка проверки"><div class="guide-section__inner">
+    <p class="guide-kicker">01 · СВЕРХУ ВНИЗ</p><h2>Шесть проверок</h2>
+    <ol class="guide-steps"><li><strong>Всего на руках.</strong> Совпадает ли сумма всех карт и наличных с фактом?</li><li><strong>Рабочие деньги.</strong> В режиме с Подотчётом они входят в общий факт, но вычитаются из личной части.</li><li><strong>Платежи до зарплаты.</strong> Не оплачены ли они уже? Верны ли даты?</li><li><strong>Подушка и планы.</strong> Они уменьшают свободную сумму, но план сам по себе ещё не переводит деньги в накопления.</li><li><strong>Долг перед подотчётом.</strong> Он уменьшает свободную сумму ровно один раз.</li><li><strong>Дневник и сверка.</strong> Отменена ли нужная операция? Не остался ли закреплённый вечерний факт?</li></ol>
+    <div class="guide-formula">Всего на руках − Рабочие деньги = Свои деньги<br>Свои деньги − защищённые суммы = сырой остаток<br><strong>Свободно = max(0, сырой остаток)</strong></div>
+    <div class="guide-callout guide-callout--warn">«Свободно до зарплаты» <strong>не уходит в минус</strong>. Если обязательств больше, чем денег, экран показывает «Свободно: 0» и отдельно «Не хватает X ₽».</div>
+  </div></section>
+
+  <section id="рабочие" class="guide-section guide-section--white" data-screen-label="Рабочие деньги"><div class="guide-section__inner">
+    <p class="guide-kicker">02 · ПОДОТЧЁТ</p><h2>«Всего» больше, чем «Своих»</h2>
+    <div class="guide-grid"><article class="guide-panel"><h3>Получены рабочие деньги</h3><p>«Всего на руках» растёт. «Свои деньги», «Свободно до зарплаты» и «Можно сегодня» не растут.</p></article><article class="guide-panel"><h3>Рабочее оплачено своими</h3><p>«Свои деньги» уменьшаются, а «К компенсации» растёт. Это не свободный расход дня.</p></article><article class="guide-panel"><h3>Рабочие взяты на личное</h3><p>«Свои деньги» растут, но одновременно растёт «Должен вернуть в подотчёт», поэтому «Свободно до зарплаты» не увеличивается.</p></article></div>
+    <div class="guide-links"><a class="guide-button guide-button--primary" href="docs/work-money.html">Подробно о Подотчёте</a></div>
+  </div></section>
+
+  <section id="накопления" class="guide-section" data-screen-label="Накопления"><div class="guide-section__inner">
+    <p class="guide-kicker">03 · ПЛАН ИЛИ ФАКТ</p><h2>План защищает. Перевод двигает деньги.</h2>
+    <div class="guide-grid"><article class="guide-panel guide-panel--orange"><h3>Запланировать</h3><p>До даты плана сумма может уменьшать «Свободно до зарплаты», но «Свои деньги» и фактические накопления не меняются.</p></article><article class="guide-panel guide-panel--blue"><h3>Выполнить сейчас</h3><p>«Всего на руках» и «Свои деньги» уменьшаются, а накопления растут. В Дневнике появляется фактическое движение.</p></article></div>
+    <p>Если вы внесли сумму как план и ждёте, что она уже оказалась в накоплениях, это не ошибка арифметики: выбран другой тип действия.</p>
+    <div class="guide-links"><a class="guide-button guide-button--primary" href="docs/savings.html">План и факт накоплений</a></div>
+  </div></section>
+
+  <section id="долги" class="guide-section guide-section--white" data-screen-label="Долги"><div class="guide-section__inner">
+    <p class="guide-kicker">04 · ДВА НЕЗАВИСИМЫХ ДВИЖЕНИЯ</p><h2>Погашение может быть больше нового долга</h2>
+    <div class="guide-panel guide-panel--blue"><h3>Пример</h3><p>Сегодня получили <strong>3&nbsp;000&nbsp;₽</strong> в долг и погасили <strong>10&nbsp;000&nbsp;₽</strong> по старому остатку. Это <strong>не переплата</strong>: новое получение и погашение старого долга — разные движения.</p></div>
+    <div class="guide-formula">Старый остаток 20 000 ₽<br>+ получено 3 000 ₽<br>− погашено 10 000 ₽<br><strong>= осталось 13 000 ₽</strong></div>
+    <p>Проверяйте не соотношение двух сегодняшних операций, а баланс конкретной долговой позиции до и после движений.</p>
+    <div class="guide-links"><a class="guide-button guide-button--primary" href="docs/debts.html">Долги, переносы и комиссии</a></div>
+  </div></section>
+
+  <section id="сверка" class="guide-section" data-screen-label="Сверка дня"><div class="guide-section__inner">
+    <p class="guide-kicker">05 · ФАКТ И РАСЧЁТ</p><h2>Сверка не стирает операции</h2>
+    <div class="guide-grid"><article class="guide-panel"><h3>Утро</h3><p>Утренняя сверка — факт «Всего на руках» на начало дня, а не дополнительный доход.</p></article><article class="guide-panel"><h3>Расчётный вечер</h3><p>Утро плюс известные поступления минус известные списания.</p></article><article class="guide-panel"><h3>Факт вечера</h3><p>Реальный остаток. Разница с расчётом показывается отдельно, а явные расходы и доходы остаются в Дневнике.</p></article></div>
+    <div class="guide-callout"><strong>Если снять вечернюю фиксацию,</strong> ручной вечерний остаток перестаёт быть источником истины. Текущий остаток снова строится из утра и операций.</div>
+    <div class="guide-links"><a class="guide-button guide-button--primary" href="docs/today.html">Сверка на экране «Сегодня»</a><a class="guide-button" href="docs/history.html">Проверить Дневник</a></div>
+  </div></section>
+</main>
+<footer class="guide-footer"><div class="guide-footer__inner"><a href="quick-start.html">← Быстрый старт</a><a href="#верх">Наверх ↑</a><span>МФМ · ЕСЛИ ЦИФРЫ НЕ СХОДЯТСЯ</span></div></footer>
+</div>
+</body>
+</html>

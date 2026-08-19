@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Быстрый старт · МФМ</title>
+<meta name="description" content="Первая настройка МФМ: режим, зарплатный цикл, остаток, платежи, Подушка, долги и первая сверка.">
+<meta name="theme-color" content="#f6f1e3">
+<link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/quick-start.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide.css">
+<link rel="stylesheet" href="assets/site-motion.css">
+<script defer src="assets/site-motion.js"></script>
+</head>
+<body>
+<div class="guide-shell">
+<header id="верх" class="guide-header">
+  <div class="guide-header__main"><a class="guide-brand" href="index.html"><img src="assets/app/mfm-brand-mark.png" alt="Знак МФМ" width="34" height="26"><strong>МФМ</strong><span>ДОКУМЕНТАЦИЯ</span></a><a class="guide-home" href="index.html">← На главную</a></div>
+  <nav class="guide-nav" aria-label="Основные страницы"><span aria-current="page">Быстрый старт</span><a href="status.html">Статус</a><a href="docs/today.html">Сегодня</a><a href="docs/payments.html">Платежи</a><a href="docs/debts.html">Долги</a><a href="access.html">Доступ</a><a href="troubleshooting.html">Если не сходится</a></nav>
+</header>
+<main>
+  <section class="guide-hero" data-screen-label="Быстрый старт">
+    <div class="guide-hero__inner"><p class="guide-kicker">ПЕРВЫЕ 10 МИНУТ</p><h1 class="guide-title">Один цикл. Одинаково понятные цифры.</h1><p class="guide-lead">Сначала внесите исходную картину, затем записывайте движения. МФМ сам пересчитает, сколько свободно до зарплаты и сколько можно сегодня.</p><div class="guide-index"><a href="#настройка">Настроить</a><a href="#читать">Как читать</a><a href="#зарплата">Зарплата раньше</a><a href="#проверка">Проверка</a></div></div>
+  </section>
+
+  <section id="настройка" class="guide-section" data-screen-label="Первая настройка"><div class="guide-section__inner">
+    <p class="guide-kicker">01 · ИСХОДНАЯ КАРТИНА</p><h2>Заполняйте в этом порядке</h2>
+    <ol class="guide-steps">
+      <li><strong>Выберите режим.</strong> «Личные деньги» — если подотчёта нет. «Личные + рабочие деньги» — если чужие средства физически лежат рядом с вашими.</li>
+      <li><strong>Задайте цикл.</strong> Укажите даты зарплаты и правило, входит ли сегодняшний день в расчёт.</li>
+      <li><strong>Внесите «Всего на руках».</strong> Это весь фактический остаток на картах и наличными. В режиме с рабочими деньгами отдельно внесите их сумму в разделе «Подотчёт».</li>
+      <li><strong>Добавьте обязательные платежи.</strong> Аренда, связь, подписки и другие известные списания до следующей зарплаты.</li>
+      <li><strong>Задайте Подушку и планы накоплений.</strong> План защищает сумму в расчёте, а «Выполнить сейчас» фактически переводит деньги в накопления.</li>
+      <li><strong>Запишите текущие долги.</strong> Внесите фактический остаток, а не только лимит или первоначальную сумму.</li>
+      <li><strong>Откройте «Сегодня».</strong> Проверьте свои деньги, защищённые суммы и дневной ориентир. Утром и вечером вносите весь фактический остаток «Всего на руках».</li>
+    </ol>
+    <div class="guide-callout guide-callout--warn"><strong>Не записывайте следующую зарплату как доступный доход.</strong> Плановая зарплата задаёт границу цикла и попадает в деньги только после фактического получения.</div>
+  </div></section>
+
+  <section id="читать" class="guide-section guide-section--white" data-screen-label="Как читать экран"><div class="guide-section__inner">
+    <p class="guide-kicker">02 · ОДНА ЦЕПОЧКА</p><h2>Как читать главные цифры</h2>
+    <div class="guide-grid"><article class="guide-panel"><h3>Всего на руках</h3><p>Всё, что физически есть. В режиме с Подотчётом включает рабочие деньги.</p></article><article class="guide-panel"><h3>Свои деньги</h3><p>«Всего на руках» минус рабочие деньги. Это личная часть фактического остатка.</p></article><article class="guide-panel"><h3>Свободно до зарплаты</h3><p>Свои деньги после платежей, Подушки, планов и долга перед подотчётом.</p></article><article class="guide-panel"><h3>Можно сегодня</h3><p>Доля свободных денег на текущий день минус уже записанные траты.</p></article></div>
+    <div class="guide-formula">Сырой остаток = Свои деньги + ожидаемые доходы до зарплаты − платежи − Подушка − планы − долг перед подотчётом<br><strong>Свободно = max(0, сырой остаток)</strong><br>Если результат отрицательный: «Свободно: 0» и отдельно «Не хватает X ₽».</div>
+  </div></section>
+
+  <section id="зарплата" class="guide-section" data-screen-label="Ранняя зарплата"><div class="guide-section__inner">
+    <p class="guide-kicker">03 · ЗАРПЛАТА ПРИШЛА РАНЬШЕ</p><h2>Не записывайте её как обычную премию</h2>
+    <ol class="guide-steps"><li>Откройте действие «Доход / премия» и выберите зарплату.</li><li>Укажите фактическую дату и сумму.</li><li>Если деньги уже входят в текущий остаток, выберите «только отметить получение». Иначе — добавьте их к «Всего на руках».</li><li>МФМ закроет старый цикл фактической датой и начнёт новый. Старая плановая дата больше не считается будущей зарплатой.</li></ol>
+    <div class="guide-callout"><strong>Пример:</strong> зарплату ждали 30-го, а получили 26-го. Новый цикл начинается 26-го; 30-е не считается ещё одной выплатой.</div>
+  </div></section>
+
+  <section id="проверка" class="guide-section guide-section--white" data-screen-label="Проверка первого цикла"><div class="guide-section__inner">
+    <p class="guide-kicker">04 · ПРОВЕРКА</p><h2>Перед первым расходом</h2>
+    <div class="guide-grid"><article class="guide-panel"><h3>Остаток</h3><p>«Всего на руках» равен факту. «Свои деньги» равны факту минус рабочие деньги.</p></article><article class="guide-panel"><h3>Защищено</h3><p>Платежи до зарплаты, Подушка и планы не выглядят свободными.</p></article><article class="guide-panel"><h3>Не хватает</h3><p>Если обязательств больше, чем свободных денег, видно «Свободно: 0» и отдельная сумма нехватки.</p></article></div>
+    <div class="guide-links"><a class="guide-button guide-button--primary" href="docs/today.html">Разобрать «Сегодня»</a><a class="guide-button" href="troubleshooting.html">Если цифры не сходятся</a></div>
+  </div></section>
+</main>
+<footer class="guide-footer"><div class="guide-footer__inner"><a href="index.html">← Главная</a><a href="#верх">Наверх ↑</a><span>МФМ · БЫСТРЫЙ СТАРТ</span></div></footer>
+</div>
+</body>
+</html>

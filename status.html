@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Режимы и статус функций · МФМ</title>
+<meta name="description" content="Что уже работает в МФМ, что доступно в ограниченном серверном пилоте и чего в продукте ещё нет.">
+<meta name="theme-color" content="#f6f1e3">
+<link rel="canonical" href="https://prokopa42.github.io/mfm-showcase/status.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide.css">
+<link rel="stylesheet" href="assets/site-motion.css">
+<script defer src="assets/site-motion.js"></script>
+</head>
+<body>
+<div class="guide-shell">
+<header id="верх" class="guide-header">
+  <div class="guide-header__main">
+    <a class="guide-brand" href="index.html"><img src="assets/app/mfm-brand-mark.png" alt="Знак МФМ" width="34" height="26"><strong>МФМ</strong><span>ДОКУМЕНТАЦИЯ</span></a>
+    <a class="guide-home" href="index.html">← На главную</a>
+  </div>
+  <nav class="guide-nav" aria-label="Основные страницы">
+    <a href="quick-start.html">Быстрый старт</a><span aria-current="page">Статус</span><a href="docs/today.html">Сегодня</a><a href="docs/payments.html">Платежи</a><a href="docs/debts.html">Долги</a><a href="access.html">Доступ</a><a href="troubleshooting.html">Если не сходится</a>
+  </nav>
+</header>
+<main>
+  <section class="guide-hero" data-screen-label="Текущий статус">
+    <div class="guide-hero__inner">
+      <p class="guide-kicker">СТАТУС НА 19 АВГУСТА 2026</p>
+      <h1 class="guide-title">Что уже работает. И чего ещё нет.</h1>
+      <p class="guide-lead">Ограниченный серверный пилот до пяти изолированных учёток поддерживается; доступ выдаётся вручную после рассмотрения заявки. Правило действует в обоих режимах.</p>
+      <span class="guide-badge">ПИЛОТ РАБОТАЕТ · САМОРЕГИСТРАЦИИ НЕТ</span>
+      <div class="guide-index"><a href="#режимы">Два режима</a><a href="#работает">Работает</a><a href="#пилот">Пилот</a><a href="#нет">Не реализовано</a></div>
+    </div>
+  </section>
+
+  <section id="режимы" class="guide-section" data-screen-label="Два режима">
+    <div class="guide-section__inner">
+      <p class="guide-kicker">01 · ОДНО ЯДРО</p><h2>Два режима, одна логика</h2>
+      <div class="guide-grid">
+        <article class="guide-panel guide-panel--blue"><span class="guide-status guide-status--live">Работает</span><h3>Личные деньги</h3><p>Зарплатный цикл, «Можно сегодня», платежи, долги, Подушка, накопления, сверки и Дневник.</p></article>
+        <article class="guide-panel guide-panel--orange"><span class="guide-status guide-status--live">Работает</span><h3>Личные + рабочие деньги</h3><p>Всё из личного режима плюс пользовательский раздел <strong>«Подотчёт»</strong>: рабочие деньги, кейсы, компенсации и возвраты.</p></article>
+      </div>
+      <div class="guide-callout"><strong>Wikmiks и ProKopa</strong> — внутренние кодовые названия серверных экземпляров. Это не пользовательские названия режимов.</div>
+    </div>
+  </section>
+
+  <section id="работает" class="guide-section guide-section--white" data-screen-label="Работающие функции">
+    <div class="guide-section__inner">
+      <p class="guide-kicker">02 · ТЕКУЩИЙ ПРОДУКТ</p><h2>Работает сейчас</h2>
+      <div class="guide-table-wrap"><table class="guide-table"><thead><tr><th>Возможность</th><th>Личные</th><th>+Рабочие</th><th>Статус</th></tr></thead><tbody>
+        <tr><td>«Можно сегодня» и зарплатный цикл</td><td>да</td><td>да</td><td>работает</td></tr>
+        <tr><td>Платежи, долги, накопления, сверки</td><td>да</td><td>да</td><td>работает</td></tr>
+        <tr><td>Дневник, экспорт и импорт</td><td>да</td><td>да</td><td>работает</td></tr>
+        <tr><td>Подотчёт, рабочие кейсы и компенсации</td><td>нет</td><td>да</td><td>работает</td></tr>
+        <tr><td>Локальная копия и серверная синхронизация</td><td>да</td><td>да</td><td>ограниченный пилот</td></tr>
+      </tbody></table></div>
+    </div>
+  </section>
+
+  <section id="пилот" class="guide-section" data-screen-label="Серверный пилот">
+    <div class="guide-section__inner">
+      <p class="guide-kicker">03 · ОГРАНИЧЕННЫЙ ПИЛОТ</p><h2>Как выдаётся учётка</h2>
+      <ol class="guide-steps"><li>Пользователь выбирает режим и подаёт заявку в самом приложении.</li><li>Заявка получает номер и страницу статуса. <strong>Заявка не создаёт учётку автоматически.</strong></li><li>Владелец вручную рассматривает заявку и принимает решение.</li><li>После одобрения выдаётся изолированная учётка и инструкция по входу.</li></ol>
+      <div class="guide-callout"><strong>Изоляция:</strong> пользователи не видят данные друг друга. Общей ленты, общего бюджета или общего кабинета нет.</div>
+      <div class="guide-links"><a class="guide-button guide-button--primary" href="access.html">Выбрать режим</a><a class="guide-button" href="quick-start.html">Быстрый старт</a></div>
+    </div>
+  </section>
+
+  <section id="нет" class="guide-section guide-section--white" data-screen-label="Не реализовано">
+    <div class="guide-section__inner">
+      <p class="guide-kicker">04 · ЧЕСТНАЯ ГРАНИЦА</p><h2>Этого в МФМ сейчас нет</h2>
+      <div class="guide-grid">
+        <article class="guide-panel guide-panel--red"><span class="guide-status guide-status--no">Не реализовано</span><h3>Свободная регистрация</h3><p>Нельзя самостоятельно создать учётку без решения владельца.</p></article>
+        <article class="guide-panel guide-panel--red"><span class="guide-status guide-status--no">Не реализовано</span><h3>Общий кабинет организации</h3><p>Нет совместных данных, ролей, согласований или сводной панели.</p></article>
+        <article class="guide-panel guide-panel--red"><span class="guide-status guide-status--no">Не реализовано</span><h3>Бухгалтерская система</h3><p>МФМ не ведёт бухгалтерский учёт, налоги или официальную отчётность.</p></article>
+      </div>
+      <p>Сетка рабочих бюджетов и выгрузка для финансового блока — направление проектирования, а не обещанная функция.</p>
+    </div>
+  </section>
+</main>
+<footer class="guide-footer"><div class="guide-footer__inner"><a href="index.html">← Главная</a><a href="#верх">Наверх ↑</a><span>МФМ · РЕЖИМЫ И СТАТУС</span></div></footer>
+</div>
+</body>
+</html>
