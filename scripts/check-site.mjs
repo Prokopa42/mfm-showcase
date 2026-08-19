@@ -53,6 +53,17 @@ const requiredHtml = [
   "docs/glossary.html",
 ];
 
+const annotatedScreens = new Map([
+  ["docs/today.html", { namespace: "today", zones: 10 }],
+  ["docs/cycle.html", { namespace: "cycle", zones: 5 }],
+  ["docs/payments.html", { namespace: "payments", zones: 6 }],
+  ["docs/debts.html", { namespace: "debts", zones: 4 }],
+  ["docs/work-money.html", { namespace: "work-money", zones: 5 }],
+  ["docs/savings.html", { namespace: "savings", zones: 5 }],
+  ["docs/history.html", { namespace: "history", zones: 5 }],
+  ["docs/settings.html", { namespace: "settings", zones: 6 }],
+]);
+
 for (const required of ["DOCS_MAINTENANCE.md", "ARCHITECTURE.md", "EDITIONS_AND_STATUS.md"]) read(required);
 
 const htmlFiles = walk(root)
@@ -62,6 +73,37 @@ const htmlFiles = walk(root)
 
 for (const required of requiredHtml) {
   if (!htmlFiles.includes(required)) fail(`Нет обязательной HTML-страницы: ${required}`);
+}
+
+for (const [file, contract] of annotatedScreens) {
+  const source = read(file);
+  if (!source.includes('../assets/annotated-screen.css')) {
+    fail(`${file}: не подключён общий стиль аннотированных экранов`);
+  }
+  if (!source.includes('data-mfm-annotated')) {
+    fail(`${file}: нет аннотированного экрана`);
+  }
+
+  const zoneIds = [...source.matchAll(/\bid="зона-(\d+)"/g)].map((match) => Number(match[1]));
+  const blockIds = [...source.matchAll(/\bid="блок-(\d+)"/g)].map((match) => Number(match[1]));
+  const expected = Array.from({ length: contract.zones }, (_, index) => index + 1);
+  if (zoneIds.join(',') !== expected.join(',')) {
+    fail(`${file}: зоны должны идти 1..${contract.zones}, получено ${zoneIds.join(',') || 'ничего'}`);
+  }
+  if (blockIds.join(',') !== expected.join(',')) {
+    fail(`${file}: разборы должны идти 1..${contract.zones}, получено ${blockIds.join(',') || 'ничего'}`);
+  }
+
+  for (const number of expected) {
+    const pair = `${contract.namespace}-${number}`;
+    const occurrences = [...source.matchAll(new RegExp(`data-mfm-pair="${pair}"`, 'g'))].length;
+    if (occurrences < 2) {
+      fail(`${file}: пара ${pair} должна явно связывать схему и разбор`);
+    }
+    if (!source.includes(`href="#блок-${number}"`) || !source.includes(`href="#зона-${number}"`)) {
+      fail(`${file}: у пары ${pair} нет двусторонних ссылок`);
+    }
+  }
 }
 
 const idsByFile = new Map();

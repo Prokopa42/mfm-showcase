@@ -61,6 +61,7 @@ img { max-width:100%; }
 }
 </style>
 <link rel="stylesheet" href="../assets/site-motion.css">
+<link rel="stylesheet" href="../assets/annotated-screen.css">
 <script defer src="../assets/site-motion.js"></script>
 </head>
 <body>
@@ -116,6 +117,7 @@ img { max-width:100%; }
       <nav id="содержание" aria-label="Содержание страницы" style="position:sticky; top:14px; border:2px solid #14120d; background:#fffdf7; padding:16px 18px; margin-top:clamp(24px,3vw,40px);">
         <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em;">СОДЕРЖАНИЕ</p>
         <div style="display:flex; flex-direction:column; margin-top:10px;">
+          <a href="#карта-экрана" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:#0749a9;">↳</span>Аннотированный экран</a>
           <a href="#общий-котёл" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Общий котёл</a>
           <a href="#копилка" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">2</span>Подушка и Копилка</a>
           <a href="#действия" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>План и факт</a>
@@ -129,6 +131,33 @@ img { max-width:100%; }
     </aside>
 
     <div style="flex:999 1 min(100%, 620px); min-width:0; max-width:860px;">
+
+      <section id="карта-экрана" data-screen-label="Аннотированный экран" data-mfm-annotated style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>КАРТА</span><span>НАКОПЛЕНИЯ · ОТ ФАКТА К ЦЕЛЯМ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400; line-height:1.12; text-wrap:balance;" class="dc-type-3">Аннотированный экран</h2>
+        <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:68ch;">Экран читается сверху вниз: сколько уже отложено, куда распределено, как меняется сумма, для чего она предназначена и какие действия доступны.</p>
+        <div class="mfm-annotated">
+          <div class="mfm-screen-map">
+            <div class="mfm-screen-demo" aria-label="Схема экрана Накопления">
+              <div class="mfm-screen-demo__bar"><strong>НАКОПЛЕНИЯ</strong><span>СРЕДНИЙ ТЕМП 12 000 ₽ / МЕС.</span></div>
+              <div class="mfm-screen-zone mfm-screen-zone--hero"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">НАКОПЛЕНО ВСЕГО · ОБЩИЙ КОТЁЛ</span><span class="mfm-screen-zone__value">100 000 ₽</span><span class="mfm-screen-zone__meta">ФАКТИЧЕСКАЯ СУММА ВНЕ РАСХОДНОГО КОНТУРА</span></div><a id="зона-1" data-mfm-pair="savings-1" href="#блок-1" class="mfm-zone-pin">1</a></div>
+              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">РАСПРЕДЕЛЕНИЕ КОТЛА</span><div class="mfm-screen-meter" style="display:flex;"><span style="width:30%; background:#fbbd5b;"></span><span style="width:50%; background:#0749a9;"></span><span style="width:20%; background:#d9d3bc;"></span></div><span class="mfm-screen-zone__meta">КОПИЛКА 30 000 · ЦЕЛИ 50 000 · НЕ РАСПРЕДЕЛЕНО 20 000</span></div><a id="зона-2" data-mfm-pair="savings-2" href="#блок-2" class="mfm-zone-pin">2</a></div>
+              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">ТРАЕКТОРИЯ · ФАКТ И ПРОГНОЗ</span><svg viewBox="0 0 320 88" role="img" aria-label="Фактический рост накоплений и пунктирный прогноз" style="display:block; width:100%; height:auto; margin-top:8px;"><path d="M8 76H312" stroke="#d9d3bc" stroke-width="2"/><polyline points="12,68 74,56 132,48 190,31" fill="none" stroke="#14120d" stroke-width="4"/><polyline points="190,31 248,22 306,10" fill="none" stroke="#0749a9" stroke-width="4" stroke-dasharray="8 7"/><circle cx="190" cy="31" r="7" fill="#0749a9" stroke="#fffdf7" stroke-width="3"/></svg></div><a id="зона-3" data-mfm-pair="savings-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--split"><div><span class="mfm-screen-zone__label">КОПИЛКА</span><strong>30 000 ₽</strong><span class="mfm-screen-zone__meta">СВОБОДНЫЙ КОНВЕРТ</span></div><div><span class="mfm-screen-zone__label">ЦЕЛЬ «ОТПУСК»</span><strong>50 000 / 120 000 ₽</strong><span class="mfm-screen-zone__meta">СРОК · ДЕКАБРЬ</span></div><a id="зона-4" data-mfm-pair="savings-4" href="#блок-4" class="mfm-zone-pin" style="position:absolute; right:12px; top:12px;">4</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ДЕЙСТВИЯ</span><span class="mfm-screen-zone__meta">ОТЛОЖИТЬ В КОТЁЛ · РАСПРЕДЕЛИТЬ</span></div><a id="зона-5" data-mfm-pair="savings-5" href="#блок-5" class="mfm-zone-pin">5</a></div>
+            </div>
+            <nav class="mfm-screen-index" aria-label="Зоны экрана Накопления"><p class="mfm-screen-index__title">ЗОНЫ ЭКРАНА</p><a class="mfm-screen-index__link" data-mfm-pair="savings-1" href="#блок-1"><span>1</span><span>Общий котёл</span></a><a class="mfm-screen-index__link" data-mfm-pair="savings-2" href="#блок-2"><span>2</span><span>Распределение</span></a><a class="mfm-screen-index__link" data-mfm-pair="savings-3" href="#блок-3"><span>3</span><span>Темп и траектория</span></a><a class="mfm-screen-index__link" data-mfm-pair="savings-4" href="#блок-4"><span>4</span><span>Копилка и цели</span></a><a class="mfm-screen-index__link" data-mfm-pair="savings-5" href="#блок-5"><span>5</span><span>Перевести и распределить</span></a></nav>
+          </div>
+          <div class="mfm-zone-list">
+            <article id="блок-1" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-1" data-mfm-pair="savings-1" class="mfm-zone-pin">1</a><h3>Общий котёл</h3></div><p>Фактически отложенные деньги. После перевода они покидают «Свои деньги» и перестают участвовать в дневном лимите. <a href="#общий-котёл">Как устроена сумма</a>.</p></article>
+            <article id="блок-2" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-2" data-mfm-pair="savings-2" class="mfm-zone-pin">2</a><h3>Распределение котла</h3></div><p>Показывает, сколько назначено Копилке и целям, а сколько ещё не распределено. Внутреннее распределение не двигает деньги между личным контуром и накоплениями. <a href="#распределение">Подробнее</a>.</p></article>
+            <article id="блок-3" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-3" data-mfm-pair="savings-3" class="mfm-zone-pin">3</a><h3>Факт и честный прогноз</h3></div><p>Сплошная линия — история реальных переводов, пунктир — продолжение наблюдаемого темпа. Если истории мало, прогноз не строится. <a href="#траектория">Как читать график</a>.</p></article>
+            <article id="блок-4" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-4" data-mfm-pair="savings-4" class="mfm-zone-pin">4</a><h3>Копилка и цели</h3></div><p>Копилка — свободный конверт внутри накоплений. Цель имеет сумму и срок, поэтому приложение сравнивает фактический темп с нужным. <a href="#копилка">Не путать с Подушкой</a> · <a href="#цели">Цели</a>.</p></article>
+            <article id="блок-5" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-5" data-mfm-pair="savings-5" class="mfm-zone-pin">5</a><h3>Перевод и распределение</h3></div><p>«Отложить в котёл» уменьшает свои деньги сейчас. «Распределить» назначает уже отложенные деньги конкретным конвертам. <a href="#действия">План и факт</a>.</p></article>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">↑ К содержанию</a></p>
+      </section>
 
       <section id="общий-котёл" data-screen-label="1 Общий котёл" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>1</span><span>ГЛАВНАЯ ЦИФРА</span></div>

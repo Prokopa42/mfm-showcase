@@ -57,6 +57,7 @@ img { max-width:100%; }
 }
 </style>
 <link rel="stylesheet" href="../assets/site-motion.css">
+<link rel="stylesheet" href="../assets/annotated-screen.css">
 <script defer src="../assets/site-motion.js"></script>
 </head>
 <body>
@@ -112,6 +113,7 @@ img { max-width:100%; }
       <nav id="содержание" aria-label="Содержание страницы" style="position:sticky; top:14px; border:2px solid #14120d; background:#fffdf7; padding:16px 18px; margin-top:clamp(24px,3vw,40px);">
         <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em;">СОДЕРЖАНИЕ</p>
         <div style="display:flex; flex-direction:column; margin-top:10px;">
+          <a href="#карта-экрана" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:#c87900;">↳</span>Аннотированный экран</a>
           <a href="#черновик" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Черновик изменений</a>
           <a href="#цикл-настройки" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">2</span>Цикл</a>
           <a href="#деньги" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>Деньги</a>
@@ -126,6 +128,34 @@ img { max-width:100%; }
     </aside>
 
     <div style="flex:999 1 min(100%, 620px); min-width:0; max-width:860px;">
+
+      <section id="карта-экрана" data-screen-label="Аннотированный экран" data-mfm-annotated style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>КАРТА</span><span>НАСТРОЙКИ · ОТ ПРАВКИ К ПРИМЕНЕНИЮ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400; line-height:1.12; text-wrap:balance;" class="dc-type-3">Аннотированный экран</h2>
+        <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:68ch;">Экран отделяет расчётные параметры, учётную запись, перенос данных и опасные действия. Это снижает риск изменить не ту часть системы.</p>
+        <div class="mfm-annotated mfm-annotated--orange">
+          <div class="mfm-screen-map">
+            <div class="mfm-screen-demo" aria-label="Схема экрана Настройки">
+              <div class="mfm-screen-demo__bar"><strong>НАСТРОЙКИ</strong><span>НЕПРИМЕНЁННЫХ ПРАВОК: 3</span><a id="зона-1" data-mfm-pair="settings-1" href="#блок-1" class="mfm-zone-pin">1</a></div>
+              <div class="mfm-screen-demo__tabs"><span class="is-current">ЦИКЛ</span><span>ДЕНЬГИ</span><span>НАКОПЛЕНИЯ</span><span>РУБРИКИ</span><span>ДАННЫЕ</span><a id="зона-2" data-mfm-pair="settings-2" href="#блок-2" class="mfm-zone-pin">2</a></div>
+              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">РАСЧЁТНЫЕ ПАРАМЕТРЫ · ЧЕРНОВИК</span><span class="mfm-screen-zone__meta">ДАТА ЗАРПЛАТЫ · СЕГОДНЯ В ДЕЛИТЕЛЕ · ПОДУШКИ</span><div style="display:flex; gap:8px; margin-top:10px;"><span style="background:#0749a9; color:#fffdf7; padding:7px 10px; font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:700;">ПРИМЕНИТЬ</span><span style="border:1.5px solid #14120d; padding:5.5px 10px; font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:700;">ОТМЕНИТЬ</span></div></div><a id="зона-3" data-mfm-pair="settings-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--split"><div><span class="mfm-screen-zone__label">УЧЁТНАЯ ЗАПИСЬ</span><strong>ВОШЛИ КАК PROKOPA</strong><span class="mfm-screen-zone__meta">СИНХРОНИЗИРОВАНО</span></div><div><span class="mfm-screen-zone__label">КЛЮЧ УСТРОЙСТВА</span><strong>ДОБАВИТЬ</strong><span class="mfm-screen-zone__meta">ЕЩЁ ОДИН СПОСОБ ВХОДА</span></div><a id="зона-4" data-mfm-pair="settings-4" href="#блок-4" class="mfm-zone-pin" style="position:absolute; right:12px; top:12px;">4</a></div>
+              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ДАННЫЕ УСТРОЙСТВА</span><span class="mfm-screen-zone__meta">ЭКСПОРТ JSON · ИМПОРТ JSON · ЛОКАЛЬНЫЕ СНИМКИ · ИНВАРИАНТЫ</span></div><a id="зона-5" data-mfm-pair="settings-5" href="#блок-5" class="mfm-zone-pin">5</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--compact" style="border-top:2px solid #d63031;"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label" style="color:#d63031;">ОПАСНЫЕ ДЕЙСТВИЯ</span><span class="mfm-screen-zone__meta">СТАРТ РАБОТЫ · ПОЛНЫЙ СБРОС</span></div><a id="зона-6" data-mfm-pair="settings-6" href="#блок-6" class="mfm-zone-pin">6</a></div>
+            </div>
+            <nav class="mfm-screen-index" aria-label="Зоны экрана Настройки"><p class="mfm-screen-index__title">ЗОНЫ ЭКРАНА</p><a class="mfm-screen-index__link" data-mfm-pair="settings-1" href="#блок-1"><span>1</span><span>Состояние черновика</span></a><a class="mfm-screen-index__link" data-mfm-pair="settings-2" href="#блок-2"><span>2</span><span>Пять внутренних страниц</span></a><a class="mfm-screen-index__link" data-mfm-pair="settings-3" href="#блок-3"><span>3</span><span>Параметры и применение</span></a><a class="mfm-screen-index__link" data-mfm-pair="settings-4" href="#блок-4"><span>4</span><span>Учётная запись и синхронизация</span></a><a class="mfm-screen-index__link" data-mfm-pair="settings-5" href="#блок-5"><span>5</span><span>Экспорт, импорт и снимки</span></a><a class="mfm-screen-index__link" data-mfm-pair="settings-6" href="#блок-6"><span>6</span><span>Старт работы и сброс</span></a></nav>
+          </div>
+          <div class="mfm-zone-list">
+            <article id="блок-1" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-1" data-mfm-pair="settings-1" class="mfm-zone-pin">1</a><h3>Состояние правок видно постоянно</h3></div><p>Шапка сообщает, есть ли неприменённые изменения. Пока вы не нажали «Применить», расчёт приложения не меняется. <a href="#черновик">Правило черновика</a>.</p></article>
+            <article id="блок-2" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-2" data-mfm-pair="settings-2" class="mfm-zone-pin">2</a><h3>Пять смысловых страниц</h3></div><p>Цикл, Деньги, Накопления, Рубрики и Данные разделены, чтобы расчётные параметры не смешивались со справочниками и обслуживанием данных.</p></article>
+            <article id="блок-3" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-3" data-mfm-pair="settings-3" class="mfm-zone-pin">3</a><h3>Изменение и пересчёт — разные шаги</h3></div><p>Поля можно проверить вместе, а затем применить одним пересчётом. Рубрики являются исключением и сохраняются сразу. <a href="#цикл-настройки">Цикл</a> · <a href="#деньги">Деньги</a> · <a href="#накопления-настройки">Накопления и рубрики</a>.</p></article>
+            <article id="блок-4" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-4" data-mfm-pair="settings-4" class="mfm-zone-pin">4</a><h3>Учётная запись и ключ устройства</h3></div><p>Показываются состояние входа, последняя синхронизация и способы входа. Каждая пилотная учётка изолирована от других. <a href="#данные">Учётная запись</a>.</p></article>
+            <article id="блок-5" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-5" data-mfm-pair="settings-5" class="mfm-zone-pin">5</a><h3>Переносимость и восстановление</h3></div><p>JSON нужен для ручного переноса, локальные снимки — для возврата перед рискованными изменениями, инварианты — для проверки целостности.</p></article>
+            <article id="блок-6" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-6" data-mfm-pair="settings-6" class="mfm-zone-pin">6</a><h3>Опасные действия отделены</h3></div><p>«Старт работы» очищает демонстрационные события с выбором будущих платежей. «Полный сброс» удаляет рабочее состояние и требует отдельного явного подтверждения.</p></article>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">↑ К содержанию</a></p>
+      </section>
 
       <section id="черновик" data-screen-label="1 Черновик изменений" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>1</span><span>ГЛАВНОЕ ПРАВИЛО</span></div>

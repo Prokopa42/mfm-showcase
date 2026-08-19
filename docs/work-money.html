@@ -57,6 +57,7 @@ img { max-width:100%; }
 }
 </style>
 <link rel="stylesheet" href="../assets/site-motion.css">
+<link rel="stylesheet" href="../assets/annotated-screen.css">
 <script defer src="../assets/site-motion.js"></script>
 </head>
 <body>
@@ -114,6 +115,7 @@ img { max-width:100%; }
       <nav id="содержание" aria-label="Содержание страницы" style="position:sticky; top:14px; border:2px solid #14120d; background:#fffdf7; padding:16px 18px; margin-top:clamp(24px,3vw,40px);">
         <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em;">СОДЕРЖАНИЕ</p>
         <div style="display:flex; flex-direction:column; margin-top:10px;">
+          <a href="#карта-экрана" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:#c87900;">↳</span>Аннотированный экран</a>
           <a href="#главная-цифра" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Три отношения</a>
           <a href="#экран" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">2</span>Внутренние страницы</a>
           <a href="#рабочий-кейс" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>Рабочий кейс</a>
@@ -127,6 +129,33 @@ img { max-width:100%; }
     </aside>
 
     <div style="flex:999 1 min(100%, 620px); min-width:0; max-width:860px;">
+
+      <section id="карта-экрана" data-screen-label="Аннотированный экран" data-mfm-annotated style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>КАРТА</span><span>ПОДОТЧЁТ · СВЕРХУ ВНИЗ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400; line-height:1.12; text-wrap:balance;" class="dc-type-3">Аннотированный экран</h2>
+        <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:68ch;">Карта отделяет рабочие деньги от личных и одновременно показывает, где смотреть выдачи, расходы, долг, компенсацию и конкретные рабочие задачи.</p>
+        <div class="mfm-annotated mfm-annotated--orange">
+          <div class="mfm-screen-map">
+            <div class="mfm-screen-demo" aria-label="Схема экрана Подотчёт">
+              <div class="mfm-screen-demo__bar"><strong>ПОДОТЧЁТ</strong><span>РАБОЧИЕ ДЕНЬГИ НЕ ВХОДЯТ В ЛИЧНЫЙ ЛИМИТ</span></div>
+              <div class="mfm-screen-demo__tabs"><span class="is-current">ОБЗОР</span><span>ЗАПИСАТЬ</span><span>КЕЙСЫ</span><span>ИСТОРИЯ</span><a id="зона-1" data-mfm-pair="work-money-1" href="#блок-1" class="mfm-zone-pin">1</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--split"><div><span class="mfm-screen-zone__label">РАБОЧИЕ ДЕНЬГИ У МЕНЯ</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small">30 000 ₽</span></div><div><span class="mfm-screen-zone__label">СВОИ ДЕНЬГИ</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small">50 000 ₽</span></div><a id="зона-2" data-mfm-pair="work-money-2" href="#блок-2" class="mfm-zone-pin" style="position:absolute; right:12px; top:12px;">2</a></div>
+              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">КЕЙСЫ · 2</span><strong>ИНФРАСТРУКТУРА · ОДОБРЕНО 50 000 ₽</strong><div class="mfm-screen-meter"><span style="width:60%;"></span></div><span class="mfm-screen-zone__meta">ПОЛУЧЕНО 30 000 · ОСТАЛОСЬ 18 000</span></div><a id="зона-3" data-mfm-pair="work-money-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ЗАПИСАТЬ ОПЕРАЦИЮ</span><span class="mfm-screen-zone__meta">ПОЛУЧИЛ · ПОТРАТИЛ · ВЕРНУЛ · КОМПЕНСИРОВАЛ</span></div><a id="зона-4" data-mfm-pair="work-money-4" href="#блок-4" class="mfm-zone-pin">4</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--hero"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ВЛИЯНИЕ НА ЛИЧНЫЙ КОНТУР</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small">К КОМПЕНСАЦИИ 7 000 ₽</span><span class="mfm-screen-zone__meta">ДОЛЖЕН ВЕРНУТЬ В ПОДОТЧЁТ 5 000 ₽</span></div><a id="зона-5" data-mfm-pair="work-money-5" href="#блок-5" class="mfm-zone-pin">5</a></div>
+            </div>
+            <nav class="mfm-screen-index" aria-label="Зоны экрана Подотчёт"><p class="mfm-screen-index__title">ЗОНЫ ЭКРАНА</p><a class="mfm-screen-index__link" data-mfm-pair="work-money-1" href="#блок-1"><span>1</span><span>Обзор, запись, кейсы, история</span></a><a class="mfm-screen-index__link" data-mfm-pair="work-money-2" href="#блок-2"><span>2</span><span>Рабочие и свои деньги</span></a><a class="mfm-screen-index__link" data-mfm-pair="work-money-3" href="#блок-3"><span>3</span><span>Рабочие кейсы и лимиты</span></a><a class="mfm-screen-index__link" data-mfm-pair="work-money-4" href="#блок-4"><span>4</span><span>Виды операций</span></a><a class="mfm-screen-index__link" data-mfm-pair="work-money-5" href="#блок-5"><span>5</span><span>Связь с личным контуром</span></a></nav>
+          </div>
+          <div class="mfm-zone-list">
+            <article id="блок-1" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-1" data-mfm-pair="work-money-1" class="mfm-zone-pin">1</a><h3>Четыре внутренних окна</h3></div><p>«Обзор» отвечает сколько денег и обязательств сейчас; «Записать» проводит действие; «Кейсы» группируют работу; «История» объясняет каждое движение. <a href="#экран">Подробнее</a>.</p></article>
+            <article id="блок-2" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-2" data-mfm-pair="work-money-2" class="mfm-zone-pin">2</a><h3>Рабочие деньги не становятся личными</h3></div><p>Они входят во «Всего на руках», но вычитаются при расчёте «Своих денег» и не увеличивают дневной лимит. <a href="#главная-цифра">Три главных отношения</a>.</p></article>
+            <article id="блок-3" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-3" data-mfm-pair="work-money-3" class="mfm-zone-pin">3</a><h3>Кейсы и фактическая выдача</h3></div><p>Одобренный лимит — не деньги на руках. Отдельно показано, сколько одобрено, сколько получено, потрачено и осталось. <a href="#рабочий-кейс">Как устроен кейс</a>.</p></article>
+            <article id="блок-4" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-4" data-mfm-pair="work-money-4" class="mfm-zone-pin">4</a><h3>Рабочие операции</h3></div><p>Выдача, рабочий расход, возврат остатка, личные деньги на рабочее, компенсация, личное из рабочих денег и возврат личного долга. <a href="#действия">Эффекты операций</a>.</p></article>
+            <article id="блок-5" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-5" data-mfm-pair="work-money-5" class="mfm-zone-pin">5</a><h3>Два встречных обязательства</h3></div><p>«К компенсации» означает, что организация должна вам. «Должен вернуть в подотчёт» означает обратное. Они видны отдельно и не взаимозачитываются молча.</p></article>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">↑ К содержанию</a></p>
+      </section>
 
       <section id="главная-цифра" data-screen-label="1 Три отношения" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>1</span><span>ГЛАВНЫЕ ОТНОШЕНИЯ</span></div>

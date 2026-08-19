@@ -57,6 +57,7 @@ img { max-width:100%; }
 }
 </style>
 <link rel="stylesheet" href="../assets/site-motion.css">
+<link rel="stylesheet" href="../assets/annotated-screen.css">
 <script defer src="../assets/site-motion.js"></script>
 </head>
 <body>
@@ -113,6 +114,7 @@ img { max-width:100%; }
       <nav id="содержание" aria-label="Содержание страницы" style="position:sticky; top:14px; border:2px solid #14120d; background:#fffdf7; padding:16px 18px; margin-top:clamp(24px,3vw,40px);">
         <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em;">СОДЕРЖАНИЕ</p>
         <div style="display:flex; flex-direction:column; margin-top:10px;">
+          <a href="#карта-экрана" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:#0749a9;">↳</span>Аннотированный экран</a>
           <a href="#фильтры" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Фильтры</a>
           <a href="#операция" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">2</span>Строка операции</a>
           <a href="#сводки" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>Сводки периода</a>
@@ -126,6 +128,33 @@ img { max-width:100%; }
     </aside>
 
     <div style="flex:999 1 min(100%, 620px); min-width:0; max-width:860px;">
+
+      <section id="карта-экрана" data-screen-label="Аннотированный экран" data-mfm-annotated style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>КАРТА</span><span>ДНЕВНИК · ОТ ФИЛЬТРА К ПРИЧИНЕ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400; line-height:1.12; text-wrap:balance;" class="dc-type-3">Аннотированный экран</h2>
+        <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:68ch;">Дневник объясняет не только сумму операции, но и её смысл: какой контур изменился, почему возникло несколько эффектов и что произойдёт при отмене.</p>
+        <div class="mfm-annotated">
+          <div class="mfm-screen-map">
+            <div class="mfm-screen-demo" aria-label="Схема экрана Дневник">
+              <div class="mfm-screen-demo__bar"><strong>ДНЕВНИК</strong><span>11 ОПЕРАЦИЙ · ТЕКУЩИЙ ЦИКЛ</span></div>
+              <div class="mfm-screen-demo__tabs"><span class="is-current">ВСЁ</span><span>30 ДНЕЙ</span><span>ЦИКЛ</span><span>ДОЛГИ</span><span>РАБОЧИЕ</span><a id="зона-1" data-mfm-pair="history-1" href="#блок-1" class="mfm-zone-pin">1</a></div>
+              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">1 ИЮЛЯ · РАСХОД</span><strong>ОПЛАТА СЕРВЕРА · 10 000 ₽</strong><span class="mfm-screen-zone__meta">РАБОЧИЙ КЕЙС «ИНФРАСТРУКТУРА»</span></div><a id="зона-2" data-mfm-pair="history-2" href="#блок-2" class="mfm-zone-pin">2</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ЭФФЕКТЫ ОПЕРАЦИИ</span><span class="mfm-screen-zone__meta">ВСЕГО НА РУКАХ −10 000 · РАБОЧИЕ −2 000 · К КОМПЕНСАЦИИ +8 000</span></div><a id="зона-3" data-mfm-pair="history-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
+              <div class="mfm-screen-zone" style="background:#fde7bb;"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">СОСТАВНАЯ ОПЕРАЦИЯ · 3 СВЯЗАННЫХ ДВИЖЕНИЯ</span><strong>ПЕРЕНОС ДОЛГА · 5 000 ₽</strong><span class="mfm-screen-zone__meta">ОДНА ПОЛЬЗОВАТЕЛЬСКАЯ СТРОКА, ОТМЕНА ЦЕЛИКОМ</span></div><a id="зона-4" data-mfm-pair="history-4" href="#блок-4" class="mfm-zone-pin">4</a></div>
+              <div class="mfm-screen-zone mfm-screen-zone--split"><div><span class="mfm-screen-zone__label">ИТОГИ ПЕРИОДА</span><strong>ДОХОДЫ 120 000 ₽</strong><span class="mfm-screen-zone__meta">РАСХОДЫ 42 700 ₽</span></div><div><span class="mfm-screen-zone__label">ДЕЙСТВИЕ</span><strong style="color:#d63031;">ОТМЕНИТЬ</strong><span class="mfm-screen-zone__meta">С ОБЪЯСНЕНИЕМ ЭФФЕКТА</span></div><a id="зона-5" data-mfm-pair="history-5" href="#блок-5" class="mfm-zone-pin" style="position:absolute; right:12px; top:12px;">5</a></div>
+            </div>
+            <nav class="mfm-screen-index" aria-label="Зоны экрана Дневник"><p class="mfm-screen-index__title">ЗОНЫ ЭКРАНА</p><a class="mfm-screen-index__link" data-mfm-pair="history-1" href="#блок-1"><span>1</span><span>Период и смысл</span></a><a class="mfm-screen-index__link" data-mfm-pair="history-2" href="#блок-2"><span>2</span><span>Строка операции</span></a><a class="mfm-screen-index__link" data-mfm-pair="history-3" href="#блок-3"><span>3</span><span>Фактические эффекты</span></a><a class="mfm-screen-index__link" data-mfm-pair="history-4" href="#блок-4"><span>4</span><span>Составная операция</span></a><a class="mfm-screen-index__link" data-mfm-pair="history-5" href="#блок-5"><span>5</span><span>Сводка и отмена</span></a></nav>
+          </div>
+          <div class="mfm-zone-list">
+            <article id="блок-1" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-1" data-mfm-pair="history-1" class="mfm-zone-pin">1</a><h3>Фильтр всегда остаётся видимым</h3></div><p>Период, смысл и вид списка задаются отдельно. Так отфильтрованную историю невозможно случайно принять за полную. <a href="#фильтры">Все фильтры</a>.</p></article>
+            <article id="блок-2" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-2" data-mfm-pair="history-2" class="mfm-zone-pin">2</a><h3>Одна строка отвечает на четыре вопроса</h3></div><p>Когда, что произошло, к какому контуру относится и на какую сумму. <a href="#операция">Как читать строку</a>.</p></article>
+            <article id="блок-3" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-3" data-mfm-pair="history-3" class="mfm-zone-pin">3</a><h3>Показываются только реальные эффекты</h3></div><p>Одна оплата может одновременно уменьшить кассу, рабочие деньги и увеличить сумму к компенсации. Нулевые эффекты не создают шум.</p></article>
+            <article id="блок-4" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-4" data-mfm-pair="history-4" class="mfm-zone-pin">4</a><h3>Составное действие остаётся одним событием</h3></div><p>Перенос долга или смешанная рабочая оплата могут состоять из нескольких движений, но пользователь видит их связно и отменяет целиком. <a href="#составные">Подробнее</a>.</p></article>
+            <article id="блок-5" class="mfm-zone-row"><div class="mfm-zone-row__head"><a href="#зона-5" data-mfm-pair="history-5" class="mfm-zone-pin">5</a><h3>Сводка и безопасная отмена</h3></div><p>Сводка агрегирует выбранный период. Перед отменой приложение объясняет, какие деньги и обязательства будут восстановлены. <a href="#сводки">Сводки</a> · <a href="#отмена">Отмена</a>.</p></article>
+          </div>
+        </div>
+        <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);">↑ К содержанию</a></p>
+      </section>
 
       <section id="фильтры" data-screen-label="1 Фильтры" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>1</span><span>ФИЛЬТРЫ</span></div>

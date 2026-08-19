@@ -131,6 +131,9 @@
   const pairElements = [...document.querySelectorAll('[data-mfm-pair], a[href^="#блок-"], a[href^="#зона-"]')];
   const pairRows = [...document.querySelectorAll('[id^="блок-"]')];
   const pairGroups = new Map();
+  const pairNamespace = body.dataset.mfmPage
+    || decodeURIComponent(window.location.pathname.split('/').pop() || 'page').replace(/\.html$/i, '')
+    || 'page';
   let hoveredPair = '';
 
   const pairKeyFromValue = (value) => {
@@ -141,7 +144,7 @@
       return '';
     }
     const match = decoded.match(/^(?:блок|зона)-(\d+)$/);
-    return match ? `today-${match[1]}` : '';
+    return match ? `${pairNamespace}-${match[1]}` : '';
   };
 
   const registerPairElement = (element, key) => {
