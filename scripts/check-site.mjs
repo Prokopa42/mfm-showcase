@@ -10,6 +10,7 @@ const failures = [];
 const localTargets = new Set();
 const canonicalPilotStatus =
   "Ограниченный серверный пилот до пяти изолированных учёток поддерживается; доступ выдаётся вручную после рассмотрения заявки.";
+const githubRepositoryUrl = "https://github.com/Prokopa42/mfm-showcase";
 
 function walk(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -112,6 +113,21 @@ for (const file of htmlFiles) {
   if (!/^<!doctype html>/i.test(source.trimStart())) fail(`${file}: нет HTML doctype`);
   if (!/<html\s+lang="ru"/i.test(source)) fail(`${file}: не задан lang="ru"`);
   if (!/<meta\s+name="viewport"/i.test(source)) fail(`${file}: нет мобильного viewport`);
+
+  const githubLinks = [...source.matchAll(/<a\b[^>]*\bdata-github-link="(header|footer)"[^>]*>/g)]
+    .map((match) => ({ position: match[1], tag: match[0] }));
+  for (const position of ["header", "footer"]) {
+    const links = githubLinks.filter((link) => link.position === position);
+    if (links.length !== 1) {
+      fail(`${file}: нужна ровно одна ссылка GitHub в ${position === "header" ? "шапке" : "подвале"}, найдено ${links.length}`);
+      continue;
+    }
+    const { tag } = links[0];
+    if (!tag.includes(`href="${githubRepositoryUrl}"`)) fail(`${file}: неверный адрес GitHub в ${position}`);
+    if (!tag.includes('target="_blank"') || !tag.includes('rel="noopener"')) {
+      fail(`${file}: внешняя ссылка GitHub в ${position} должна безопасно открываться в новой вкладке`);
+    }
+  }
 
   const ids = [...source.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
   const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);

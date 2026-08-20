@@ -243,10 +243,70 @@ header nav a,
   transition: transform 180ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
+a[data-github-link="header"] {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #14120d !important;
+  background: #14120d !important;
+  color: #f6f1e3 !important;
+  padding: 7px 11px !important;
+  box-shadow: 4px 4px 0 #0749a9;
+  font: 700 11px/1.2 "JetBrains Mono", monospace !important;
+  letter-spacing: 0.08em !important;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+a[data-github-link="header"]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: #fbbd5b;
+}
+
+a[data-github-link="footer"] {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  border: 2px solid #14120d !important;
+  background: #0749a9 !important;
+  color: #fffdf7 !important;
+  padding: 9px 12px !important;
+  box-shadow: 4px 4px 0 #14120d;
+  font: 700 12px/1.35 "JetBrains Mono", monospace !important;
+  letter-spacing: 0.04em;
+  text-decoration: none !important;
+}
+
+a[data-github-link="footer"]::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex: none;
+  background: #fbbd5b;
+}
+
 @media (hover: hover) and (pointer: fine) {
   header nav a:hover,
   .site-toc__links a:hover {
     transform: translateY(-2px);
+  }
+
+  a[data-github-link="header"]:hover {
+    box-shadow: 6px 6px 0 #d63031;
+    transform: translate(-2px, -2px);
+  }
+
+  a[data-github-link="footer"]:hover {
+    background: #063a86 !important;
+    box-shadow: 6px 6px 0 #fbbd5b;
+    transform: translate(-2px, -2px);
   }
 
   .mfm-shape-group:hover .mfm-motion-shape,
@@ -360,6 +420,8 @@ header nav a,
   .mfm-motion-tag::after,
   .dc-texture,
   header nav a,
+  a[data-github-link="header"],
+  a[data-github-link="footer"],
   .site-toc__links a {
     animation: none !important;
     transform: none !important;
