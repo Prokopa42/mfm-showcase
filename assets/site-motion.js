@@ -128,6 +128,162 @@
     directTags.forEach((tag, index) => tag.style.setProperty('--mfm-tag-index', String(index)));
   });
 
+  const parseCount = (element) => {
+    const text = element.textContent;
+    const match = text.match(/^\s*([+−-]?\s*)(\d[\d\u00a0 ]*)(\s*(?:₽|%|дн\.?|дней|шт\.?|мес\.?)\s*)$/iu);
+    if (!match) return null;
+    const value = Number.parseInt(match[2].replace(/[\s\u00a0]/g, ''), 10);
+    if (!Number.isFinite(value) || value === 0) return null;
+    return { finalText: text, prefix: match[1], suffix: match[3], value };
+  };
+
+  const formatCount = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
+  const countCandidates = [...document.querySelectorAll('main strong, main span, main p, main [data-mfm-count]')]
+    .filter((element) => element.childElementCount === 0)
+    .map((element) => ({ element, count: parseCount(element) }))
+    .filter(({ count }) => count);
+
+  const countGroups = new Map();
+  countCandidates.forEach((candidate) => {
+    const group = candidate.element.closest('section') || candidate.element.parentElement;
+    const index = countGroups.get(group) || 0;
+    candidate.count.delay = Math.min(index * 120, 600);
+    countGroups.set(group, index + 1);
+  });
+
+  const playCount = (element, count) => {
+    if (element.dataset.mfmCountState === 'played') return;
+    element.dataset.mfmCountState = 'played';
+    const duration = Math.min(1750, 1050 + Math.log10(count.value + 1) * 110);
+    window.setTimeout(() => {
+      const startedAt = performance.now();
+      const step = (now) => {
+        const progressValue = Math.min(1, (now - startedAt) / duration);
+        const eased = 1 - Math.pow(1 - progressValue, 3);
+        const current = Math.round(count.value * eased);
+        element.textContent = `${count.prefix}${formatCount.format(current)}${count.suffix}`;
+        if (progressValue < 1) window.requestAnimationFrame(step);
+        else element.textContent = count.finalText;
+      };
+      window.requestAnimationFrame(step);
+    }, count.delay);
+  };
+
+  const visualObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const element = entry.target;
+      if (element.classList.contains('mfm-countup')) {
+        const item = countCandidates.find((candidate) => candidate.element === element);
+        if (item) playCount(element, item.count);
+      } else {
+        element.dataset.mfmVisual = 'played';
+      }
+      visualObserver.unobserve(element);
+    }
+  }, {
+    rootMargin: '0px 0px -8% 0px',
+    threshold: 0.28,
+  });
+
+  if (!reducedMotion.matches) {
+    countCandidates.forEach(({ element, count }) => {
+      const width = element.getBoundingClientRect().width;
+      element.classList.add('mfm-countup');
+      element.dataset.mfmCountState = 'pending';
+      element.setAttribute('aria-label', count.finalText.trim());
+      if (width > 0) element.style.minWidth = `${Math.ceil(width)}px`;
+      element.textContent = `${count.prefix}${formatCount.format(0)}${count.suffix}`;
+      visualObserver.observe(element);
+    });
+  }
+
+  const motionBars = [...document.querySelectorAll('main [style*="width:"]')]
+    .filter((element) => {
+      const widthMatch = element.getAttribute('style')?.match(/(?:^|;)\s*width\s*:\s*(\d+(?:\.\d+)?)%/i);
+      if (!widthMatch) return false;
+      const percentage = Number.parseFloat(widthMatch[1]);
+      const style = window.getComputedStyle(element);
+      const height = element.getBoundingClientRect().height;
+      return percentage >= 4
+        && percentage < 99
+        && height >= 3
+        && height <= 72
+        && style.backgroundColor !== 'rgba(0, 0, 0, 0)'
+        && style.backgroundColor !== 'transparent'
+        && !element.closest('header, footer');
+    });
+
+  motionBars.forEach((bar) => {
+    const siblings = [...bar.parentElement.children].filter((element) => motionBars.includes(element));
+    bar.classList.add('mfm-motion-bar');
+    bar.style.setProperty('--mfm-bar-index', String(Math.max(0, siblings.indexOf(bar))));
+    bar.dataset.mfmVisual = reducedMotion.matches ? 'played' : 'pending';
+  });
+
+  const barGroups = [...new Set(motionBars.map((bar) => bar.parentElement).filter(Boolean))];
+  const barObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      motionBars
+        .filter((bar) => bar.parentElement === entry.target)
+        .forEach((bar) => { bar.dataset.mfmVisual = 'played'; });
+      barObserver.unobserve(entry.target);
+    }
+  }, {
+    rootMargin: '0px 0px -8% 0px',
+    threshold: 0.18,
+  });
+  if (!reducedMotion.matches) barGroups.forEach((group) => barObserver.observe(group));
+
+  const motionCharts = [...document.querySelectorAll('main svg[role="img"]')];
+  motionCharts.forEach((chart) => {
+    chart.classList.add('mfm-motion-chart');
+    chart.dataset.mfmVisual = reducedMotion.matches ? 'played' : 'pending';
+    [...chart.querySelectorAll('path, polyline, line')].forEach((line, index) => {
+      const stroke = String(line.getAttribute('stroke') || '').toLowerCase();
+      const grid = stroke === '#d9d3bc' || stroke === '#ece7d2';
+      line.classList.add(grid ? 'mfm-chart-grid' : 'mfm-chart-series');
+      line.style.setProperty('--mfm-chart-index', String(index));
+    });
+    [...chart.querySelectorAll('circle')].forEach((point, index) => {
+      point.classList.add('mfm-chart-point');
+      point.style.setProperty('--mfm-point-index', String(index));
+    });
+    if (!reducedMotion.matches) visualObserver.observe(chart);
+  });
+
+  const tocLinks = [...document.querySelectorAll('main aside nav#содержание a[href^="#"], .site-toc__links a[href^="#"]')]
+    .map((link) => {
+      let target = null;
+      try {
+        target = document.querySelector(link.getAttribute('href'));
+      } catch {
+        return null;
+      }
+      if (!target) return null;
+      link.classList.add('mfm-toc-link');
+      const index = link.firstElementChild;
+      if (index?.tagName === 'SPAN') index.classList.add('mfm-toc-index');
+      return { link, target };
+    })
+    .filter(Boolean);
+
+  const updateTocState = () => {
+    if (!tocLinks.length) return;
+    const marker = window.scrollY + Math.max(180, (header?.getBoundingClientRect().height || 0) + 78);
+    let current = tocLinks[0];
+    for (const item of tocLinks) {
+      if (item.target.offsetTop <= marker) current = item;
+    }
+    for (const item of tocLinks) {
+      const active = item === current;
+      item.link.classList.toggle('is-reading', active);
+      if (active) item.link.setAttribute('aria-current', 'location');
+      else item.link.removeAttribute('aria-current');
+    }
+  };
+
   const pairElements = [...document.querySelectorAll('[data-mfm-pair], a[href^="#блок-"], a[href^="#зона-"]')];
   const pairRows = [...document.querySelectorAll('[id^="блок-"]')];
   const pairGroups = new Map();
@@ -218,6 +374,7 @@
     root.style.setProperty('--mfm-logo-angle', `${(window.scrollY * 0.18).toFixed(2)}deg`);
     root.style.setProperty('--mfm-texture-shift', `${(-window.scrollY * 0.035).toFixed(2)}px`);
     header?.classList.toggle('mfm-header-scrolled', window.scrollY > 8);
+    updateTocState();
   };
 
   const requestScrollUpdate = () => {
@@ -228,6 +385,11 @@
 
   const updateMotionPreference = () => {
     body.classList.toggle('mfm-motion-enabled', !reducedMotion.matches);
+    if (reducedMotion.matches) {
+      countCandidates.forEach(({ element, count }) => { element.textContent = count.finalText; });
+      motionBars.forEach((bar) => { bar.dataset.mfmVisual = 'played'; });
+      motionCharts.forEach((chart) => { chart.dataset.mfmVisual = 'played'; });
+    }
     updateScrollEffects();
   };
 

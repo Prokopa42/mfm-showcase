@@ -67,6 +67,19 @@ const annotatedScreens = new Map([
 
 for (const required of ["DOCS_MAINTENANCE.md", "ARCHITECTURE.md", "EDITIONS_AND_STATUS.md"]) read(required);
 
+const motionScript = read("assets/site-motion.js");
+const motionStyles = read("assets/site-motion.css");
+for (const token of ["mfm-countup", "mfm-motion-chart", "mfm-motion-bar", "mfm-toc-link"]) {
+  if (!motionScript.includes(token)) fail(`site-motion.js: отсутствует обязательный слой движения ${token}`);
+  if (!motionStyles.includes(token)) fail(`site-motion.css: отсутствует обязательный слой движения ${token}`);
+}
+if (!motionStyles.includes("prefers-reduced-motion: reduce")) {
+  fail("site-motion.css: нет безопасного режима prefers-reduced-motion");
+}
+if (!read("index.html").includes("data-mfm-kinetic")) {
+  fail("index.html: отсутствует смысловой кинетический фрагмент");
+}
+
 const htmlFiles = walk(root)
   .map(projectPath)
   .filter((path) => extname(path) === ".html")
@@ -113,6 +126,9 @@ for (const file of htmlFiles) {
   if (!/^<!doctype html>/i.test(source.trimStart())) fail(`${file}: нет HTML doctype`);
   if (!/<html\s+lang="ru"/i.test(source)) fail(`${file}: не задан lang="ru"`);
   if (!/<meta\s+name="viewport"/i.test(source)) fail(`${file}: нет мобильного viewport`);
+  if (!source.includes("assets/site-motion.css") || !source.includes("assets/site-motion.js")) {
+    fail(`${file}: не подключён единый слой движения и доступности`);
+  }
 
   const githubLinks = [...source.matchAll(/<a\b[^>]*\bdata-github-link="(header|footer)"[^>]*>/g)]
     .map((match) => ({ position: match[1], tag: match[0] }));
