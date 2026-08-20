@@ -59,6 +59,7 @@ img { max-width:100%; }
 <link rel="stylesheet" href="../assets/site-motion.css">
 <link rel="stylesheet" href="../assets/annotated-screen.css">
 <script defer src="../assets/site-motion.js"></script>
+<script defer src="../assets/annotated-screen.js"></script>
 </head>
 <body>
 <div style="position:relative; overflow:clip;">
@@ -135,15 +136,25 @@ img { max-width:100%; }
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>КАРТА</span><span>ПОДОТЧЁТ · СВЕРХУ ВНИЗ</span></div>
         <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400; line-height:1.12; text-wrap:balance;" class="dc-type-3">Аннотированный экран</h2>
         <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:68ch;">Карта отделяет рабочие деньги от личных и одновременно показывает, где смотреть выдачи, расходы, долг, компенсацию и конкретные рабочие задачи.</p>
-        <div class="mfm-annotated mfm-annotated--orange">
+        <div class="mfm-annotated mfm-annotated--orange" data-mfm-demo="work">
           <div class="mfm-screen-map">
             <div class="mfm-screen-demo" aria-label="Схема экрана Подотчёт">
-              <div class="mfm-screen-demo__bar"><strong>ПОДОТЧЁТ</strong><span>РАБОЧИЕ ДЕНЬГИ НЕ ВХОДЯТ В ЛИЧНЫЙ ЛИМИТ</span></div>
-              <div class="mfm-screen-demo__tabs"><span class="is-current">ОБЗОР</span><span>ЗАПИСАТЬ</span><span>КЕЙСЫ</span><span>ИСТОРИЯ</span><a id="зона-1" data-mfm-pair="work-money-1" href="#блок-1" class="mfm-zone-pin">1</a></div>
-              <div class="mfm-screen-zone mfm-screen-zone--split"><div><span class="mfm-screen-zone__label">РАБОЧИЕ ДЕНЬГИ У МЕНЯ</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small">30 000 ₽</span></div><div><span class="mfm-screen-zone__label">СВОИ ДЕНЬГИ</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small">50 000 ₽</span></div><a id="зона-2" data-mfm-pair="work-money-2" href="#блок-2" class="mfm-zone-pin" style="position:absolute; right:12px; top:12px;">2</a></div>
-              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">КЕЙСЫ · 2</span><strong>ИНФРАСТРУКТУРА · ОДОБРЕНО 50 000 ₽</strong><div class="mfm-screen-meter"><span style="width:60%;"></span></div><span class="mfm-screen-zone__meta">ПОЛУЧЕНО 30 000 · ОСТАЛОСЬ 18 000</span></div><a id="зона-3" data-mfm-pair="work-money-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
-              <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ЗАПИСАТЬ ОПЕРАЦИЮ</span><span class="mfm-screen-zone__meta">ПОЛУЧИЛ · ПОТРАТИЛ · ВЕРНУЛ · КОМПЕНСИРОВАЛ</span></div><a id="зона-4" data-mfm-pair="work-money-4" href="#блок-4" class="mfm-zone-pin">4</a></div>
-              <div class="mfm-screen-zone mfm-screen-zone--hero"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ВЛИЯНИЕ НА ЛИЧНЫЙ КОНТУР</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small">К КОМПЕНСАЦИИ 7 000 ₽</span><span class="mfm-screen-zone__meta">ДОЛЖЕН ВЕРНУТЬ В ПОДОТЧЁТ 5 000 ₽</span></div><a id="зона-5" data-mfm-pair="work-money-5" href="#блок-5" class="mfm-zone-pin">5</a></div>
+              <div class="mfm-screen-demo__bar"><strong>ПОДОТЧЁТ</strong><span data-mfm-demo-summary>РАБОЧИЕ ДЕНЬГИ НЕ ВХОДЯТ В ЛИЧНЫЙ ЛИМИТ</span></div>
+              <div class="mfm-screen-demo__tabs-row">
+                <div class="mfm-screen-demo__tabs" role="tablist" aria-label="Внутренние окна подотчёта">
+                  <button id="work-tab-overview" type="button" role="tab" aria-selected="true" aria-controls="work-demo-panel" data-mfm-demo-tab data-mfm-demo-state="overview" class="is-current">ОБЗОР</button>
+                  <button id="work-tab-record" type="button" role="tab" aria-selected="false" aria-controls="work-demo-panel" data-mfm-demo-tab data-mfm-demo-state="record" tabindex="-1">ЗАПИСАТЬ</button>
+                  <button id="work-tab-cases" type="button" role="tab" aria-selected="false" aria-controls="work-demo-panel" data-mfm-demo-tab data-mfm-demo-state="cases" tabindex="-1">КЕЙСЫ</button>
+                  <button id="work-tab-history" type="button" role="tab" aria-selected="false" aria-controls="work-demo-panel" data-mfm-demo-tab data-mfm-demo-state="history" tabindex="-1">ИСТОРИЯ</button>
+                </div>
+                <a id="зона-1" data-mfm-pair="work-money-1" href="#блок-1" class="mfm-zone-pin">1</a>
+              </div>
+              <div id="work-demo-panel" class="mfm-demo-panel" role="tabpanel" aria-labelledby="work-tab-overview" data-mfm-demo-panel>
+                <div class="mfm-screen-zone mfm-screen-zone--split"><div><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-2-left-label">РАБОЧИЕ ДЕНЬГИ У МЕНЯ</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small" data-mfm-demo-field="zone-2-left-value">30 000 ₽</span></div><div><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-2-right-label">СВОИ ДЕНЬГИ</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small" data-mfm-demo-field="zone-2-right-value">50 000 ₽</span></div><a id="зона-2" data-mfm-pair="work-money-2" href="#блок-2" class="mfm-zone-pin" style="position:absolute; right:12px; top:12px;">2</a></div>
+                <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-3-label">КЕЙСЫ · 2</span><strong data-mfm-demo-field="zone-3-title">ИНФРАСТРУКТУРА · ОДОБРЕНО 50 000 ₽</strong><div class="mfm-screen-meter"><span style="width:60%;" data-mfm-demo-meter></span></div><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-3-meta">ПОЛУЧЕНО 30 000 · ОСТАЛОСЬ 18 000</span></div><a id="зона-3" data-mfm-pair="work-money-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
+                <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-4-label">ЗАПИСАТЬ ОПЕРАЦИЮ</span><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-4-meta">ПОЛУЧИЛ · ПОТРАТИЛ · ВЕРНУЛ · КОМПЕНСИРОВАЛ</span></div><a id="зона-4" data-mfm-pair="work-money-4" href="#блок-4" class="mfm-zone-pin">4</a></div>
+                <div class="mfm-screen-zone mfm-screen-zone--hero"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-5-label">ВЛИЯНИЕ НА ЛИЧНЫЙ КОНТУР</span><span class="mfm-screen-zone__value mfm-screen-zone__value--small" data-mfm-demo-field="zone-5-value">К КОМПЕНСАЦИИ 7 000 ₽</span><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-5-meta">ДОЛЖЕН ВЕРНУТЬ В ПОДОТЧЁТ 5 000 ₽</span></div><a id="зона-5" data-mfm-pair="work-money-5" href="#блок-5" class="mfm-zone-pin">5</a></div>
+              </div>
             </div>
             <nav class="mfm-screen-index" aria-label="Зоны экрана Подотчёт"><p class="mfm-screen-index__title">ЗОНЫ ЭКРАНА</p><a class="mfm-screen-index__link" data-mfm-pair="work-money-1" href="#блок-1"><span>1</span><span>Обзор, запись, кейсы, история</span></a><a class="mfm-screen-index__link" data-mfm-pair="work-money-2" href="#блок-2"><span>2</span><span>Рабочие и свои деньги</span></a><a class="mfm-screen-index__link" data-mfm-pair="work-money-3" href="#блок-3"><span>3</span><span>Рабочие кейсы и лимиты</span></a><a class="mfm-screen-index__link" data-mfm-pair="work-money-4" href="#блок-4"><span>4</span><span>Виды операций</span></a><a class="mfm-screen-index__link" data-mfm-pair="work-money-5" href="#блок-5"><span>5</span><span>Связь с личным контуром</span></a></nav>
           </div>

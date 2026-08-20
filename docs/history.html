@@ -59,6 +59,7 @@ img { max-width:100%; }
 <link rel="stylesheet" href="../assets/site-motion.css">
 <link rel="stylesheet" href="../assets/annotated-screen.css">
 <script defer src="../assets/site-motion.js"></script>
+<script defer src="../assets/annotated-screen.js"></script>
 </head>
 <body>
 <div style="position:relative; overflow:clip;">
@@ -134,15 +135,26 @@ img { max-width:100%; }
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>КАРТА</span><span>ДНЕВНИК · ОТ ФИЛЬТРА К ПРИЧИНЕ</span></div>
         <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400; line-height:1.12; text-wrap:balance;" class="dc-type-3">Аннотированный экран</h2>
         <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:68ch;">Дневник объясняет не только сумму операции, но и её смысл: какой контур изменился, почему возникло несколько эффектов и что произойдёт при отмене.</p>
-        <div class="mfm-annotated">
+        <div class="mfm-annotated" data-mfm-demo="history">
           <div class="mfm-screen-map">
             <div class="mfm-screen-demo" aria-label="Схема экрана Дневник">
-              <div class="mfm-screen-demo__bar"><strong>ДНЕВНИК</strong><span>11 ОПЕРАЦИЙ · ТЕКУЩИЙ ЦИКЛ</span></div>
-              <div class="mfm-screen-demo__tabs"><span class="is-current">ВСЁ</span><span>30 ДНЕЙ</span><span>ЦИКЛ</span><span>ДОЛГИ</span><span>РАБОЧИЕ</span><a id="зона-1" data-mfm-pair="history-1" href="#блок-1" class="mfm-zone-pin">1</a></div>
-              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">1 ИЮЛЯ · РАСХОД</span><strong>ОПЛАТА СЕРВЕРА · 10 000 ₽</strong><span class="mfm-screen-zone__meta">РАБОЧИЙ КЕЙС «ИНФРАСТРУКТУРА»</span></div><a id="зона-2" data-mfm-pair="history-2" href="#блок-2" class="mfm-zone-pin">2</a></div>
-              <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ЭФФЕКТЫ ОПЕРАЦИИ</span><span class="mfm-screen-zone__meta">ВСЕГО НА РУКАХ −10 000 · РАБОЧИЕ −2 000 · К КОМПЕНСАЦИИ +8 000</span></div><a id="зона-3" data-mfm-pair="history-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
-              <div class="mfm-screen-zone" style="background:#fde7bb;"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">СОСТАВНАЯ ОПЕРАЦИЯ · 3 СВЯЗАННЫХ ДВИЖЕНИЯ</span><strong>ПЕРЕНОС ДОЛГА · 5 000 ₽</strong><span class="mfm-screen-zone__meta">ОДНА ПОЛЬЗОВАТЕЛЬСКАЯ СТРОКА, ОТМЕНА ЦЕЛИКОМ</span></div><a id="зона-4" data-mfm-pair="history-4" href="#блок-4" class="mfm-zone-pin">4</a></div>
-              <div class="mfm-screen-zone mfm-screen-zone--split"><div><span class="mfm-screen-zone__label">ИТОГИ ПЕРИОДА</span><strong>ДОХОДЫ 120 000 ₽</strong><span class="mfm-screen-zone__meta">РАСХОДЫ 42 700 ₽</span></div><div><span class="mfm-screen-zone__label">ДЕЙСТВИЕ</span><strong style="color:#d63031;">ОТМЕНИТЬ</strong><span class="mfm-screen-zone__meta">С ОБЪЯСНЕНИЕМ ЭФФЕКТА</span></div><a id="зона-5" data-mfm-pair="history-5" href="#блок-5" class="mfm-zone-pin" style="position:absolute; right:12px; top:12px;">5</a></div>
+              <div class="mfm-screen-demo__bar"><strong>ДНЕВНИК</strong><span data-mfm-demo-summary>11 ОПЕРАЦИЙ · ТЕКУЩИЙ ЦИКЛ</span></div>
+              <div class="mfm-screen-demo__tabs-row">
+                <div class="mfm-screen-demo__tabs" role="tablist" aria-label="Фильтр дневника">
+                  <button id="history-tab-all" type="button" role="tab" aria-selected="true" aria-controls="history-demo-panel" data-mfm-demo-tab data-mfm-demo-state="all" class="is-current">ВСЁ</button>
+                  <button id="history-tab-month" type="button" role="tab" aria-selected="false" aria-controls="history-demo-panel" data-mfm-demo-tab data-mfm-demo-state="month" tabindex="-1">30 ДНЕЙ</button>
+                  <button id="history-tab-cycle" type="button" role="tab" aria-selected="false" aria-controls="history-demo-panel" data-mfm-demo-tab data-mfm-demo-state="cycle" tabindex="-1">ЦИКЛ</button>
+                  <button id="history-tab-debts" type="button" role="tab" aria-selected="false" aria-controls="history-demo-panel" data-mfm-demo-tab data-mfm-demo-state="debts" tabindex="-1">ДОЛГИ</button>
+                  <button id="history-tab-work" type="button" role="tab" aria-selected="false" aria-controls="history-demo-panel" data-mfm-demo-tab data-mfm-demo-state="work" tabindex="-1">РАБОЧИЕ</button>
+                </div>
+                <a id="зона-1" data-mfm-pair="history-1" href="#блок-1" class="mfm-zone-pin">1</a>
+              </div>
+              <div id="history-demo-panel" class="mfm-demo-panel" role="tabpanel" aria-labelledby="history-tab-all" data-mfm-demo-panel>
+                <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-2-label">1 ИЮЛЯ · РАСХОД</span><strong data-mfm-demo-field="zone-2-title">ОПЛАТА СЕРВЕРА · 10 000 ₽</strong><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-2-meta">РАБОЧИЙ КЕЙС «ИНФРАСТРУКТУРА»</span></div><a id="зона-2" data-mfm-pair="history-2" href="#блок-2" class="mfm-zone-pin">2</a></div>
+                <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-3-label">ЭФФЕКТЫ ОПЕРАЦИИ</span><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-3-meta">ВСЕГО НА РУКАХ −10 000 · РАБОЧИЕ −2 000 · К КОМПЕНСАЦИИ +8 000</span></div><a id="зона-3" data-mfm-pair="history-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
+                <div class="mfm-screen-zone" style="background:#fde7bb;"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-4-label">СОСТАВНАЯ ОПЕРАЦИЯ · 3 СВЯЗАННЫХ ДВИЖЕНИЯ</span><strong data-mfm-demo-field="zone-4-title">ПЕРЕНОС ДОЛГА · 5 000 ₽</strong><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-4-meta">ОДНА ПОЛЬЗОВАТЕЛЬСКАЯ СТРОКА, ОТМЕНА ЦЕЛИКОМ</span></div><a id="зона-4" data-mfm-pair="history-4" href="#блок-4" class="mfm-zone-pin">4</a></div>
+                <div class="mfm-screen-zone mfm-screen-zone--split"><div><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-5-left-label">ИТОГИ ПЕРИОДА</span><strong data-mfm-demo-field="zone-5-left-title">ДОХОДЫ 120 000 ₽</strong><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-5-left-meta">РАСХОДЫ 42 700 ₽</span></div><div><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-5-right-label">ДЕЙСТВИЕ</span><strong style="color:#d63031;" data-mfm-demo-field="zone-5-right-title">ОТМЕНИТЬ</strong><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-5-right-meta">С ОБЪЯСНЕНИЕМ ЭФФЕКТА</span></div><a id="зона-5" data-mfm-pair="history-5" href="#блок-5" class="mfm-zone-pin" style="position:absolute; right:12px; top:12px;">5</a></div>
+              </div>
             </div>
             <nav class="mfm-screen-index" aria-label="Зоны экрана Дневник"><p class="mfm-screen-index__title">ЗОНЫ ЭКРАНА</p><a class="mfm-screen-index__link" data-mfm-pair="history-1" href="#блок-1"><span>1</span><span>Период и смысл</span></a><a class="mfm-screen-index__link" data-mfm-pair="history-2" href="#блок-2"><span>2</span><span>Строка операции</span></a><a class="mfm-screen-index__link" data-mfm-pair="history-3" href="#блок-3"><span>3</span><span>Фактические эффекты</span></a><a class="mfm-screen-index__link" data-mfm-pair="history-4" href="#блок-4"><span>4</span><span>Составная операция</span></a><a class="mfm-screen-index__link" data-mfm-pair="history-5" href="#блок-5"><span>5</span><span>Сводка и отмена</span></a></nav>
           </div>

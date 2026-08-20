@@ -65,10 +65,19 @@ const annotatedScreens = new Map([
   ["docs/settings.html", { namespace: "settings", zones: 6 }],
 ]);
 
+const interactiveDemos = new Map([
+  ["docs/cycle.html", { demo: "cycle", states: ["payments", "debts", "accountable"] }],
+  ["docs/work-money.html", { demo: "work", states: ["overview", "record", "cases", "history"] }],
+  ["docs/history.html", { demo: "history", states: ["all", "month", "cycle", "debts", "work"] }],
+  ["docs/settings.html", { demo: "settings", states: ["cycle", "money", "savings", "categories", "data"] }],
+]);
+
 for (const required of ["DOCS_MAINTENANCE.md", "ARCHITECTURE.md", "EDITIONS_AND_STATUS.md"]) read(required);
 
 const motionScript = read("assets/site-motion.js");
 const motionStyles = read("assets/site-motion.css");
+const annotatedScript = read("assets/annotated-screen.js");
+const annotatedStyles = read("assets/annotated-screen.css");
 for (const token of ["mfm-countup", "mfm-motion-chart", "mfm-motion-bar", "mfm-toc-link"]) {
   if (!motionScript.includes(token)) fail(`site-motion.js: отсутствует обязательный слой движения ${token}`);
   if (!motionStyles.includes(token)) fail(`site-motion.css: отсутствует обязательный слой движения ${token}`);
@@ -78,6 +87,11 @@ if (!motionStyles.includes("prefers-reduced-motion: reduce")) {
 }
 if (!read("index.html").includes("data-mfm-kinetic")) {
   fail("index.html: отсутствует смысловой кинетический фрагмент");
+}
+for (const token of ["[data-mfm-demo-tab]", "aria-selected", "ArrowRight", "ArrowLeft", "data-mfm-demo-panel"]) {
+  if (!annotatedScript.includes(token)) {
+    fail(`аннотированные экраны: отсутствует контракт живых вкладок ${token}`);
+  }
 }
 
 const htmlFiles = walk(root)
@@ -117,6 +131,24 @@ for (const [file, contract] of annotatedScreens) {
     if (!source.includes(`href="#блок-${number}"`) || !source.includes(`href="#зона-${number}"`)) {
       fail(`${file}: у пары ${pair} нет двусторонних ссылок`);
     }
+  }
+}
+
+for (const [file, contract] of interactiveDemos) {
+  const source = read(file);
+  if (!source.includes('../assets/annotated-screen.js')) {
+    fail(`${file}: не подключён сценарий живых аннотированных экранов`);
+  }
+  if (!source.includes(`data-mfm-demo="${contract.demo}"`)) {
+    fail(`${file}: нет демонстрации ${contract.demo}`);
+  }
+  if (!source.includes('role="tablist"') || !source.includes('role="tabpanel"')) {
+    fail(`${file}: вкладки не имеют доступного tablist/tabpanel контракта`);
+  }
+  for (const state of contract.states) {
+    const occurrences = [...source.matchAll(new RegExp(`data-mfm-demo-state="${state}"`, "g"))].length;
+    if (occurrences !== 1) fail(`${file}: состояние ${state} должно быть объявлено ровно один раз`);
+    if (!annotatedScript.includes(`${state}: {`)) fail(`annotated-screen.js: нет данных состояния ${contract.demo}/${state}`);
   }
 }
 

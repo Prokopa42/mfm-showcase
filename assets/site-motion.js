@@ -140,6 +140,7 @@
   const formatCount = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
   const countCandidates = [...document.querySelectorAll('main strong, main span, main p, main [data-mfm-count]')]
     .filter((element) => element.childElementCount === 0)
+    .filter((element) => !element.closest('[data-mfm-demo]'))
     .map((element) => ({ element, count: parseCount(element) }))
     .filter(({ count }) => count);
 
@@ -211,6 +212,7 @@
         && height <= 72
         && style.backgroundColor !== 'rgba(0, 0, 0, 0)'
         && style.backgroundColor !== 'transparent'
+        && !element.closest('[data-mfm-demo]')
         && !element.closest('header, footer');
     });
 

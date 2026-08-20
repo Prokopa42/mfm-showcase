@@ -60,6 +60,7 @@ img { max-width:100%; }
 <link rel="stylesheet" href="../assets/site-motion.css">
 <link rel="stylesheet" href="../assets/annotated-screen.css">
 <script defer src="../assets/site-motion.js"></script>
+<script defer src="../assets/annotated-screen.js"></script>
 </head>
 <body>
 <div style="position:relative; overflow:clip;">
@@ -132,14 +133,23 @@ img { max-width:100%; }
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>КАРТА</span><span>ЦИКЛ · СВЕРХУ ВНИЗ</span></div>
         <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400; line-height:1.12; text-wrap:balance;" class="dc-type-3">Аннотированный экран</h2>
         <p style="margin:16px 0 0; font-size:16px; line-height:1.6; max-width:68ch;">Нажмите номер на схеме или в указателе. Вы попадёте к объяснению зоны; номер в объяснении вернёт к тому же месту экрана.</p>
-        <div class="mfm-annotated">
+        <div class="mfm-annotated" data-mfm-demo="cycle">
           <div class="mfm-screen-map">
             <div class="mfm-screen-demo" aria-label="Схема экрана Цикл">
-              <div class="mfm-screen-demo__bar"><strong>ЦИКЛ</strong><span>1 АВГ → 21 АВГ · ДЕНЬ 11 ИЗ 20</span><a id="зона-1" data-mfm-pair="cycle-1" href="#блок-1" class="mfm-zone-pin" aria-label="К разбору зоны 1">1</a></div>
-              <div class="mfm-screen-demo__tabs"><span class="is-current">ПЛАТЕЖИ</span><span>ДОЛГИ</span><span>ПОДОТЧЁТ</span><a id="зона-2" data-mfm-pair="cycle-2" href="#блок-2" class="mfm-zone-pin" aria-label="К разбору зоны 2">2</a></div>
-              <div class="mfm-screen-zone mfm-screen-zone--hero"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">СВОБОДНО ДО ЗАРПЛАТЫ</span><span class="mfm-screen-zone__value">50 000 ₽</span><span class="mfm-screen-zone__meta">МОЖНО СЕГОДНЯ 3 800 ₽ · 10 ДНЕЙ</span></div><a id="зона-3" data-mfm-pair="cycle-3" href="#блок-3" class="mfm-zone-pin" aria-label="К разбору зоны 3">3</a></div>
-              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">ОСЬ ЗАРПЛАТНОГО ЦИКЛА</span><div class="mfm-screen-axis" aria-hidden="true"><span></span><span></span><span></span></div><span class="mfm-screen-zone__meta">ЗП · 1 АВГ / СЕГОДНЯ / ЗП · 21 АВГ</span></div><a id="зона-4" data-mfm-pair="cycle-4" href="#блок-4" class="mfm-zone-pin" aria-label="К разбору зоны 4">4</a></div>
-              <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">БЛИЖАЙШИЙ ПЛАТЁЖ</span><span class="mfm-screen-zone__meta">АРЕНДА · 14 АВГ · 35 000 ₽</span></div><a id="зона-5" data-mfm-pair="cycle-5" href="#блок-5" class="mfm-zone-pin" aria-label="К разбору зоны 5">5</a></div>
+              <div class="mfm-screen-demo__bar"><strong>ЦИКЛ</strong><span data-mfm-demo-summary>1 АВГ → 21 АВГ · ДЕНЬ 11 ИЗ 20</span><a id="зона-1" data-mfm-pair="cycle-1" href="#блок-1" class="mfm-zone-pin" aria-label="К разбору зоны 1">1</a></div>
+              <div class="mfm-screen-demo__tabs-row">
+                <div class="mfm-screen-demo__tabs" role="tablist" aria-label="Внутренние окна цикла">
+                  <button id="cycle-tab-payments" type="button" role="tab" aria-selected="true" aria-controls="cycle-demo-panel" data-mfm-demo-tab data-mfm-demo-state="payments" class="is-current">ПЛАТЕЖИ</button>
+                  <button id="cycle-tab-debts" type="button" role="tab" aria-selected="false" aria-controls="cycle-demo-panel" data-mfm-demo-tab data-mfm-demo-state="debts" tabindex="-1">ДОЛГИ</button>
+                  <button id="cycle-tab-accountable" type="button" role="tab" aria-selected="false" aria-controls="cycle-demo-panel" data-mfm-demo-tab data-mfm-demo-state="accountable" tabindex="-1">ПОДОТЧЁТ</button>
+                </div>
+                <a id="зона-2" data-mfm-pair="cycle-2" href="#блок-2" class="mfm-zone-pin" aria-label="К разбору зоны 2">2</a>
+              </div>
+              <div id="cycle-demo-panel" class="mfm-demo-panel" role="tabpanel" aria-labelledby="cycle-tab-payments" data-mfm-demo-panel>
+                <div class="mfm-screen-zone mfm-screen-zone--hero"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-3-label">СВОБОДНО ДО ЗАРПЛАТЫ</span><span class="mfm-screen-zone__value" data-mfm-demo-field="zone-3-value">50 000 ₽</span><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-3-meta">МОЖНО СЕГОДНЯ 3 800 ₽ · 10 ДНЕЙ</span></div><a id="зона-3" data-mfm-pair="cycle-3" href="#блок-3" class="mfm-zone-pin" aria-label="К разбору зоны 3">3</a></div>
+                <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-4-label">ОСЬ ЗАРПЛАТНОГО ЦИКЛА</span><div class="mfm-screen-axis" aria-hidden="true"><span></span><span></span><span></span></div><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-4-meta">ЗП · 1 АВГ / СЕГОДНЯ / ЗП · 21 АВГ</span></div><a id="зона-4" data-mfm-pair="cycle-4" href="#блок-4" class="mfm-zone-pin" aria-label="К разбору зоны 4">4</a></div>
+                <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label" data-mfm-demo-field="zone-5-label">БЛИЖАЙШИЙ ПЛАТЁЖ</span><span class="mfm-screen-zone__meta" data-mfm-demo-field="zone-5-meta">АРЕНДА · 14 АВГ · 35 000 ₽</span></div><a id="зона-5" data-mfm-pair="cycle-5" href="#блок-5" class="mfm-zone-pin" aria-label="К разбору зоны 5">5</a></div>
+              </div>
             </div>
             <nav class="mfm-screen-index" aria-label="Зоны экрана Цикл">
               <p class="mfm-screen-index__title">ЗОНЫ ЭКРАНА</p>
