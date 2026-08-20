@@ -85,6 +85,11 @@ for (const token of ["mfm-countup", "mfm-motion-chart", "mfm-motion-bar", "mfm-t
 if (!motionStyles.includes("prefers-reduced-motion: reduce")) {
   fail("site-motion.css: нет безопасного режима prefers-reduced-motion");
 }
+for (const token of ["--mfm-paper-rule", ".dc-texture::before", ".dc-texture::after"]) {
+  if (!motionStyles.includes(token)) {
+    fail(`site-motion.css: отсутствует общий слой фактуры бухгалтерской бумаги ${token}`);
+  }
+}
 if (!read("index.html").includes("data-mfm-kinetic")) {
   fail("index.html: отсутствует смысловой кинетический фрагмент");
 }

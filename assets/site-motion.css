@@ -3,6 +3,10 @@
   --mfm-scroll-progress: 0;
   --mfm-texture-shift: 0px;
   --mfm-sticky-header-height: 0px;
+  --mfm-paper-rule: rgba(20, 18, 13, 0.07);
+  --mfm-paper-fibre: rgba(20, 18, 13, 0.024);
+  --mfm-paper-ledger-blue: rgba(7, 73, 169, 0.075);
+  --mfm-paper-ledger-red: rgba(214, 48, 49, 0.045);
 }
 
 body > div:first-child {
@@ -63,8 +67,56 @@ main aside nav#содержание {
 }
 
 .dc-texture {
+  isolation: isolate;
   background-position: 0 var(--mfm-texture-shift);
   will-change: background-position;
+}
+
+.dc-texture::before,
+.dc-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.dc-texture::before {
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      var(--mfm-paper-rule) 31px,
+      var(--mfm-paper-rule) 32px
+    ),
+    repeating-linear-gradient(
+      to right,
+      var(--mfm-paper-fibre) 0,
+      var(--mfm-paper-fibre) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+  background-position: 0 var(--mfm-texture-shift), 0 0;
+}
+
+.dc-texture::after {
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent 239px,
+      var(--mfm-paper-ledger-blue) 239px,
+      var(--mfm-paper-ledger-blue) 240px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 223px,
+      var(--mfm-paper-ledger-red) 223px,
+      var(--mfm-paper-ledger-red) 224px
+    );
+  background-position: 0 0, 0 var(--mfm-texture-shift);
+  opacity: 0.72;
 }
 
 .mfm-scroll-progress {
@@ -685,6 +737,14 @@ a[data-github-link="footer"]::before {
     padding: 31px 4px 13px;
     font-size: 8px;
     letter-spacing: 0.06em;
+  }
+
+  .dc-texture::before {
+    opacity: 0.72;
+  }
+
+  .dc-texture::after {
+    opacity: 0.36;
   }
 }
 
