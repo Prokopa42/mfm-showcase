@@ -104,7 +104,7 @@ img { max-width:100%; }
       <span aria-hidden="true" style="flex:none; width:18px; height:18px; border:3px solid #14120d; box-sizing:border-box; margin-top:4px;"></span>
       <p style="margin:0;  line-height:1.5; text-wrap:pretty;" class="dc-type-2">Сколько я должен сейчас, <strong>из чего состоит долг</strong> и уменьшается он или растёт?</p>
     </div>
-    <p style="margin:18px 0 0; font-size:16px; line-height:1.6; max-width:66ch; color:rgba(20,18,13,0.8);">Долг — это обязательство вернуть деньги. Он может быть перед человеком, сервисом, организацией или подотчётом — модель «карта / банк / кредитка» не обязательна.</p>
+    <p style="margin:18px 0 0; font-size:16px; line-height:1.6; max-width:66ch; color:rgba(20,18,13,0.8);">Долг — это обязательство вернуть деньги. Главное значение в карточке — «Долг сейчас»: точная сумма, которую вы должны в данный момент. Лимит, если он есть, показывается отдельно.</p>
   </div>
 </section>
 
@@ -115,7 +115,7 @@ img { max-width:100%; }
       <nav id="содержание" aria-label="Содержание страницы" style="position:sticky; top:14px; border:2px solid #14120d; background:#fffdf7; padding:16px 18px; margin-top:clamp(24px,3vw,40px);">
         <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em;">СОДЕРЖАНИЕ</p>
         <div style="display:flex; flex-direction:column; margin-top:10px;">
-          <a href="#главная-цифра" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Общий долг</a>
+          <a href="#главная-цифра" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Общий и текущий долг</a>
           <a href="#экран" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:#d63031;">2</span>Аннотированный экран</a>
           <a href="#действия" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>Операции</a>
           <a href="#комиссии" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">4</span>Комиссии переноса</a>
@@ -131,7 +131,7 @@ img { max-width:100%; }
 
       <section id="главная-цифра" data-screen-label="1 Общий долг" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px);">
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>1</span><span>ГЛАВНАЯ ЦИФРА</span></div>
-        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Общий долг — одна сумма из двух частей</h2>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Общий долг складывается из точных текущих сумм</h2>
         <div id="общий-долг" style="margin-top:26px; border:2px solid #14120d; background:#fffdf7;">
           <div style="padding:14px 16px; display:flex; flex-direction:column; gap:8px; font-family:'JetBrains Mono', monospace; font-size:13px;">
             <div style="display:flex; justify-content:space-between; gap:12px;"><span>Обычные долговые обязательства</span><strong>40&nbsp;000&nbsp;₽</strong></div>
@@ -139,6 +139,16 @@ img { max-width:100%; }
             <div style="display:flex; justify-content:space-between; gap:12px; border-top:1px solid #d9d3bc; padding-top:8px; color:#d63031;"><span>= Общий долг</span><strong>45&nbsp;000&nbsp;₽</strong></div>
           </div>
           <p style="margin:0; padding:0 16px 14px; font-size:14px; line-height:1.55; color:rgba(20,18,13,0.8);">Подотчётный долг отображается как виртуальная долговая позиция. Отдельный обычный долг-дубль не создаётся — сумма не считается дважды.</p>
+        </div>
+        <div id="текущий-долг" style="margin-top:18px; border-left:7px solid #0749a9; background:#fffdf7; padding:16px;">
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.1em; color:#0749a9;">КАК ЗАПИСАТЬ ФАКТ</p>
+          <h3 style="margin:10px 0 0; font-size:18px; line-height:1.35;">Должны 34&nbsp;893&nbsp;₽ — введите 34&nbsp;893&nbsp;₽</h3>
+          <p style="margin:8px 0 0; font-size:15px; line-height:1.6; color:rgba(20,18,13,0.8);">Откройте «изменить» и укажите эту сумму в поле «Долг сейчас». После сохранения именно 34&nbsp;893&nbsp;₽ будут показаны в карточке и войдут в общий долг. Приложение не прибавит к ним старые операции.</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap:10px; margin-top:14px;">
+            <div style="border:1.5px solid #14120d; padding:10px 12px;"><strong style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px;">Долг сейчас</strong><span style="display:block; margin-top:5px; font-size:14px; line-height:1.5;">сколько нужно вернуть в данный момент</span></div>
+            <div style="border:1.5px solid #d9d3bc; padding:10px 12px;"><strong style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px;">Лимит, если есть</strong><span style="display:block; margin-top:5px; font-size:14px; line-height:1.5;">максимальная доступная сумма; к долгу не прибавляется</span></div>
+          </div>
+          <p style="margin:12px 0 0; font-size:14px; line-height:1.55; color:rgba(20,18,13,0.8);">История операций остаётся пояснением. Новые долговые движения, записанные после ручного уточнения, снова увеличивают или уменьшают текущую сумму. «Всего на руках» и «Можно сегодня» от самого уточнения не меняются.</p>
         </div>
         <div id="обязательство" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:16px; margin-top:18px;">
           <div style="border:2px solid #14120d; background:#fffdf7; padding:16px;">
@@ -173,7 +183,7 @@ img { max-width:100%; }
               <div class="mfm-screen-zone mfm-screen-zone--compact"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ДЕЙСТВИЯ</span><span class="mfm-screen-zone__meta">ПОЛУЧИЛ В ДОЛГ · ПЕРЕНЕСТИ · НОВЫЙ ДОЛГ</span></div><a id="зона-1" data-mfm-pair="debts-1" href="#блок-1" class="mfm-zone-pin">1</a></div>
               <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">ТРЕНД ОБЩЕГО ДОЛГА</span><div class="mfm-screen-axis" aria-hidden="true"><span></span><span></span><span></span></div><span class="mfm-screen-zone__meta">ДОЛГ СНИЖАЕТСЯ НА 8 400 ₽ / МЕС.</span></div><a id="зона-2" data-mfm-pair="debts-2" href="#блок-2" class="mfm-zone-pin">2</a></div>
               <div class="mfm-screen-zone mfm-screen-zone--hero"><div class="mfm-screen-zone__copy"><span class="mfm-screen-zone__label">ОБЩИЙ ДОЛГ</span><span class="mfm-screen-zone__value">45 000 ₽</span><span class="mfm-screen-zone__meta">ОБЫЧНЫЕ 40 000 · ПЕРЕД ПОДОТЧЁТОМ 5 000</span></div><a id="зона-3" data-mfm-pair="debts-3" href="#блок-3" class="mfm-zone-pin">3</a></div>
-              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">АКТИВНЫЕ ДОЛГИ · 2</span><strong>РЕМОНТ У СЕРГЕЯ · 15 000 ₽</strong><div class="mfm-screen-meter"><span style="width:50%;"></span></div><span class="mfm-screen-zone__meta">ПОДОТЧЁТ · 5 000 ₽</span></div><a id="зона-4" data-mfm-pair="debts-4" href="#блок-4" class="mfm-zone-pin">4</a></div>
+              <div class="mfm-screen-zone"><div class="mfm-screen-zone__copy" style="width:100%;"><span class="mfm-screen-zone__label">АКТИВНЫЕ ДОЛГИ · 2</span><strong>РЕМОНТ У СЕРГЕЯ · ИЗМЕНИТЬ</strong><span class="mfm-screen-zone__value">15 000 ₽</span><span class="mfm-screen-zone__meta">ДОЛГ СЕЙЧАС · ПОКАЗАТЬ, ИЗ ЧЕГО ПОЛУЧИЛАСЬ СУММА</span></div><a id="зона-4" data-mfm-pair="debts-4" href="#блок-4" class="mfm-zone-pin">4</a></div>
             </div>
             <nav class="mfm-screen-index" aria-label="Зоны экрана Долги"><p class="mfm-screen-index__title">ЗОНЫ ЭКРАНА</p><a class="mfm-screen-index__link" data-mfm-pair="debts-1" href="#блок-1"><span>1</span><span>Долговые действия</span></a><a class="mfm-screen-index__link" data-mfm-pair="debts-2" href="#блок-2"><span>2</span><span>Тренд долга</span></a><a class="mfm-screen-index__link" data-mfm-pair="debts-3" href="#блок-3"><span>3</span><span>Показатели и состав</span></a><a class="mfm-screen-index__link" data-mfm-pair="debts-4" href="#блок-4"><span>4</span><span>Активные обязательства</span></a></nav>
           </div>
@@ -193,22 +203,26 @@ img { max-width:100%; }
           </div>
           <div id="блок-4" style="display:flex; gap:14px; padding:14px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc;">
             <a href="#зона-4" data-mfm-pair="debts-4" class="mfm-zone-pin" aria-label="Вернуться к зоне 4">4</a>
-            <div><p style="margin:0; font-size:15.5px; font-weight:600;">Активные долги</p><p style="margin:4px 0 0; font-size:14.5px; line-height:1.55; color:rgba(20,18,13,0.8);">Для каждого обязательства: название, остаток, исходная сумма, лимит и доступная часть (если применимо), дата, действия «изменить» и «закрыть». Нулевой остаток не исчезает молча — долг закрывается явно и находится в закрытых.</p></div>
+            <div><p style="margin:0; font-size:15.5px; font-weight:600;">Активные долги</p><p style="margin:4px 0 0; font-size:14.5px; line-height:1.55; color:rgba(20,18,13,0.8);">В строке видны название, точный «Долг сейчас», источник суммы и действие «изменить». Лимит и прошлые операции раскрываются как пояснение и не подменяют текущий долг. При положительной сумме отдельного действия «закрыть» нет.</p></div>
           </div>
         </div>
         <div style="margin-top:22px; max-width:520px; border:2px solid #14120d; background:#fffdf7;">
           <div style="padding:10px 16px; border-bottom:2px solid #14120d; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:700; letter-spacing:0.12em;">КАРТОЧКА ДОЛГА · МАКЕТ</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; color:rgba(20,18,13,0.55);">синтетические данные</span></div>
           <div style="padding:14px 16px;">
-            <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;"><span style="font-size:15.5px; font-weight:600;">Ремонт у Сергея</span><span style="font-family:'JetBrains Mono', monospace; font-size:14px; font-weight:700; color:#d63031;">15&nbsp;000&nbsp;₽</span></div>
-            <div style="margin-top:10px; display:flex; height:14px; border:1.5px solid #14120d; box-sizing:border-box; max-width:380px;">
-              <div style="width:50%; background:#d63031;"></div>
-              <div style="width:50%; background:#ece7d2; border-left:1.5px solid #14120d;"></div>
+            <div style="display:flex; justify-content:space-between; gap:14px; align-items:flex-start; flex-wrap:wrap;">
+              <div><span style="font-size:15.5px; font-weight:600;">Ремонт у Сергея</span><span style="display:inline-block; margin-left:8px; font-family:'JetBrains Mono', monospace; font-size:11px; text-decoration:underline; text-underline-offset:3px;">изменить</span><p style="margin:5px 0 0; font-family:'JetBrains Mono', monospace; font-size:10.5px; color:rgba(20,18,13,0.55);">Указано вручную · 21 августа</p></div>
+              <div style="text-align:right;"><strong style="display:block; font-family:'JetBrains Mono', monospace; font-size:15px; color:#d63031;">15&nbsp;000&nbsp;₽</strong><span style="font-family:'JetBrains Mono', monospace; font-size:10.5px; color:rgba(20,18,13,0.55);">Долг сейчас</span></div>
             </div>
-            <div style="display:flex; justify-content:space-between; gap:10px; margin-top:6px; max-width:380px; font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:0.05em; color:rgba(20,18,13,0.55); flex-wrap:wrap;"><span>ОСТАТОК 15 000 ИЗ 30 000 ₽</span><span>ОТ 2 ИЮЛЯ</span></div>
-            <div style="display:flex; gap:8px; margin-top:12px;">
-              <span style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.06em; border:1.5px solid #14120d; padding:7px 10px;">ИЗМЕНИТЬ</span>
-              <span style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.06em; border:1.5px solid #14120d; padding:7px 10px;">ЗАКРЫТЬ</span>
-            </div>
+            <details open style="margin-top:10px;">
+              <summary style="font-family:'JetBrains Mono', monospace; font-size:11px; color:#0749a9; cursor:pointer;">Показать, из чего получилась сумма</summary>
+              <div style="display:grid; gap:4px; margin-top:8px; padding:10px 12px; border-left:4px solid #0749a9; background:#f6f1e3; font-family:'JetBrains Mono', monospace; font-size:10.5px; line-height:1.45; color:rgba(20,18,13,0.72);">
+                <span><strong>С чего начали:</strong> 30&nbsp;000&nbsp;₽ · 2 июля</span>
+                <span><strong>По моим записям:</strong> 17&nbsp;500&nbsp;₽</span>
+                <span><strong>Указан текущий долг:</strong> 15&nbsp;000&nbsp;₽ · 21 августа</span>
+                <span><strong>Лимит:</strong> 30&nbsp;000&nbsp;₽ · доступно 15&nbsp;000&nbsp;₽</span>
+              </div>
+            </details>
+            <p style="margin:10px 0 0; font-size:13.5px; line-height:1.5; color:rgba(20,18,13,0.8);">Если «Долг сейчас» станет 0 ₽, рядом с «изменить» появится «закрыть». У закрытого долга доступно действие «вернуть».</p>
           </div>
         </div>
         <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
@@ -299,6 +313,14 @@ img { max-width:100%; }
       <section id="вопросы" data-screen-label="7 Частые вопросы" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
         <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>7</span><span>ЧАСТЫЕ ВОПРОСЫ</span></div>
         <div style="margin-top:22px; display:flex; flex-direction:column;">
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Что произойдёт, если я введу текущий долг 34&nbsp;893&nbsp;₽?</p>
+            <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">После сохранения карточка и общий долг будут считать именно 34&nbsp;893&nbsp;₽. Это готовая текущая сумма, а не поправка к истории. Более поздние покупки в долг, комиссии и погашения будут применяться уже к ней.</p>
+          </div>
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Когда появляются «закрыть» и «вернуть»?</p>
+            <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Пока долг больше нуля, рядом с названием есть только «изменить». Когда «Долг сейчас» равен 0 ₽, появляется «закрыть». После закрытия запись переходит в список закрытых, где её можно «вернуть».</p>
+          </div>
           <div style="padding:14px 0; border-top:1px solid #d9d3bc;">
             <p style="margin:0; font-size:15.5px; font-weight:600;">Почему долг вырос, а денег на руках нет?</p>
             <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Это мог быть расход в долг, а не получение наличных. Долг вырос, но личная касса не пополнилась.</p>
