@@ -255,7 +255,7 @@
     if (!reducedMotion.matches) visualObserver.observe(chart);
   });
 
-  const tocLinks = [...document.querySelectorAll('main aside nav#содержание a[href^="#"], .site-toc__links a[href^="#"]')]
+  const tocLinks = [...document.querySelectorAll('main aside nav[aria-label="Содержание страницы"] a[href^="#"], .site-toc__links a[href^="#"]')]
     .map((link) => {
       let target = null;
       try {

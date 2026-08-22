@@ -185,6 +185,14 @@ for (const file of htmlFiles) {
   const ids = [...source.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
   const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
   if (duplicates.length) fail(`${file}: повторяющиеся id: ${[...new Set(duplicates)].join(", ")}`);
+  if (source.includes('href="#содержание"')) {
+    const contentsTarget = source.match(/<[^>]+\bid="содержание"[^>]*>/u)?.[0];
+    if (!contentsTarget) {
+      fail(`${file}: ссылки «К содержанию» не имеют цели`);
+    } else if (/position\s*:\s*sticky/iu.test(contentsTarget)) {
+      fail(`${file}: цель #содержание не может быть sticky — браузер не прокрутит страницу назад`);
+    }
+  }
   idsByFile.set(file, new Set(ids));
 }
 
