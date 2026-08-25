@@ -364,6 +364,49 @@
     root.style.setProperty('--mfm-sticky-header-height', `${height}px`);
   };
 
+  const initialHash = window.location.hash;
+  let initialHashAlignmentCancelled = false;
+
+  const hashTarget = () => {
+    if (!window.location.hash) return null;
+    try {
+      return document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    } catch {
+      return null;
+    }
+  };
+
+  const alignHashTarget = () => {
+    const target = hashTarget();
+    if (!target) return;
+    const headerHeight = header?.getBoundingClientRect().height || 0;
+    const top = window.scrollY + target.getBoundingClientRect().top - headerHeight - 18;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+  };
+
+  const queueHashAlignment = () => {
+    window.requestAnimationFrame(() => window.requestAnimationFrame(alignHashTarget));
+  };
+
+  window.addEventListener('hashchange', queueHashAlignment);
+
+  if (initialHash) {
+    const realignInitialHash = () => {
+      if (initialHashAlignmentCancelled || window.location.hash !== initialHash) return;
+      alignHashTarget();
+    };
+    const cancelInitialHashAlignment = () => { initialHashAlignmentCancelled = true; };
+    window.addEventListener('wheel', cancelInitialHashAlignment, { once: true, passive: true });
+    window.addEventListener('touchstart', cancelInitialHashAlignment, { once: true, passive: true });
+    window.addEventListener('pointerdown', cancelInitialHashAlignment, { once: true, passive: true });
+    window.addEventListener('keydown', cancelInitialHashAlignment, { once: true });
+    queueHashAlignment();
+    window.addEventListener('load', realignInitialHash, { once: true });
+    document.fonts?.ready.then(realignInitialHash);
+    window.setTimeout(realignInitialHash, 400);
+    window.setTimeout(realignInitialHash, 1200);
+  }
+
   if (header && 'ResizeObserver' in window) {
     new ResizeObserver(updateHeaderMetrics).observe(header);
   }
