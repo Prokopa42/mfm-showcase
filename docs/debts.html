@@ -118,7 +118,7 @@ img { max-width:100%; }
           <a href="#главная-цифра" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">1</span>Общий и текущий долг</a>
           <a href="#экран" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:#d63031;">2</span>Аннотированный экран</a>
           <a href="#действия" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">3</span>Операции</a>
-          <a href="#комиссии" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">4</span>Комиссии переноса</a>
+          <a href="#комиссии" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">4</span>Платёж и комиссии</a>
           <a href="#пример" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">5</span>Пример переноса</a>
           <a href="#подотчётный-долг" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">6</span>Подотчётный долг</a>
           <a href="#вопросы" style="display:flex; gap:10px; align-items:baseline; padding:7px 0; border-top:1px solid #ece7d2; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#14120d; text-decoration:none;" class="dc-state-4 dc-state-1"><span style="color:rgba(20,18,13,0.45);">7</span>Частые вопросы</a>
@@ -243,9 +243,9 @@ img { max-width:100%; }
             <p style="margin:0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Покупка отражает сегодняшнее потребление, поэтому входит в траты дня, хотя свои деньги и «Свободно до зарплаты» не уменьшаются.</p>
           </div>
           <div style="padding:14px 0; border-top:1px solid #d9d3bc; display:flex; flex-direction:column; gap:8px;">
-            <p style="margin:0; font-size:15.5px; font-weight:600;">Погасил долг своими</p>
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Платёж и комиссии по долгу</p>
             <div style="display:flex; gap:6px; flex-wrap:wrap;"><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px;">всего на руках ↓</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #d63031; color:#d63031; padding:4px 8px;">свои деньги ↓</span><span style="font-family:'JetBrains Mono', monospace; font-size:11px; border:1.5px solid #0749a9; color:#0749a9; padding:4px 8px;">долг ↓</span></div>
-            <p style="margin:0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Отдельное долговое движение: уменьшает деньги и долг, но не искажает статистику повседневных трат.</p>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:rgba(20,18,13,0.8);">Деньги уменьшаются на весь платёж, но долг — только на сумму, указанную в поле «В погашение долга». Обслуживание и банковская комиссия сами по себе долг не уменьшают.</p>
           </div>
           <div id="перенос" style="padding:14px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc; display:flex; flex-direction:column; gap:8px;">
             <p style="margin:0; font-size:15.5px; font-weight:600;">Перенёс долг</p>
@@ -256,10 +256,22 @@ img { max-width:100%; }
         <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
       </section>
 
-      <section id="комиссии" data-screen-label="4 Комиссии переноса" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
-        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>4</span><span>КОМИССИИ ПЕРЕНОСА</span></div>
-        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Куда падает комиссия — то и растёт</h2>
-        <div style="margin-top:26px; border:2px solid #14120d; background:#fffdf7;">
+      <section id="комиссии" data-screen-label="4 Платёж и комиссии" style="padding:clamp(24px,3vw,40px) 0 clamp(28px,4vw,44px); border-top:2px solid #14120d;">
+        <div style="display:flex; align-items:baseline; gap:14px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:rgba(20,18,13,0.55);"><span>4</span><span>ПЛАТЁЖ И КОМИССИИ</span></div>
+        <h2 style="margin:14px 0 0; font-family:'Archivo Black', 'Arial Black', sans-serif; font-weight:400;  line-height:1.12; text-wrap:balance;" class="dc-type-3">Долг уменьшает только погашение</h2>
+        <p style="margin:16px 0 0; max-width:68ch; font-size:15px; line-height:1.6; color:rgba(20,18,13,0.8);">В быстрой операции выберите «Платёж / комиссии» и укажите только те части, которые были в реальном списании.</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap:12px; margin-top:20px;">
+          <div style="border:2px solid #0749a9; background:#fffdf7; padding:14px 16px;"><strong style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; color:#0749a9;">В погашение долга</strong><span style="display:block; margin-top:7px; font-size:14px; line-height:1.5;">уменьшает деньги на руках и основной долг</span></div>
+          <div style="border:2px solid #14120d; background:#fffdf7; padding:14px 16px;"><strong style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px;">Комиссия / обслуживание</strong><span style="display:block; margin-top:7px; font-size:14px; line-height:1.5;">уменьшает деньги; долг не меняется, если оплачено своими</span></div>
+          <div style="border:2px solid #d63031; background:#fffdf7; padding:14px 16px;"><strong style="display:block; font-family:'JetBrains Mono', monospace; font-size:12px; color:#d63031;">Комиссия банка за перевод</strong><span style="display:block; margin-top:7px; font-size:14px; line-height:1.5;">списывается своими и не уменьшает долг</span></div>
+        </div>
+        <div style="margin-top:18px; border:2px solid #14120d; background:#14120d; color:#fffdf7; padding:16px;">
+          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.08em;">ПРИМЕР · ТОЛЬКО КОМИССИИ</p>
+          <p style="margin:10px 0 0; font-size:15px; line-height:1.65;">В погашение: <strong>0&nbsp;₽</strong> · обслуживание карты: <strong>400&nbsp;₽</strong> · комиссия банка за перевод: <strong>40&nbsp;₽</strong>.</p>
+          <p style="margin:6px 0 0; font-size:15px; line-height:1.65;"><strong>Деньги на руках: −440&nbsp;₽. Долг: без изменений.</strong></p>
+        </div>
+        <p style="margin:22px 0 0; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em;">ЕСЛИ КОМИССИЯ ДОБАВЛЕНА В ДОЛГ</p>
+        <div style="margin-top:10px; border:2px solid #14120d; background:#fffdf7;">
           <div style="display:flex; gap:12px; padding:12px 16px; border-bottom:1px solid #d9d3bc; flex-wrap:wrap;"><span style="flex:0 0 210px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Оплачена своими</span><span style="flex:1 1 240px; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">свои деньги уменьшаются; общий долг не растёт</span></div>
           <div style="display:flex; gap:12px; padding:12px 16px; border-bottom:1px solid #d9d3bc; flex-wrap:wrap;"><span style="flex:0 0 210px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Добавлена в целевой долг</span><span style="flex:1 1 240px; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">целевой долг растёт на сумму комиссии</span></div>
           <div style="display:flex; gap:12px; padding:12px 16px; border-bottom:1px solid #d9d3bc; flex-wrap:wrap;"><span style="flex:0 0 210px; font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;">Добавлена в исходный долг</span><span style="flex:1 1 240px; font-size:14.5px; line-height:1.5; color:rgba(20,18,13,0.8);">исходный долг уменьшается меньше; общий долг растёт на комиссию</span></div>
@@ -329,9 +341,13 @@ img { max-width:100%; }
             <p style="margin:0; font-size:15.5px; font-weight:600;">Почему после переноса общий долг тот же?</p>
             <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Изменился кредитор или долговая позиция, а не сумма обязательств. Рост возможен только из-за комиссии, добавленной в долг.</p>
           </div>
-          <div style="padding:14px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc;">
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc;">
             <p style="margin:0; font-size:15.5px; font-weight:600;">Почему погашение не считается свободным расходом?</p>
             <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Это отдельное долговое движение. Оно уменьшает деньги и долг, но не искажает статистику повседневных трат.</p>
+          </div>
+          <div style="padding:14px 0; border-top:1px solid #d9d3bc; border-bottom:1px solid #d9d3bc;">
+            <p style="margin:0; font-size:15.5px; font-weight:600;">Как записать комиссию, если основной долг не уменьшился?</p>
+            <p style="margin:6px 0 0; font-size:15px; line-height:1.55; color:rgba(20,18,13,0.8);">Выберите «Платёж / комиссии», оставьте «В погашение долга» равным 0 ₽ и внесите обслуживание и комиссию банка за перевод в отдельные поля. Приложение спишет только эти суммы с денег на руках, а долг оставит прежним.</p>
           </div>
         </div>
         <p style="margin:24px 0 0; text-align:right;"><a href="#содержание" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.08em; color:rgba(20,18,13,0.55);" class="dc-state-4 dc-state-1">↑ К содержанию</a></p>
